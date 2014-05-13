@@ -23,6 +23,10 @@
 		C900312A1922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
 		C90031321922BA470085F1E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C90031301922BA470085F1E3 /* InfoPlist.strings */; };
 		C90031341922BA470085F1E3 /* PhageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90031331922BA470085F1E3 /* PhageTests.m */; };
+		C976FE351922C60D0020AD6F /* CFPhage.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE341922C60D0020AD6F /* CFPhage.m */; };
+		C976FE381922C7F50020AD6F /* CFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE371922C7F50020AD6F /* CFCell.m */; };
+		C976FE3E1922C9D90020AD6F /* CFBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE3D1922C9D90020AD6F /* CFBoard.m */; };
+		C976FE411922C9FB0020AD6F /* CFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE401922C9FB0020AD6F /* CFPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,14 @@
 		C900312F1922BA470085F1E3 /* PhageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhageTests-Info.plist"; sourceTree = "<group>"; };
 		C90031311922BA470085F1E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C90031331922BA470085F1E3 /* PhageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhageTests.m; sourceTree = "<group>"; };
+		C976FE331922C60D0020AD6F /* CFPhage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPhage.h; sourceTree = "<group>"; };
+		C976FE341922C60D0020AD6F /* CFPhage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPhage.m; sourceTree = "<group>"; };
+		C976FE361922C7F50020AD6F /* CFCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFCell.h; sourceTree = "<group>"; };
+		C976FE371922C7F50020AD6F /* CFCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFCell.m; sourceTree = "<group>"; };
+		C976FE3C1922C9D90020AD6F /* CFBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFBoard.h; sourceTree = "<group>"; };
+		C976FE3D1922C9D90020AD6F /* CFBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFBoard.m; sourceTree = "<group>"; };
+		C976FE3F1922C9FB0020AD6F /* CFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFPlayer.h; path = ../CFPlayer.h; sourceTree = "<group>"; };
+		C976FE401922C9FB0020AD6F /* CFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFPlayer.m; path = ../CFPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +138,14 @@
 				C90031191922BA470085F1E3 /* CFViewController.m */,
 				C900311B1922BA470085F1E3 /* CFMyScene.h */,
 				C900311C1922BA470085F1E3 /* CFMyScene.m */,
+				C976FE331922C60D0020AD6F /* CFPhage.h */,
+				C976FE3C1922C9D90020AD6F /* CFBoard.h */,
+				C976FE3D1922C9D90020AD6F /* CFBoard.m */,
+				C976FE341922C60D0020AD6F /* CFPhage.m */,
+				C976FE361922C7F50020AD6F /* CFCell.h */,
+				C976FE371922C7F50020AD6F /* CFCell.m */,
+				C976FE3F1922C9FB0020AD6F /* CFPlayer.h */,
+				C976FE401922C9FB0020AD6F /* CFPlayer.m */,
 				C90031201922BA470085F1E3 /* Images.xcassets */,
 				C900310A1922BA470085F1E3 /* Supporting Files */,
 			);
@@ -261,8 +281,12 @@
 			files = (
 				C90031101922BA470085F1E3 /* main.m in Sources */,
 				C90031141922BA470085F1E3 /* CFAppDelegate.m in Sources */,
+				C976FE381922C7F50020AD6F /* CFCell.m in Sources */,
+				C976FE411922C9FB0020AD6F /* CFPlayer.m in Sources */,
 				C900311A1922BA470085F1E3 /* CFViewController.m in Sources */,
 				C900311D1922BA470085F1E3 /* CFMyScene.m in Sources */,
+				C976FE3E1922C9D90020AD6F /* CFBoard.m in Sources */,
+				C976FE351922C60D0020AD6F /* CFPhage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +497,7 @@
 				C90031391922BA470085F1E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C900313A1922BA470085F1E3 /* Build configuration list for PBXNativeTarget "PhageTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +506,7 @@
 				C900313C1922BA470085F1E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
