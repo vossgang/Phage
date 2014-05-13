@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C90031021922BA470085F1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031011922BA470085F1E3 /* Foundation.framework */; };
+		C90031041922BA470085F1E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031031922BA470085F1E3 /* CoreGraphics.framework */; };
+		C90031061922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
+		C90031081922BA470085F1E3 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031071922BA470085F1E3 /* SpriteKit.framework */; };
+		C900310E1922BA470085F1E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C900310C1922BA470085F1E3 /* InfoPlist.strings */; };
+		C90031101922BA470085F1E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C900310F1922BA470085F1E3 /* main.m */; };
+		C90031141922BA470085F1E3 /* CFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C90031131922BA470085F1E3 /* CFAppDelegate.m */; };
+		C90031171922BA470085F1E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90031151922BA470085F1E3 /* Main.storyboard */; };
+		C900311A1922BA470085F1E3 /* CFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90031191922BA470085F1E3 /* CFViewController.m */; };
+		C900311D1922BA470085F1E3 /* CFMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C900311C1922BA470085F1E3 /* CFMyScene.m */; };
+		C900311F1922BA470085F1E3 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = C900311E1922BA470085F1E3 /* Spaceship.png */; };
+		C90031211922BA470085F1E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C90031201922BA470085F1E3 /* Images.xcassets */; };
+		C90031281922BA470085F1E3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031271922BA470085F1E3 /* XCTest.framework */; };
+		C90031291922BA470085F1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031011922BA470085F1E3 /* Foundation.framework */; };
+		C900312A1922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
+		C90031321922BA470085F1E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C90031301922BA470085F1E3 /* InfoPlist.strings */; };
+		C90031341922BA470085F1E3 /* PhageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90031331922BA470085F1E3 /* PhageTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C900312B1922BA470085F1E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90030F61922BA470085F1E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C90030FD1922BA470085F1E3;
+			remoteInfo = Phage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C90030FE1922BA470085F1E3 /* Phage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90031011922BA470085F1E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C90031031922BA470085F1E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C90031051922BA470085F1E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C90031071922BA470085F1E3 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		C900310B1922BA470085F1E3 /* Phage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Phage-Info.plist"; sourceTree = "<group>"; };
+		C900310D1922BA470085F1E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C900310F1922BA470085F1E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C90031111922BA470085F1E3 /* Phage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Phage-Prefix.pch"; sourceTree = "<group>"; };
+		C90031121922BA470085F1E3 /* CFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFAppDelegate.h; sourceTree = "<group>"; };
+		C90031131922BA470085F1E3 /* CFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFAppDelegate.m; sourceTree = "<group>"; };
+		C90031161922BA470085F1E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C90031181922BA470085F1E3 /* CFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFViewController.h; sourceTree = "<group>"; };
+		C90031191922BA470085F1E3 /* CFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFViewController.m; sourceTree = "<group>"; };
+		C900311B1922BA470085F1E3 /* CFMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFMyScene.h; sourceTree = "<group>"; };
+		C900311C1922BA470085F1E3 /* CFMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFMyScene.m; sourceTree = "<group>"; };
+		C900311E1922BA470085F1E3 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		C90031201922BA470085F1E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C90031261922BA470085F1E3 /* PhageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90031271922BA470085F1E3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C900312F1922BA470085F1E3 /* PhageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhageTests-Info.plist"; sourceTree = "<group>"; };
+		C90031311922BA470085F1E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C90031331922BA470085F1E3 /* PhageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhageTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C90030FB1922BA470085F1E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90031041922BA470085F1E3 /* CoreGraphics.framework in Frameworks */,
+				C90031061922BA470085F1E3 /* UIKit.framework in Frameworks */,
+				C90031081922BA470085F1E3 /* SpriteKit.framework in Frameworks */,
+				C90031021922BA470085F1E3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C90031231922BA470085F1E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90031281922BA470085F1E3 /* XCTest.framework in Frameworks */,
+				C900312A1922BA470085F1E3 /* UIKit.framework in Frameworks */,
+				C90031291922BA470085F1E3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C90030F51922BA470085F1E3 = {
+			isa = PBXGroup;
+			children = (
+				C90031091922BA470085F1E3 /* Phage */,
+				C900312D1922BA470085F1E3 /* PhageTests */,
+				C90031001922BA470085F1E3 /* Frameworks */,
+				C90030FF1922BA470085F1E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C90030FF1922BA470085F1E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90030FE1922BA470085F1E3 /* Phage.app */,
+				C90031261922BA470085F1E3 /* PhageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C90031001922BA470085F1E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C90031011922BA470085F1E3 /* Foundation.framework */,
+				C90031031922BA470085F1E3 /* CoreGraphics.framework */,
+				C90031051922BA470085F1E3 /* UIKit.framework */,
+				C90031071922BA470085F1E3 /* SpriteKit.framework */,
+				C90031271922BA470085F1E3 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C90031091922BA470085F1E3 /* Phage */ = {
+			isa = PBXGroup;
+			children = (
+				C90031121922BA470085F1E3 /* CFAppDelegate.h */,
+				C90031131922BA470085F1E3 /* CFAppDelegate.m */,
+				C90031151922BA470085F1E3 /* Main.storyboard */,
+				C90031181922BA470085F1E3 /* CFViewController.h */,
+				C90031191922BA470085F1E3 /* CFViewController.m */,
+				C900311B1922BA470085F1E3 /* CFMyScene.h */,
+				C900311C1922BA470085F1E3 /* CFMyScene.m */,
+				C900311E1922BA470085F1E3 /* Spaceship.png */,
+				C90031201922BA470085F1E3 /* Images.xcassets */,
+				C900310A1922BA470085F1E3 /* Supporting Files */,
+			);
+			path = Phage;
+			sourceTree = "<group>";
+		};
+		C900310A1922BA470085F1E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C900310B1922BA470085F1E3 /* Phage-Info.plist */,
+				C900310C1922BA470085F1E3 /* InfoPlist.strings */,
+				C900310F1922BA470085F1E3 /* main.m */,
+				C90031111922BA470085F1E3 /* Phage-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C900312D1922BA470085F1E3 /* PhageTests */ = {
+			isa = PBXGroup;
+			children = (
+				C90031331922BA470085F1E3 /* PhageTests.m */,
+				C900312E1922BA470085F1E3 /* Supporting Files */,
+			);
+			path = PhageTests;
+			sourceTree = "<group>";
+		};
+		C900312E1922BA470085F1E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C900312F1922BA470085F1E3 /* PhageTests-Info.plist */,
+				C90031301922BA470085F1E3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C90030FD1922BA470085F1E3 /* Phage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90031371922BA470085F1E3 /* Build configuration list for PBXNativeTarget "Phage" */;
+			buildPhases = (
+				C90030FA1922BA470085F1E3 /* Sources */,
+				C90030FB1922BA470085F1E3 /* Frameworks */,
+				C90030FC1922BA470085F1E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Phage;
+			productName = Phage;
+			productReference = C90030FE1922BA470085F1E3 /* Phage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C90031251922BA470085F1E3 /* PhageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C900313A1922BA470085F1E3 /* Build configuration list for PBXNativeTarget "PhageTests" */;
+			buildPhases = (
+				C90031221922BA470085F1E3 /* Sources */,
+				C90031231922BA470085F1E3 /* Frameworks */,
+				C90031241922BA470085F1E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C900312C1922BA470085F1E3 /* PBXTargetDependency */,
+			);
+			name = PhageTests;
+			productName = PhageTests;
+			productReference = C90031261922BA470085F1E3 /* PhageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C90030F61922BA470085F1E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CF;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Code Fellows";
+				TargetAttributes = {
+					C90031251922BA470085F1E3 = {
+						TestTargetID = C90030FD1922BA470085F1E3;
+					};
+				};
+			};
+			buildConfigurationList = C90030F91922BA470085F1E3 /* Build configuration list for PBXProject "Phage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C90030F51922BA470085F1E3;
+			productRefGroup = C90030FF1922BA470085F1E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C90030FD1922BA470085F1E3 /* Phage */,
+				C90031251922BA470085F1E3 /* PhageTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C90030FC1922BA470085F1E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C900310E1922BA470085F1E3 /* InfoPlist.strings in Resources */,
+				C90031211922BA470085F1E3 /* Images.xcassets in Resources */,
+				C900311F1922BA470085F1E3 /* Spaceship.png in Resources */,
+				C90031171922BA470085F1E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C90031241922BA470085F1E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90031321922BA470085F1E3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C90030FA1922BA470085F1E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90031101922BA470085F1E3 /* main.m in Sources */,
+				C90031141922BA470085F1E3 /* CFAppDelegate.m in Sources */,
+				C900311A1922BA470085F1E3 /* CFViewController.m in Sources */,
+				C900311D1922BA470085F1E3 /* CFMyScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C90031221922BA470085F1E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90031341922BA470085F1E3 /* PhageTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C900312C1922BA470085F1E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C90030FD1922BA470085F1E3 /* Phage */;
+			targetProxy = C900312B1922BA470085F1E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C900310C1922BA470085F1E3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C900310D1922BA470085F1E3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C90031151922BA470085F1E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C90031161922BA470085F1E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C90031301922BA470085F1E3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C90031311922BA470085F1E3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C90031351922BA470085F1E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C90031361922BA470085F1E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C90031381922BA470085F1E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Phage/Phage-Prefix.pch";
+				INFOPLIST_FILE = "Phage/Phage-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C90031391922BA470085F1E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Phage/Phage-Prefix.pch";
+				INFOPLIST_FILE = "Phage/Phage-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C900313B1922BA470085F1E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Phage.app/Phage";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Phage/Phage-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PhageTests/PhageTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C900313C1922BA470085F1E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Phage.app/Phage";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Phage/Phage-Prefix.pch";
+				INFOPLIST_FILE = "PhageTests/PhageTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C90030F91922BA470085F1E3 /* Build configuration list for PBXProject "Phage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90031351922BA470085F1E3 /* Debug */,
+				C90031361922BA470085F1E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90031371922BA470085F1E3 /* Build configuration list for PBXNativeTarget "Phage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90031381922BA470085F1E3 /* Debug */,
+				C90031391922BA470085F1E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C900313A1922BA470085F1E3 /* Build configuration list for PBXNativeTarget "PhageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C900313B1922BA470085F1E3 /* Debug */,
+				C900313C1922BA470085F1E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C90030F61922BA470085F1E3 /* Project object */;
+}
