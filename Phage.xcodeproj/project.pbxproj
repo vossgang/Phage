@@ -17,7 +17,6 @@
 		C90031171922BA470085F1E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90031151922BA470085F1E3 /* Main.storyboard */; };
 		C900311A1922BA470085F1E3 /* CFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90031191922BA470085F1E3 /* CFViewController.m */; };
 		C900311D1922BA470085F1E3 /* CFMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C900311C1922BA470085F1E3 /* CFMyScene.m */; };
-		C900311F1922BA470085F1E3 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = C900311E1922BA470085F1E3 /* Spaceship.png */; };
 		C90031211922BA470085F1E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C90031201922BA470085F1E3 /* Images.xcassets */; };
 		C90031281922BA470085F1E3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031271922BA470085F1E3 /* XCTest.framework */; };
 		C90031291922BA470085F1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031011922BA470085F1E3 /* Foundation.framework */; };
@@ -53,7 +52,6 @@
 		C90031191922BA470085F1E3 /* CFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFViewController.m; sourceTree = "<group>"; };
 		C900311B1922BA470085F1E3 /* CFMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFMyScene.h; sourceTree = "<group>"; };
 		C900311C1922BA470085F1E3 /* CFMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFMyScene.m; sourceTree = "<group>"; };
-		C900311E1922BA470085F1E3 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		C90031201922BA470085F1E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C90031261922BA470085F1E3 /* PhageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90031271922BA470085F1E3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -128,7 +126,6 @@
 				C90031191922BA470085F1E3 /* CFViewController.m */,
 				C900311B1922BA470085F1E3 /* CFMyScene.h */,
 				C900311C1922BA470085F1E3 /* CFMyScene.m */,
-				C900311E1922BA470085F1E3 /* Spaceship.png */,
 				C90031201922BA470085F1E3 /* Images.xcassets */,
 				C900310A1922BA470085F1E3 /* Supporting Files */,
 			);
@@ -243,7 +240,6 @@
 			files = (
 				C900310E1922BA470085F1E3 /* InfoPlist.strings in Resources */,
 				C90031211922BA470085F1E3 /* Images.xcassets in Resources */,
-				C900311F1922BA470085F1E3 /* Spaceship.png in Resources */,
 				C90031171922BA470085F1E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +392,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Phage/Phage-Prefix.pch";
 				INFOPLIST_FILE = "Phage/Phage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -410,6 +407,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Phage/Phage-Prefix.pch";
 				INFOPLIST_FILE = "Phage/Phage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
