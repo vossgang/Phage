@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B94F6821922D40F00BD5280 /* protocell1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B94F6811922D40F00BD5280 /* protocell1.png */; };
+		1B94F6841922E40700BD5280 /* protocell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B94F6831922E40700BD5280 /* protocell2.png */; };
+		1BFE164E1923190600BB02B0 /* protocell0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BFE164D1923190600BB02B0 /* protocell0.png */; };
 		C90031021922BA470085F1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031011922BA470085F1E3 /* Foundation.framework */; };
 		C90031041922BA470085F1E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031031922BA470085F1E3 /* CoreGraphics.framework */; };
 		C90031061922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B94F6811922D40F00BD5280 /* protocell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell1.png; sourceTree = "<group>"; };
+		1B94F6831922E40700BD5280 /* protocell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell2.png; sourceTree = "<group>"; };
+		1BFE164D1923190600BB02B0 /* protocell0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell0.png; sourceTree = "<group>"; };
 		C90030FE1922BA470085F1E3 /* Phage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90031011922BA470085F1E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C90031031922BA470085F1E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,6 +153,9 @@
 				C976FE3F1922C9FB0020AD6F /* CFPlayer.h */,
 				C976FE401922C9FB0020AD6F /* CFPlayer.m */,
 				C90031201922BA470085F1E3 /* Images.xcassets */,
+				1BFE164D1923190600BB02B0 /* protocell0.png */,
+				1B94F6831922E40700BD5280 /* protocell2.png */,
+				1B94F6811922D40F00BD5280 /* protocell1.png */,
 				C900310A1922BA470085F1E3 /* Supporting Files */,
 			);
 			path = Phage;
@@ -258,9 +267,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B94F6821922D40F00BD5280 /* protocell1.png in Resources */,
 				C900310E1922BA470085F1E3 /* InfoPlist.strings in Resources */,
 				C90031211922BA470085F1E3 /* Images.xcassets in Resources */,
+				1BFE164E1923190600BB02B0 /* protocell0.png in Resources */,
 				C90031171922BA470085F1E3 /* Main.storyboard in Resources */,
+				1B94F6841922E40700BD5280 /* protocell2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
