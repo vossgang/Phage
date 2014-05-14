@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		3A36AA261922DD0900174D1E /* blurphagebg@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A36AA251922DD0900174D1E /* blurphagebg@2x~ipad.png */; };
 		3A36AA291922DE0800174D1E /* CFMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A36AA281922DE0800174D1E /* CFMenuViewController.m */; };
 		3A36AA2C1922DE2C00174D1E /* CFGamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A36AA2B1922DE2C00174D1E /* CFGamePlayViewController.m */; };
 		3A36AA2F1922DE3800174D1E /* CFGameCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A36AA2E1922DE3800174D1E /* CFGameCenterViewController.m */; };
+=======
+		3DED7EBA1922E53200D5E6E9 /* CFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EB91922E53200D5E6E9 /* CFCell.m */; };
+		3DED7EBD1922E6FD00D5E6E9 /* CFPhage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EBC1922E6FD00D5E6E9 /* CFPhage.m */; };
+		3DED7EC01922E77F00D5E6E9 /* CFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EBF1922E77F00D5E6E9 /* CFPlayer.m */; };
+		3DED7EC31922E84C00D5E6E9 /* CFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EC21922E84C00D5E6E9 /* CFGameController.m */; };
+>>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 		C90031021922BA470085F1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031011922BA470085F1E3 /* Foundation.framework */; };
 		C90031041922BA470085F1E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031031922BA470085F1E3 /* CoreGraphics.framework */; };
 		C90031061922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
@@ -43,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		3A36AA251922DD0900174D1E /* blurphagebg@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blurphagebg@2x~ipad.png"; sourceTree = "<group>"; };
 		3A36AA271922DE0800174D1E /* CFMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMenuViewController.h; sourceTree = "<group>"; };
 		3A36AA281922DE0800174D1E /* CFMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMenuViewController.m; sourceTree = "<group>"; };
@@ -50,6 +58,16 @@
 		3A36AA2B1922DE2C00174D1E /* CFGamePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGamePlayViewController.m; sourceTree = "<group>"; };
 		3A36AA2D1922DE3800174D1E /* CFGameCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFGameCenterViewController.h; sourceTree = "<group>"; };
 		3A36AA2E1922DE3800174D1E /* CFGameCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGameCenterViewController.m; sourceTree = "<group>"; };
+=======
+		3DED7EB81922E53200D5E6E9 /* CFCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFCell.h; sourceTree = "<group>"; };
+		3DED7EB91922E53200D5E6E9 /* CFCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFCell.m; sourceTree = "<group>"; };
+		3DED7EBB1922E6FD00D5E6E9 /* CFPhage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPhage.h; sourceTree = "<group>"; };
+		3DED7EBC1922E6FD00D5E6E9 /* CFPhage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPhage.m; sourceTree = "<group>"; };
+		3DED7EBE1922E77F00D5E6E9 /* CFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPlayer.h; sourceTree = "<group>"; };
+		3DED7EBF1922E77F00D5E6E9 /* CFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPlayer.m; sourceTree = "<group>"; };
+		3DED7EC11922E84C00D5E6E9 /* CFGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFGameController.h; sourceTree = "<group>"; };
+		3DED7EC21922E84C00D5E6E9 /* CFGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGameController.m; sourceTree = "<group>"; };
+>>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 		C90030FE1922BA470085F1E3 /* Phage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90031011922BA470085F1E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C90031031922BA470085F1E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -175,6 +193,7 @@
 			children = (
 				C90031121922BA470085F1E3 /* CFAppDelegate.h */,
 				C90031131922BA470085F1E3 /* CFAppDelegate.m */,
+<<<<<<< HEAD
 				C900311B1922BA470085F1E3 /* CFMyScene.h */,
 				C900311C1922BA470085F1E3 /* CFMyScene.m */,
 				C976FE331922C60D0020AD6F /* CFPhage.h */,
@@ -192,6 +211,11 @@
 				3A36AA2B1922DE2C00174D1E /* CFGamePlayViewController.m */,
 				3A36AA2D1922DE3800174D1E /* CFGameCenterViewController.h */,
 				3A36AA2E1922DE3800174D1E /* CFGameCenterViewController.m */,
+=======
+				3DED7EC61922E96A00D5E6E9 /* ViewControllers */,
+				3DED7EC41922E95800D5E6E9 /* Model */,
+				3DED7EC51922E95E00D5E6E9 /* ModelControllers */,
+>>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 				C90031201922BA470085F1E3 /* Images.xcassets */,
 				C900310A1922BA470085F1E3 /* Supporting Files */,
 			);
@@ -330,10 +354,18 @@
 				3A36AA2C1922DE2C00174D1E /* CFGamePlayViewController.m in Sources */,
 				C90031101922BA470085F1E3 /* main.m in Sources */,
 				C90031141922BA470085F1E3 /* CFAppDelegate.m in Sources */,
+<<<<<<< HEAD
 				3A36AA291922DE0800174D1E /* CFMenuViewController.m in Sources */,
 				C976FE381922C7F50020AD6F /* CFCell.m in Sources */,
 				C976FE411922C9FB0020AD6F /* CFPlayer.m in Sources */,
 				3A36AA2F1922DE3800174D1E /* CFGameCenterViewController.m in Sources */,
+=======
+				3DED7EBD1922E6FD00D5E6E9 /* CFPhage.m in Sources */,
+				C900311A1922BA470085F1E3 /* CFViewController.m in Sources */,
+				3DED7EC31922E84C00D5E6E9 /* CFGameController.m in Sources */,
+				3DED7EBA1922E53200D5E6E9 /* CFCell.m in Sources */,
+				3DED7EC01922E77F00D5E6E9 /* CFPlayer.m in Sources */,
+>>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 				C900311D1922BA470085F1E3 /* CFMyScene.m in Sources */,
 				C976FE3E1922C9D90020AD6F /* CFBoard.m in Sources */,
 				C976FE351922C60D0020AD6F /* CFPhage.m in Sources */,
