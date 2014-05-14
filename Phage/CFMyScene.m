@@ -10,11 +10,6 @@
 #import "CFCell.h"
 #import "CFPhage.h"
 
-#define NUMBER_OF_CELLS 30
-#define NUMBER_OF_SECTIONS 2
-#define MAXIMUM_CELL_SIZE 120
-#define NUMBER_OF_PHAGES_PER_CELL 5
-#define PHAGE_DIAMETER 10
 
 @interface CFMyScene()
 

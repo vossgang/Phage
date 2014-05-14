@@ -13,7 +13,7 @@
 @interface CFGameController : NSObject
 
 + (instancetype) sharedGameController;
-- (NSDictionary *)setupGameCells;
+- (NSDictionary *)setupBoard;
 - (NSArray *)setupPlayers;
 
 @property (nonatomic, strong) CFPlayer *winningPlayer;
