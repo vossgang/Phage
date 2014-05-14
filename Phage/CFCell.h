@@ -9,30 +9,47 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 
+static NSString * const kSmallCellKey = @"smallCell";
+static NSString * const kMediumCellKey = @"mediumCell";
+static NSString * const kLargeCellKey = @"largeCell";
+
 @class CFPlayer;
+@class CFPhage;
 
 typedef enum : NSUInteger {
-    CFCellSizeSmall,
-    CFCellSizeMedium,
-    CFCellSizeLarge,
-} CFCellSize;
+    SizeSmall,
+    SizeMedium,
+    SizeLarge,
+} CellSize;
 
 typedef enum : NSUInteger {
-    CFCellTypeFactory,
-    CFCellTypeScuttle,
-    CFCellTypeNeutral,
-} CFCellType;
+    TypeFactory,
+    TypeScuttle,
+    TypeNormal,
+} CellType;
 
+typedef enum :NSUInteger {
+    AffiliationPlayer,
+    AffiliationAI,
+    AffiliationNeutral,
+} CellAffiliation;
 
 @interface CFCell : SKSpriteNode
 
+@property (nonatomic) CellType cellType;
+@property (nonatomic) CellSize cellSize;
+@property (nonatomic) CellAffiliation cellAffiliation;
+
 @property (nonatomic) NSInteger phageCount;
+@property (nonatomic, strong) CFPhage *phageHead;
 @property (nonatomic, weak) CFPlayer *owner;
+@property (nonatomic) CGPoint location;
 
--(instancetype)initWithSize:(CGSize)size type:(CFCellType)type location:(CGPoint)location;
+- (instancetype)initWithAffiliation:(CellAffiliation)affiliation
+                           cellSize:(CellSize)cellSize
+                               type:(CellType)type
+                           location:(CGPoint)location;
 
--(NSInteger)productionRateForCellSize:(CFCellSize)cellSize;
--(NSInteger)productionCapacityForCellSize:(CFCellSize)cellSize type:(CFCellType)cellType;
--(NSInteger)numberOfOrganellsForCellSize:(CFCellSize)cellSize;
+- (CGSize)sizeForCellSize:(CellSize)cellSize;
 
 @end

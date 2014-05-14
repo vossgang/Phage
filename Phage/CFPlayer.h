@@ -14,4 +14,8 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, weak) NSArray *playerCells;
 
+-(instancetype)initWithColor:(UIColor *)color
+                        name:(NSString *)name
+                 playerCells:(NSArray *)playerCells;
+
 @end
