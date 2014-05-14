@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 <<<<<<< HEAD
-		3A36AA261922DD0900174D1E /* blurphagebg@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A36AA251922DD0900174D1E /* blurphagebg@2x~ipad.png */; };
-		3A36AA291922DE0800174D1E /* CFMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A36AA281922DE0800174D1E /* CFMenuViewController.m */; };
-		3A36AA2C1922DE2C00174D1E /* CFGamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A36AA2B1922DE2C00174D1E /* CFGamePlayViewController.m */; };
-		3A36AA2F1922DE3800174D1E /* CFGameCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A36AA2E1922DE3800174D1E /* CFGameCenterViewController.m */; };
-=======
 		1B94F6821922D40F00BD5280 /* protocell1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B94F6811922D40F00BD5280 /* protocell1.png */; };
 		1B94F6841922E40700BD5280 /* protocell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B94F6831922E40700BD5280 /* protocell2.png */; };
 		1BFE164E1923190600BB02B0 /* protocell0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BFE164D1923190600BB02B0 /* protocell0.png */; };
 		1BFE16501923B79D00BB02B0 /* protoPhage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BFE164F1923B79D00BB02B0 /* protoPhage.png */; };
->>>>>>> 9b4dd5c4ea60288e87e1795a5e7c85758126b527
+=======
+		3DED7EBA1922E53200D5E6E9 /* CFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EB91922E53200D5E6E9 /* CFCell.m */; };
+		3DED7EBD1922E6FD00D5E6E9 /* CFPhage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EBC1922E6FD00D5E6E9 /* CFPhage.m */; };
+		3DED7EC01922E77F00D5E6E9 /* CFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EBF1922E77F00D5E6E9 /* CFPlayer.m */; };
+		3DED7EC31922E84C00D5E6E9 /* CFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EC21922E84C00D5E6E9 /* CFGameController.m */; };
+>>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 		C90031021922BA470085F1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031011922BA470085F1E3 /* Foundation.framework */; };
 		C90031041922BA470085F1E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031031922BA470085F1E3 /* CoreGraphics.framework */; };
 		C90031061922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
@@ -33,10 +33,14 @@
 		C900312A1922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
 		C90031321922BA470085F1E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C90031301922BA470085F1E3 /* InfoPlist.strings */; };
 		C90031341922BA470085F1E3 /* PhageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90031331922BA470085F1E3 /* PhageTests.m */; };
+		C9693D1B1923D6D00038A669 /* CFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D171923D6D00038A669 /* CFPlayer.m */; };
+		C9693D251923D6F40038A669 /* CFGameCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D1E1923D6F40038A669 /* CFGameCenterViewController.m */; };
+		C9693D261923D6F40038A669 /* CFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D201923D6F40038A669 /* CFGameController.m */; };
+		C9693D271923D6F40038A669 /* CFGamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D221923D6F40038A669 /* CFGamePlayViewController.m */; };
+		C9693D281923D6F40038A669 /* CFMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D241923D6F40038A669 /* CFMenuViewController.m */; };
 		C976FE351922C60D0020AD6F /* CFPhage.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE341922C60D0020AD6F /* CFPhage.m */; };
 		C976FE381922C7F50020AD6F /* CFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE371922C7F50020AD6F /* CFCell.m */; };
 		C976FE3E1922C9D90020AD6F /* CFBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE3D1922C9D90020AD6F /* CFBoard.m */; };
-		C976FE411922C9FB0020AD6F /* CFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE401922C9FB0020AD6F /* CFPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,19 +55,20 @@
 
 /* Begin PBXFileReference section */
 <<<<<<< HEAD
-		3A36AA251922DD0900174D1E /* blurphagebg@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blurphagebg@2x~ipad.png"; sourceTree = "<group>"; };
-		3A36AA271922DE0800174D1E /* CFMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMenuViewController.h; sourceTree = "<group>"; };
-		3A36AA281922DE0800174D1E /* CFMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMenuViewController.m; sourceTree = "<group>"; };
-		3A36AA2A1922DE2C00174D1E /* CFGamePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFGamePlayViewController.h; sourceTree = "<group>"; };
-		3A36AA2B1922DE2C00174D1E /* CFGamePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGamePlayViewController.m; sourceTree = "<group>"; };
-		3A36AA2D1922DE3800174D1E /* CFGameCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFGameCenterViewController.h; sourceTree = "<group>"; };
-		3A36AA2E1922DE3800174D1E /* CFGameCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGameCenterViewController.m; sourceTree = "<group>"; };
-=======
 		1B94F6811922D40F00BD5280 /* protocell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell1.png; sourceTree = "<group>"; };
 		1B94F6831922E40700BD5280 /* protocell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell2.png; sourceTree = "<group>"; };
 		1BFE164D1923190600BB02B0 /* protocell0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell0.png; sourceTree = "<group>"; };
 		1BFE164F1923B79D00BB02B0 /* protoPhage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protoPhage.png; sourceTree = "<group>"; };
->>>>>>> 9b4dd5c4ea60288e87e1795a5e7c85758126b527
+=======
+		3DED7EB81922E53200D5E6E9 /* CFCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFCell.h; sourceTree = "<group>"; };
+		3DED7EB91922E53200D5E6E9 /* CFCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFCell.m; sourceTree = "<group>"; };
+		3DED7EBB1922E6FD00D5E6E9 /* CFPhage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPhage.h; sourceTree = "<group>"; };
+		3DED7EBC1922E6FD00D5E6E9 /* CFPhage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPhage.m; sourceTree = "<group>"; };
+		3DED7EBE1922E77F00D5E6E9 /* CFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPlayer.h; sourceTree = "<group>"; };
+		3DED7EBF1922E77F00D5E6E9 /* CFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPlayer.m; sourceTree = "<group>"; };
+		3DED7EC11922E84C00D5E6E9 /* CFGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFGameController.h; sourceTree = "<group>"; };
+		3DED7EC21922E84C00D5E6E9 /* CFGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGameController.m; sourceTree = "<group>"; };
+>>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 		C90030FE1922BA470085F1E3 /* Phage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90031011922BA470085F1E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C90031031922BA470085F1E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,14 +89,22 @@
 		C900312F1922BA470085F1E3 /* PhageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhageTests-Info.plist"; sourceTree = "<group>"; };
 		C90031311922BA470085F1E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C90031331922BA470085F1E3 /* PhageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhageTests.m; sourceTree = "<group>"; };
+		C9693D161923D6D00038A669 /* CFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPlayer.h; sourceTree = "<group>"; };
+		C9693D171923D6D00038A669 /* CFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPlayer.m; sourceTree = "<group>"; };
+		C9693D1D1923D6F40038A669 /* CFGameCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFGameCenterViewController.h; path = Phage/CFGameCenterViewController.h; sourceTree = "<group>"; };
+		C9693D1E1923D6F40038A669 /* CFGameCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFGameCenterViewController.m; path = Phage/CFGameCenterViewController.m; sourceTree = "<group>"; };
+		C9693D1F1923D6F40038A669 /* CFGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFGameController.h; path = Phage/CFGameController.h; sourceTree = "<group>"; };
+		C9693D201923D6F40038A669 /* CFGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFGameController.m; path = Phage/CFGameController.m; sourceTree = "<group>"; };
+		C9693D211923D6F40038A669 /* CFGamePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFGamePlayViewController.h; path = Phage/CFGamePlayViewController.h; sourceTree = "<group>"; };
+		C9693D221923D6F40038A669 /* CFGamePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFGamePlayViewController.m; path = Phage/CFGamePlayViewController.m; sourceTree = "<group>"; };
+		C9693D231923D6F40038A669 /* CFMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMenuViewController.h; path = Phage/CFMenuViewController.h; sourceTree = "<group>"; };
+		C9693D241923D6F40038A669 /* CFMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMenuViewController.m; path = Phage/CFMenuViewController.m; sourceTree = "<group>"; };
 		C976FE331922C60D0020AD6F /* CFPhage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPhage.h; sourceTree = "<group>"; };
 		C976FE341922C60D0020AD6F /* CFPhage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPhage.m; sourceTree = "<group>"; };
 		C976FE361922C7F50020AD6F /* CFCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFCell.h; sourceTree = "<group>"; };
 		C976FE371922C7F50020AD6F /* CFCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFCell.m; sourceTree = "<group>"; };
 		C976FE3C1922C9D90020AD6F /* CFBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFBoard.h; sourceTree = "<group>"; };
 		C976FE3D1922C9D90020AD6F /* CFBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFBoard.m; sourceTree = "<group>"; };
-		C976FE3F1922C9FB0020AD6F /* CFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFPlayer.h; path = ../CFPlayer.h; sourceTree = "<group>"; };
-		C976FE401922C9FB0020AD6F /* CFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFPlayer.m; path = ../CFPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +169,17 @@
 		C90030F51922BA470085F1E3 = {
 			isa = PBXGroup;
 			children = (
+				C9693D1D1923D6F40038A669 /* CFGameCenterViewController.h */,
+				C9693D1E1923D6F40038A669 /* CFGameCenterViewController.m */,
+				C9693D1F1923D6F40038A669 /* CFGameController.h */,
+				C9693D201923D6F40038A669 /* CFGameController.m */,
+				C9693D211923D6F40038A669 /* CFGamePlayViewController.h */,
+				C9693D221923D6F40038A669 /* CFGamePlayViewController.m */,
+				C9693D231923D6F40038A669 /* CFMenuViewController.h */,
+				C9693D241923D6F40038A669 /* CFMenuViewController.m */,
 				C90031091922BA470085F1E3 /* Phage */,
-				C900312D1922BA470085F1E3 /* PhageTests */,
 				C90031001922BA470085F1E3 /* Frameworks */,
+				C900310A1922BA470085F1E3 /* Supporting Files */,
 				C90030FF1922BA470085F1E3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -189,29 +210,28 @@
 			children = (
 				C90031121922BA470085F1E3 /* CFAppDelegate.h */,
 				C90031131922BA470085F1E3 /* CFAppDelegate.m */,
+<<<<<<< HEAD
 				C900311B1922BA470085F1E3 /* CFMyScene.h */,
 				C900311C1922BA470085F1E3 /* CFMyScene.m */,
+				C9693D161923D6D00038A669 /* CFPlayer.h */,
+				C9693D171923D6D00038A669 /* CFPlayer.m */,
 				C976FE3C1922C9D90020AD6F /* CFBoard.h */,
 				C976FE3D1922C9D90020AD6F /* CFBoard.m */,
 				C976FE331922C60D0020AD6F /* CFPhage.h */,
 				C976FE341922C60D0020AD6F /* CFPhage.m */,
 				C976FE361922C7F50020AD6F /* CFCell.h */,
 				C976FE371922C7F50020AD6F /* CFCell.m */,
-				C976FE3F1922C9FB0020AD6F /* CFPlayer.h */,
-				C976FE401922C9FB0020AD6F /* CFPlayer.m */,
 				C90031151922BA470085F1E3 /* Main.storyboard */,
-				3A36AA271922DE0800174D1E /* CFMenuViewController.h */,
-				3A36AA281922DE0800174D1E /* CFMenuViewController.m */,
-				3A36AA2A1922DE2C00174D1E /* CFGamePlayViewController.h */,
-				3A36AA2B1922DE2C00174D1E /* CFGamePlayViewController.m */,
-				3A36AA2D1922DE3800174D1E /* CFGameCenterViewController.h */,
-				3A36AA2E1922DE3800174D1E /* CFGameCenterViewController.m */,
+=======
+				3DED7EC61922E96A00D5E6E9 /* ViewControllers */,
+				3DED7EC41922E95800D5E6E9 /* Model */,
+				3DED7EC51922E95E00D5E6E9 /* ModelControllers */,
+>>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 				C90031201922BA470085F1E3 /* Images.xcassets */,
 				1BFE164D1923190600BB02B0 /* protocell0.png */,
 				1B94F6831922E40700BD5280 /* protocell2.png */,
 				1B94F6811922D40F00BD5280 /* protocell1.png */,
 				1BFE164F1923B79D00BB02B0 /* protoPhage.png */,
-				C900310A1922BA470085F1E3 /* Supporting Files */,
 			);
 			path = Phage;
 			sourceTree = "<group>";
@@ -219,13 +239,14 @@
 		C900310A1922BA470085F1E3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3A36AA251922DD0900174D1E /* blurphagebg@2x~ipad.png */,
 				C900310B1922BA470085F1E3 /* Phage-Info.plist */,
 				C900310C1922BA470085F1E3 /* InfoPlist.strings */,
 				C900310F1922BA470085F1E3 /* main.m */,
 				C90031111922BA470085F1E3 /* Phage-Prefix.pch */,
+				C900312D1922BA470085F1E3 /* PhageTests */,
 			);
 			name = "Supporting Files";
+			path = Phage;
 			sourceTree = "<group>";
 		};
 		C900312D1922BA470085F1E3 /* PhageTests */ = {
@@ -235,7 +256,7 @@
 				C900312E1922BA470085F1E3 /* Supporting Files */,
 			);
 			path = PhageTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		C900312E1922BA470085F1E3 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -329,11 +350,7 @@
 				C90031211922BA470085F1E3 /* Images.xcassets in Resources */,
 				1BFE164E1923190600BB02B0 /* protocell0.png in Resources */,
 				C90031171922BA470085F1E3 /* Main.storyboard in Resources */,
-<<<<<<< HEAD
-				3A36AA261922DD0900174D1E /* blurphagebg@2x~ipad.png in Resources */,
-=======
 				1B94F6841922E40700BD5280 /* protocell2.png in Resources */,
->>>>>>> 9b4dd5c4ea60288e87e1795a5e7c85758126b527
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,14 +369,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A36AA2C1922DE2C00174D1E /* CFGamePlayViewController.m in Sources */,
+				C9693D281923D6F40038A669 /* CFMenuViewController.m in Sources */,
 				C90031101922BA470085F1E3 /* main.m in Sources */,
 				C90031141922BA470085F1E3 /* CFAppDelegate.m in Sources */,
-				3A36AA291922DE0800174D1E /* CFMenuViewController.m in Sources */,
+<<<<<<< HEAD
 				C976FE381922C7F50020AD6F /* CFCell.m in Sources */,
-				C976FE411922C9FB0020AD6F /* CFPlayer.m in Sources */,
-				3A36AA2F1922DE3800174D1E /* CFGameCenterViewController.m in Sources */,
+				C9693D1B1923D6D00038A669 /* CFPlayer.m in Sources */,
+				C9693D251923D6F40038A669 /* CFGameCenterViewController.m in Sources */,
+				C9693D261923D6F40038A669 /* CFGameController.m in Sources */,
+=======
+				3DED7EBD1922E6FD00D5E6E9 /* CFPhage.m in Sources */,
+				C900311A1922BA470085F1E3 /* CFViewController.m in Sources */,
+				3DED7EC31922E84C00D5E6E9 /* CFGameController.m in Sources */,
+				3DED7EBA1922E53200D5E6E9 /* CFCell.m in Sources */,
+				3DED7EC01922E77F00D5E6E9 /* CFPlayer.m in Sources */,
+>>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 				C900311D1922BA470085F1E3 /* CFMyScene.m in Sources */,
+				C9693D271923D6F40038A669 /* CFGamePlayViewController.m in Sources */,
 				C976FE3E1922C9D90020AD6F /* CFBoard.m in Sources */,
 				C976FE351922C60D0020AD6F /* CFPhage.m in Sources */,
 			);
