@@ -9,7 +9,7 @@
 #import "CFMyScene.h"
 #import "CFCell.h"
 
-#define NUMBER_OF_CELLS 30
+#define NUMBER_OF_CELLS 45
 #define NUMBER_OF_SECTIONS 2
 #define MAXIMUM_CELL_SIZE 120
 
@@ -60,8 +60,6 @@
     cell.physicsBody.affectedByGravity  = NO;
     cell.physicsBody.dynamic            = YES;
     cell.physicsBody.mass               = 1.4;
-    SKAction *move = [SKAction moveBy:CGVectorMake(25, 25) duration:.1];
-    [cell runAction:move];
     
 }
 
@@ -92,9 +90,14 @@
     return CGPointMake(x, y);
 }
 
+
 -(CGSize)randomSize {
     
-    NSInteger size = arc4random_uniform(MAXIMUM_CELL_SIZE-50) + 50;
+    NSInteger size;
+    
+    GET_NEW_SIZE:
+    size = arc4random_uniform(MAXIMUM_CELL_SIZE-50) + 50;
+    if (size > (MAXIMUM_CELL_SIZE * .5)) if (arc4random_uniform(3)) goto GET_NEW_SIZE;
     
     return CGSizeMake(size, size);
 }
