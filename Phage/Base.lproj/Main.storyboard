@@ -63,7 +63,7 @@
                         <viewControllerLayoutGuide type="top" id="mz0-K7-FI4"/>
                         <viewControllerLayoutGuide type="bottom" id="c7t-ZB-iGs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Se8-S5-s8d">
+                    <view key="view" contentMode="scaleToFill" id="Se8-S5-s8d" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
