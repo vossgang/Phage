@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
 @class CFCell;
 @class CFPlayer;
 
-@interface CFPhage : NSObject
+@interface CFPhage : SKSpriteNode
 
 @property (nonatomic, weak) CFCell *targetCell;
 @property (nonatomic, weak) CFPlayer *player;
+@property (nonatomic,strong) CFPhage *next;
 
 @end

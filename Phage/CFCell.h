@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
 @class CFPlayer;
 
@@ -23,7 +24,7 @@ typedef enum : NSUInteger {
 } CFCellType;
 
 
-@interface CFCell : NSObject
+@interface CFCell : SKSpriteNode
 
 @property (nonatomic) NSInteger phageCount;
 @property (nonatomic, weak) CFPlayer *owner;
