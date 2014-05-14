@@ -160,8 +160,11 @@
 				C90031131922BA470085F1E3 /* CFAppDelegate.m */,
 				C900311B1922BA470085F1E3 /* CFMyScene.h */,
 				C900311C1922BA470085F1E3 /* CFMyScene.m */,
+<<<<<<< HEAD
+=======
 				C9693D161923D6D00038A669 /* CFPlayer.h */,
 				C9693D171923D6D00038A669 /* CFPlayer.m */,
+>>>>>>> 0e06ee1ab5030cc0aefc8b15cc39e1de3c172cd1
 				C976FE3C1922C9D90020AD6F /* CFBoard.h */,
 				C976FE3D1922C9D90020AD6F /* CFBoard.m */,
 				C976FE331922C60D0020AD6F /* CFPhage.h */,
@@ -174,6 +177,10 @@
 				1B94F6831922E40700BD5280 /* protocell2.png */,
 				1B94F6811922D40F00BD5280 /* protocell1.png */,
 				1BFE164F1923B79D00BB02B0 /* protoPhage.png */,
+<<<<<<< HEAD
+				C900310A1922BA470085F1E3 /* Supporting Files */,
+=======
+>>>>>>> 0e06ee1ab5030cc0aefc8b15cc39e1de3c172cd1
 			);
 			path = Phage;
 			sourceTree = "<group>";
