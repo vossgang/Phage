@@ -10,37 +10,35 @@
 
 @implementation CFCell
 
-- (instancetype)initWithAffiliation:(CellAffiliation)affiliation
+- (instancetype)initWithAffiliation:(Affiliation)affiliation
                            cellSize:(CellSize)cellSize
                                type:(CellType)type
                            location:(CGPoint)location
 {
-    self = [super initWithColor:[UIColor clearColor] size:[self sizeForCellSize:cellSize]];
+    self = [super initWithImageNamed:[NSString stringWithFormat:@"protocell%d", type]];
     if (self) {
-        
         _cellAffiliation    = affiliation;
         _cellSize           = cellSize;
         _cellType           = type;
         _location           = location;
+        self.size           = [self sizeForCellSize:cellSize];
     }
     return self;
 }
 
 - (CGSize)sizeForCellSize:(CellSize)cellSize
 {
+    NSInteger size = arc4random_uniform(11);
+    
     switch (cellSize) {
         case SizeSmall:
-            return CGSizeMake(30.0f, 30.0f);
+            return CGSizeMake(size +30, size +30);
             break;
         case SizeMedium:
-            return CGSizeMake(60.0f, 60.0f);
+            return CGSizeMake(size +60, size +60);
             break;
-        case SizeLarge:
-            return CGSizeMake(90.0f, 90.0f);
-            break;
-            
         default:
-            return CGSizeMake(30.0f, 30.0f);
+            return CGSizeMake(size +90, size +90);
             break;
     }
 }

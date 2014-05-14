@@ -10,4 +10,17 @@
 
 @implementation CFPhage
 
+-(instancetype)initWithTargetCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation
+{
+    self = [super initWithImageNamed:@"protoPhage"];
+    if (self) {
+        _targetCell = targetCell;
+        _affiliation = affiliation;
+        _targetCell = targetCell;
+        _affiliation = affiliation;
+        
+    }
+    return self;
+}
+
 @end

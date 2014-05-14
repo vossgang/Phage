@@ -51,6 +51,7 @@
 		1B94F6831922E40700BD5280 /* protocell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell2.png; sourceTree = "<group>"; };
 		1BFE164D1923190600BB02B0 /* protocell0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell0.png; sourceTree = "<group>"; };
 		1BFE164F1923B79D00BB02B0 /* protoPhage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protoPhage.png; sourceTree = "<group>"; };
+		3D6B02FC1924182D005491FF /* CFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFConstants.h; path = Phage/CFConstants.h; sourceTree = "<group>"; };
 		C90030FE1922BA470085F1E3 /* Phage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90031011922BA470085F1E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C90031031922BA470085F1E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,8 +61,8 @@
 		C900310D1922BA470085F1E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C900310F1922BA470085F1E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C90031111922BA470085F1E3 /* Phage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Phage-Prefix.pch"; sourceTree = "<group>"; };
-		C90031121922BA470085F1E3 /* CFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFAppDelegate.h; sourceTree = "<group>"; };
-		C90031131922BA470085F1E3 /* CFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFAppDelegate.m; sourceTree = "<group>"; };
+		C90031121922BA470085F1E3 /* CFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CFAppDelegate.h; path = Phage/CFAppDelegate.h; sourceTree = "<group>"; };
+		C90031131922BA470085F1E3 /* CFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CFAppDelegate.m; path = Phage/CFAppDelegate.m; sourceTree = "<group>"; };
 		C90031161922BA470085F1E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C900311B1922BA470085F1E3 /* CFMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFMyScene.h; sourceTree = "<group>"; };
 		C900311C1922BA470085F1E3 /* CFMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFMyScene.m; sourceTree = "<group>"; };
@@ -114,18 +115,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D6B02FF19242804005491FF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C90031201922BA470085F1E3 /* Images.xcassets */,
+				1BFE164D1923190600BB02B0 /* protocell0.png */,
+				1B94F6831922E40700BD5280 /* protocell2.png */,
+				1B94F6811922D40F00BD5280 /* protocell1.png */,
+				1BFE164F1923B79D00BB02B0 /* protoPhage.png */,
+			);
+			name = Images;
+			path = Phage;
+			sourceTree = "<group>";
+		};
+		3D6B030019242836005491FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C90031151922BA470085F1E3 /* Main.storyboard */,
+				C9693D1D1923D6F40038A669 /* CFGameCenterViewController.h */,
+				C9693D1E1923D6F40038A669 /* CFGameCenterViewController.m */,
+				C9693D231923D6F40038A669 /* CFMenuViewController.h */,
+				C9693D241923D6F40038A669 /* CFMenuViewController.m */,
+				C9693D211923D6F40038A669 /* CFGamePlayViewController.h */,
+				C9693D221923D6F40038A669 /* CFGamePlayViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3D6B03011924285C005491FF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D6B02FC1924182D005491FF /* CFConstants.h */,
+				C90031121922BA470085F1E3 /* CFAppDelegate.h */,
+				C90031131922BA470085F1E3 /* CFAppDelegate.m */,
+				C9693D1F1923D6F40038A669 /* CFGameController.h */,
+				C9693D201923D6F40038A669 /* CFGameController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		C90030F51922BA470085F1E3 = {
 			isa = PBXGroup;
 			children = (
-				C9693D1D1923D6F40038A669 /* CFGameCenterViewController.h */,
-				C9693D1E1923D6F40038A669 /* CFGameCenterViewController.m */,
-				C9693D1F1923D6F40038A669 /* CFGameController.h */,
-				C9693D201923D6F40038A669 /* CFGameController.m */,
-				C9693D211923D6F40038A669 /* CFGamePlayViewController.h */,
-				C9693D221923D6F40038A669 /* CFGamePlayViewController.m */,
-				C9693D231923D6F40038A669 /* CFMenuViewController.h */,
-				C9693D241923D6F40038A669 /* CFMenuViewController.m */,
-				C90031091922BA470085F1E3 /* Phage */,
+				3D6B030019242836005491FF /* View */,
+				3D6B03011924285C005491FF /* Controllers */,
+				C90031091922BA470085F1E3 /* Model */,
+				3D6B02FF19242804005491FF /* Images */,
 				C90031001922BA470085F1E3 /* Frameworks */,
 				C900310A1922BA470085F1E3 /* Supporting Files */,
 				C90030FF1922BA470085F1E3 /* Products */,
@@ -153,28 +188,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C90031091922BA470085F1E3 /* Phage */ = {
+		C90031091922BA470085F1E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C90031121922BA470085F1E3 /* CFAppDelegate.h */,
-				C90031131922BA470085F1E3 /* CFAppDelegate.m */,
-				C900311B1922BA470085F1E3 /* CFMyScene.h */,
-				C900311C1922BA470085F1E3 /* CFMyScene.m */,
-				C9693D161923D6D00038A669 /* CFPlayer.h */,
-				C9693D171923D6D00038A669 /* CFPlayer.m */,
 				C976FE3C1922C9D90020AD6F /* CFBoard.h */,
 				C976FE3D1922C9D90020AD6F /* CFBoard.m */,
-				C976FE331922C60D0020AD6F /* CFPhage.h */,
-				C976FE341922C60D0020AD6F /* CFPhage.m */,
+				C9693D161923D6D00038A669 /* CFPlayer.h */,
+				C9693D171923D6D00038A669 /* CFPlayer.m */,
 				C976FE361922C7F50020AD6F /* CFCell.h */,
 				C976FE371922C7F50020AD6F /* CFCell.m */,
-				C90031151922BA470085F1E3 /* Main.storyboard */,
-				C90031201922BA470085F1E3 /* Images.xcassets */,
-				1BFE164D1923190600BB02B0 /* protocell0.png */,
-				1B94F6831922E40700BD5280 /* protocell2.png */,
-				1B94F6811922D40F00BD5280 /* protocell1.png */,
-				1BFE164F1923B79D00BB02B0 /* protoPhage.png */,
+				C976FE331922C60D0020AD6F /* CFPhage.h */,
+				C976FE341922C60D0020AD6F /* CFPhage.m */,
+				C900311B1922BA470085F1E3 /* CFMyScene.h */,
+				C900311C1922BA470085F1E3 /* CFMyScene.m */,
 			);
+			name = Model;
 			path = Phage;
 			sourceTree = "<group>";
 		};
@@ -358,6 +386,7 @@
 				C90031161922BA470085F1E3 /* Base */,
 			);
 			name = Main.storyboard;
+			path = Phage;
 			sourceTree = "<group>";
 		};
 		C90031301922BA470085F1E3 /* InfoPlist.strings */ = {

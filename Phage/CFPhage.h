@@ -10,12 +10,14 @@
 #import <SpriteKit/SpriteKit.h>
 
 @class CFCell;
-@class CFPlayer;
 
 @interface CFPhage : SKSpriteNode
 
 @property (nonatomic, weak) CFCell *targetCell;
-@property (nonatomic, weak) CFPlayer *player;
+@property (nonatomic) Affiliation affiliation;
 @property (nonatomic,strong) CFPhage *next;
+
+
+-(instancetype)initWithTargetCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation;
 
 @end

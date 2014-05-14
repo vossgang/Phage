@@ -16,36 +16,18 @@ static NSString * const kLargeCellKey = @"largeCell";
 @class CFPlayer;
 @class CFPhage;
 
-typedef enum : NSUInteger {
-    SizeSmall,
-    SizeMedium,
-    SizeLarge,
-} CellSize;
-
-typedef enum : NSUInteger {
-    TypeFactory,
-    TypeScuttle,
-    TypeNormal,
-} CellType;
-
-typedef enum :NSUInteger {
-    AffiliationPlayer,
-    AffiliationAI,
-    AffiliationNeutral,
-} CellAffiliation;
-
 @interface CFCell : SKSpriteNode
 
 @property (nonatomic) CellType cellType;
 @property (nonatomic) CellSize cellSize;
-@property (nonatomic) CellAffiliation cellAffiliation;
+@property (nonatomic) Affiliation cellAffiliation;
 
 @property (nonatomic) NSInteger phageCount;
 @property (nonatomic, strong) CFPhage *phageHead;
 @property (nonatomic, weak) CFPlayer *owner;
 @property (nonatomic) CGPoint location;
 
-- (instancetype)initWithAffiliation:(CellAffiliation)affiliation
+- (instancetype)initWithAffiliation:(Affiliation)affiliation
                            cellSize:(CellSize)cellSize
                                type:(CellType)type
                            location:(CGPoint)location;
