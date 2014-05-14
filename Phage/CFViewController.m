@@ -15,15 +15,6 @@
 {
     [super viewDidLoad];
 
-    // Configure the view.
-    SKView * skView = (SKView *)self.view;
-
-    // Create and configure the scene.
-    SKScene * scene = [CFMyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Present the scene.
-    [skView presentScene:scene];
 }
 
 - (NSUInteger)supportedInterfaceOrientations
@@ -33,6 +24,21 @@
     } else {
         return UIInterfaceOrientationMaskAll;
     }
+}
+
+-(void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    // Configure the view.
+    SKView * skView = (SKView *)self.view;
+    
+    // Create and configure the scene.
+    SKScene * scene = [CFMyScene sceneWithSize:skView.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    // Present the scene.
+    [skView presentScene:scene];
+    
 }
 
 - (void)didReceiveMemoryWarning
