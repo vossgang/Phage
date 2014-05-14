@@ -7,6 +7,7 @@
 //
 
 #import "CFGameController.h"
+<<<<<<< HEAD
 #import "CFCell.h"
 
 #define DEFAULT_NUMBER_OF_SMALL_CELLS 10
@@ -90,4 +91,9 @@
 
 
 
+=======
+
+@implementation CFGameController
+
+>>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 @end

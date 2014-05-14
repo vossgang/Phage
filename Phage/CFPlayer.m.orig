@@ -10,6 +10,7 @@
 
 @implementation CFPlayer
 
+<<<<<<< HEAD
 -(instancetype)initWithColor:(UIColor *)color name:(NSString *)name playerCells:(NSArray *)playerCells
 {
     self = [super init];
@@ -21,4 +22,6 @@
     return self;
 }
 
+=======
+>>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 @end

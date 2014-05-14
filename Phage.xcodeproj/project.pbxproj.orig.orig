@@ -8,16 +8,22 @@
 
 /* Begin PBXBuildFile section */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d1adf8908dc76f70a1981fa3cd1a4c5940e05b04
 		1B94F6821922D40F00BD5280 /* protocell1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B94F6811922D40F00BD5280 /* protocell1.png */; };
 		1B94F6841922E40700BD5280 /* protocell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B94F6831922E40700BD5280 /* protocell2.png */; };
 		1BFE164E1923190600BB02B0 /* protocell0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BFE164D1923190600BB02B0 /* protocell0.png */; };
 		1BFE16501923B79D00BB02B0 /* protoPhage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BFE164F1923B79D00BB02B0 /* protoPhage.png */; };
+<<<<<<< HEAD
 =======
 		3DED7EBA1922E53200D5E6E9 /* CFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EB91922E53200D5E6E9 /* CFCell.m */; };
 		3DED7EBD1922E6FD00D5E6E9 /* CFPhage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EBC1922E6FD00D5E6E9 /* CFPhage.m */; };
 		3DED7EC01922E77F00D5E6E9 /* CFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EBF1922E77F00D5E6E9 /* CFPlayer.m */; };
 		3DED7EC31922E84C00D5E6E9 /* CFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED7EC21922E84C00D5E6E9 /* CFGameController.m */; };
 >>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
+=======
+>>>>>>> d1adf8908dc76f70a1981fa3cd1a4c5940e05b04
 		C90031021922BA470085F1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031011922BA470085F1E3 /* Foundation.framework */; };
 		C90031041922BA470085F1E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031031922BA470085F1E3 /* CoreGraphics.framework */; };
 		C90031061922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
@@ -55,10 +61,14 @@
 
 /* Begin PBXFileReference section */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d1adf8908dc76f70a1981fa3cd1a4c5940e05b04
 		1B94F6811922D40F00BD5280 /* protocell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell1.png; sourceTree = "<group>"; };
 		1B94F6831922E40700BD5280 /* protocell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell2.png; sourceTree = "<group>"; };
 		1BFE164D1923190600BB02B0 /* protocell0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell0.png; sourceTree = "<group>"; };
 		1BFE164F1923B79D00BB02B0 /* protoPhage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protoPhage.png; sourceTree = "<group>"; };
+<<<<<<< HEAD
 =======
 		3DED7EB81922E53200D5E6E9 /* CFCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFCell.h; sourceTree = "<group>"; };
 		3DED7EB91922E53200D5E6E9 /* CFCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFCell.m; sourceTree = "<group>"; };
@@ -69,6 +79,8 @@
 		3DED7EC11922E84C00D5E6E9 /* CFGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFGameController.h; sourceTree = "<group>"; };
 		3DED7EC21922E84C00D5E6E9 /* CFGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGameController.m; sourceTree = "<group>"; };
 >>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
+=======
+>>>>>>> d1adf8908dc76f70a1981fa3cd1a4c5940e05b04
 		C90030FE1922BA470085F1E3 /* Phage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90031011922BA470085F1E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C90031031922BA470085F1E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -179,8 +191,16 @@
 <<<<<<< HEAD
 				C900311B1922BA470085F1E3 /* CFMyScene.h */,
 				C900311C1922BA470085F1E3 /* CFMyScene.m */,
+<<<<<<< HEAD
 				C9693D161923D6D00038A669 /* CFPlayer.h */,
 				C9693D171923D6D00038A669 /* CFPlayer.m */,
+=======
+<<<<<<< HEAD
+=======
+				C9693D161923D6D00038A669 /* CFPlayer.h */,
+				C9693D171923D6D00038A669 /* CFPlayer.m */,
+>>>>>>> 0e06ee1ab5030cc0aefc8b15cc39e1de3c172cd1
+>>>>>>> d1adf8908dc76f70a1981fa3cd1a4c5940e05b04
 				C976FE3C1922C9D90020AD6F /* CFBoard.h */,
 				C976FE3D1922C9D90020AD6F /* CFBoard.m */,
 				C976FE331922C60D0020AD6F /* CFPhage.h */,
@@ -188,16 +208,26 @@
 				C976FE361922C7F50020AD6F /* CFCell.h */,
 				C976FE371922C7F50020AD6F /* CFCell.m */,
 				C90031151922BA470085F1E3 /* Main.storyboard */,
+<<<<<<< HEAD
 =======
 				3DED7EC61922E96A00D5E6E9 /* ViewControllers */,
 				3DED7EC41922E95800D5E6E9 /* Model */,
 				3DED7EC51922E95E00D5E6E9 /* ModelControllers */,
 >>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
+=======
+>>>>>>> d1adf8908dc76f70a1981fa3cd1a4c5940e05b04
 				C90031201922BA470085F1E3 /* Images.xcassets */,
 				1BFE164D1923190600BB02B0 /* protocell0.png */,
 				1B94F6831922E40700BD5280 /* protocell2.png */,
 				1B94F6811922D40F00BD5280 /* protocell1.png */,
 				1BFE164F1923B79D00BB02B0 /* protoPhage.png */,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+				C900310A1922BA470085F1E3 /* Supporting Files */,
+=======
+>>>>>>> 0e06ee1ab5030cc0aefc8b15cc39e1de3c172cd1
+>>>>>>> d1adf8908dc76f70a1981fa3cd1a4c5940e05b04
 			);
 			path = Phage;
 			sourceTree = "<group>";
@@ -338,10 +368,15 @@
 				C9693D281923D6F40038A669 /* CFMenuViewController.m in Sources */,
 				C90031101922BA470085F1E3 /* main.m in Sources */,
 				C90031141922BA470085F1E3 /* CFAppDelegate.m in Sources */,
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d1adf8908dc76f70a1981fa3cd1a4c5940e05b04
 				C976FE381922C7F50020AD6F /* CFCell.m in Sources */,
 				C9693D1B1923D6D00038A669 /* CFPlayer.m in Sources */,
 				C9693D251923D6F40038A669 /* CFGameCenterViewController.m in Sources */,
 				C9693D261923D6F40038A669 /* CFGameController.m in Sources */,
+<<<<<<< HEAD
 =======
 				3DED7EBD1922E6FD00D5E6E9 /* CFPhage.m in Sources */,
 				C900311A1922BA470085F1E3 /* CFViewController.m in Sources */,
@@ -349,6 +384,8 @@
 				3DED7EBA1922E53200D5E6E9 /* CFCell.m in Sources */,
 				3DED7EC01922E77F00D5E6E9 /* CFPlayer.m in Sources */,
 >>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
+=======
+>>>>>>> d1adf8908dc76f70a1981fa3cd1a4c5940e05b04
 				C900311D1922BA470085F1E3 /* CFMyScene.m in Sources */,
 				C9693D271923D6F40038A669 /* CFGamePlayViewController.m in Sources */,
 				C976FE3E1922C9D90020AD6F /* CFBoard.m in Sources */,
