@@ -41,8 +41,9 @@
 
 -(void)distributePhages {
     [self setupPhageList];
-    for (CFCell *cell in self.view) {
+    for (CFCell *cell in self.children) {
         
+    #warning - finish implementation
     }
     
 }
