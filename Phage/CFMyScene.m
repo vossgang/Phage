@@ -39,17 +39,40 @@
 
 #pragma mark - Phage Management
 
--(void)setupPhageLinkedList {
+-(void)distributePhages {
+    [self setupPhageList];
+    for (CFCell *cell in self.view) {
+        
+    }
+    
+}
+
+-(void)setupPhageList {
+    
     CFPhage *firstPhage = [[CFPhage alloc] initWithImageNamed:@"protoPhage"];
     _phage = firstPhage;
+    
     for (int i = 0; i < NUMBER_OF_CELLS * NUMBER_OF_PHAGES_PER_CELL; i++) {
+        
+        //allocate and initialize phage node with image
         CFPhage *nextPhage = [[CFPhage alloc] initWithImageNamed:@"protoPhage"];
+
+        //add phage to view & hide it
+        [self addChild:nextPhage];
+        nextPhage.hidden = YES;
+        
+        //assign physics characeristics to phage
+        [self assignPhysicsToPhage:nextPhage];
+        
+        //advance the linked list focalpoint
         nextPhage.next = _phage;
         _phage = nextPhage;
     }
+    
     firstPhage.next = _phage;
 }
 
+//phage property 'getter' overide
 -(CFPhage *)phage {
     _phage = _phage.next;
     return _phage;
@@ -65,15 +88,15 @@
 }
 
 -(void)addPhageToCell:(CFCell *)cell {
-    CFPhage *phage = self.phage;
+    CFPhage *phage  = self.phage;
     
-    phage.size = CGSizeMake(PHAGE_DIAMETER, PHAGE_DIAMETER);
-    [self assignPhysicsToPhage:phage];
+    phage.size      = CGSizeMake(PHAGE_DIAMETER, PHAGE_DIAMETER);
+    phage.position  = [self randomPositionRelativeToCell:cell];
 
 }
 
 
--(CGPoint)randomPhagePositionRelativeToCell:(CFCell *)cell {
+-(CGPoint)randomPositionRelativeToCell:(CFCell *)cell {
     
     int x,y;
     
@@ -82,7 +105,6 @@
     
     if (arc4random_uniform(2))  x = cell.position.y + arc4random_uniform(5);
         else x = cell.position.y - arc4random_uniform(5);
-    
     
     return CGPointMake(x, y);
 }
@@ -124,9 +146,9 @@
 }
 
 -(CFCell *)setupCellInSection:(NSInteger)section {
-    CFCell *cell =  [[CFCell alloc] initWithImageNamed:[NSString stringWithFormat:@"protocell%d", section]];//alloc, init with custom initializer
-    cell.position = [self randomPosition];
-    cell.size = [self randomSize];
+    CFCell *cell    =  [[CFCell alloc] initWithImageNamed:[NSString stringWithFormat:@"protocell%d", section]];//alloc, init with custom initializer
+    cell.position   = [self randomPosition];
+    cell.size       = [self randomSize];
     return cell;
 }
 
@@ -169,8 +191,6 @@
         [self assignPhysicsToCell:cell];
         
         [self addChild:cell];
-        
-
         
     }
 
