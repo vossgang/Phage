@@ -23,4 +23,10 @@
     return self;
 }
 
+-(CFPhage *)next
+{
+    _next = _next.next;
+    return _next;
+}
+
 @end
