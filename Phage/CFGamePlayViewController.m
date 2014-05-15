@@ -24,7 +24,7 @@
 
 - (IBAction)backButtonPressed:(id)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 -(void)viewWillLayoutSubviews
