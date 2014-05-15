@@ -13,11 +13,10 @@
 @interface CFGameController : NSObject
 
 + (instancetype) sharedGameController;
-- (NSDictionary *)setupBoard;
-- (NSArray *)setupPlayers;
+- (instancetype)initNewGame;
 
 @property (nonatomic, strong) CFPlayer *winningPlayer;
 @property (nonatomic, strong) NSDictionary *gameState;
-
+@property (nonatomic, strong) NSArray *unaffiliatedCells, *playerCells, *enemyCells;
 
 @end

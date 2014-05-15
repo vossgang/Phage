@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "CFPhage.h"
 
 static NSString * const kSmallCellKey = @"smallCell";
 static NSString * const kMediumCellKey = @"mediumCell";
 static NSString * const kLargeCellKey = @"largeCell";
 
 @class CFPlayer;
-@class CFPhage;
+//@class CFPhage;
 
 @interface CFCell : SKSpriteNode
 

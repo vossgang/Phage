@@ -15,7 +15,7 @@
                                type:(CellType)type
                            location:(CGPoint)location
 {
-    self = [super initWithImageNamed:[NSString stringWithFormat:@"protocell%d", type]];
+    self = [super initWithImageNamed:[NSString stringWithFormat:@"protocell%lu", type]];
     if (self) {
         _cellAffiliation    = affiliation;
         _cellSize           = cellSize;
@@ -41,6 +41,10 @@
             return CGSizeMake(size +90, size +90);
             break;
     }
+}
+
+-(CFPhage *)phageHead  {
+    return _phageHead.next;
 }
    
 @end
