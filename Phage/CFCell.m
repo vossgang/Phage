@@ -38,6 +38,7 @@
                          spawnPoint:(CGPoint)spawnPoint
                      effectsEmitter:(CFPhageEmitter *)effectsEmitter
                      sendingEmitter:(CFPhageEmitter *)sendingEmitter
+
 {
     self = [super initWithTexture:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"protocell%d", affiliation]]];
     if (self) {
@@ -51,6 +52,8 @@
         
         [self addChild:effectsEmitter];
         [self addChild:sendingEmitter];
+        
+        [effectsEmitter setZPosition:-1];
         
         [self assignPhysics];
     }
