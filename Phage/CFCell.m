@@ -40,7 +40,7 @@
                      sendingEmitter:(CFPhageEmitter *)sendingEmitter
 
 {
-    self = [super initWithImageNamed:[NSString stringWithFormat:@"protocell%u", type]];
+    self = [super initWithImageNamed:[NSString stringWithFormat:@"protocell%u", affiliation]];
     if (self) {
         _cellAffiliation    = affiliation;
         _cellSize           = cellSize;

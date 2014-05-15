@@ -176,8 +176,6 @@
 {
     /* Called when a touch begins */
     
-    
-    
 
 }
 
