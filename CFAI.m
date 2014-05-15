@@ -37,11 +37,23 @@
     CFMyScene *myScene = [CFMyScene new];
     NSArray *arrayOfCells = [myScene returnCellInfoToAI];
     for (CFCell *cell in arrayOfCells) {
-        // Do shit
+        switch (cell.cellAffiliation) {
+            case AffiliationAI:
+                //
+                break;
+                
+            default:
+                break;
+        }
     }
 }
 
 - (double)calculateDistanceToCellUsingStartPoint:(CGPoint)withStartPoint andEndPoint:(CGPoint)withEndPoint {
+    // Calculate the hypotenuse of the triangle created by the start and end points
+    // Formula is x end - x start, then take absolute value (for positive numbers to get length between the two)
+    // then take the positive value and then calculate its value to the power of 2.
+    // This gives you the values for the x and y axis. Finally, take the square root of the sum of these values
+    // to find the distance between the start and end points.
     double xAxis = pow(fabs(withEndPoint.x - withStartPoint.x),2);
     double yAxis = pow(fabs(withEndPoint.y - withStartPoint.y),2);
     return  sqrt(xAxis + yAxis);
