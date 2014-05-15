@@ -8,7 +8,7 @@
 
 #import "CFMyScene.h"
 #import "CFCell.h"
-#import "CFPhage.h"
+#import "CFPhageEmitter.h"
 #import "CFGameController.h"
 
 @interface CFMyScene()
@@ -48,7 +48,7 @@
     CFCell *playerCell = _gameController.playerCells[0];
     [playerCell setPositionToSpawnPoint];
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhage *phage = playerCell.phageHead;
+        CFPhageEmitter *phage = playerCell.phageHead;
         phage.position = [self randomPhagePositionRelativeToCell:playerCell];
         [self addChild:phage];
     }
@@ -57,7 +57,7 @@
     CFCell *enemyCell = _gameController.enemyCells[0];
     [enemyCell setPositionToSpawnPoint];
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhage *phage = enemyCell.phageHead;
+        CFPhageEmitter *phage = enemyCell.phageHead;
         phage.position = [self randomPhagePositionRelativeToCell:enemyCell];
         [self addChild:phage];
     }

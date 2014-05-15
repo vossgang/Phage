@@ -17,7 +17,7 @@
 #define NUMBER_OF_SECTIONS 2
 #define NUMBER_OF_PHAGES_PER_CELL 5
 
-#define PHAGE_SIZE CGSizeMake(10, 20)
+#define PHAGE_CLOUD_SIZE CGSizeMake(10, 20)
 #define PHAGE_DIAMETER 10
 
 typedef enum : NSUInteger {
@@ -37,4 +37,9 @@ typedef enum :NSUInteger {
     AffiliationAI,
     AffiliationNeutral,
 } Affiliation;
+
+typedef enum : NSUInteger {
+    EmitterTypeEffects,
+    EmitterTypeAction,
+} EmitterType;
 

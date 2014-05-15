@@ -11,11 +11,11 @@
 
 @class CFCell;
 
-@interface CFPhage : SKSpriteNode
+@interface CFPhageEmitter : SKSpriteNode
 
 @property (nonatomic, weak) CFCell *targetCell;
 @property (nonatomic) Affiliation affiliation;
-@property (nonatomic,strong) CFPhage *next;
+@property (nonatomic, weak) CFPhageEmitter *next;
 
 
 -(instancetype)initWithTargetCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation;

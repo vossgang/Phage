@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Code Fellows. All rights reserved.
 //
 
-#import "CFPhage.h"
+#import "CFPhageEmitter.h"
 
-@implementation CFPhage
+@implementation CFPhageEmitter
 
 -(instancetype)initWithTargetCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation
 {
@@ -18,7 +18,7 @@
         _affiliation = affiliation;
         _targetCell = targetCell;
         _affiliation = affiliation;
-        self.size = PHAGE_SIZE;
+        self.size = PHAGE_CLOUD_SIZE;
         
     }
     return self;
