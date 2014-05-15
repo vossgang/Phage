@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B94F6821922D40F00BD5280 /* protocell1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B94F6811922D40F00BD5280 /* protocell1.png */; };
-		1B94F6841922E40700BD5280 /* protocell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B94F6831922E40700BD5280 /* protocell2.png */; };
-		1BFE164E1923190600BB02B0 /* protocell0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BFE164D1923190600BB02B0 /* protocell0.png */; };
-		1BFE16501923B79D00BB02B0 /* protoPhage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BFE164F1923B79D00BB02B0 /* protoPhage.png */; };
+		1BB9B9761925118800A0896E /* protocellX.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9B9741925118800A0896E /* protocellX.atlas */; };
+		1BB9B9771925118800A0896E /* phageX.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9B9751925118800A0896E /* phageX.atlas */; };
+		1BB9B97A1925241700A0896E /* Phage.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9B9781925241700A0896E /* Phage.sks */; };
+		1BB9B97B1925241700A0896E /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9B9791925241700A0896E /* spark.png */; };
 		C90031021922BA470085F1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031011922BA470085F1E3 /* Foundation.framework */; };
 		C90031041922BA470085F1E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031031922BA470085F1E3 /* CoreGraphics.framework */; };
 		C90031061922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
@@ -47,10 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B94F6811922D40F00BD5280 /* protocell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell1.png; sourceTree = "<group>"; };
-		1B94F6831922E40700BD5280 /* protocell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell2.png; sourceTree = "<group>"; };
-		1BFE164D1923190600BB02B0 /* protocell0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocell0.png; sourceTree = "<group>"; };
-		1BFE164F1923B79D00BB02B0 /* protoPhage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protoPhage.png; sourceTree = "<group>"; };
+		1BB9B9741925118800A0896E /* protocellX.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = protocellX.atlas; sourceTree = "<group>"; };
+		1BB9B9751925118800A0896E /* phageX.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = phageX.atlas; sourceTree = "<group>"; };
+		1BB9B9781925241700A0896E /* Phage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Phage.sks; sourceTree = "<group>"; };
+		1BB9B9791925241700A0896E /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		3D6B02FC1924182D005491FF /* CFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFConstants.h; path = Phage/CFConstants.h; sourceTree = "<group>"; };
 		C90030FE1922BA470085F1E3 /* Phage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90031011922BA470085F1E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,10 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				C90031201922BA470085F1E3 /* Images.xcassets */,
-				1BFE164D1923190600BB02B0 /* protocell0.png */,
-				1B94F6831922E40700BD5280 /* protocell2.png */,
-				1B94F6811922D40F00BD5280 /* protocell1.png */,
-				1BFE164F1923B79D00BB02B0 /* protoPhage.png */,
+				1BB9B9741925118800A0896E /* protocellX.atlas */,
+				1BB9B9751925118800A0896E /* phageX.atlas */,
 			);
 			name = Images;
 			path = Phage;
@@ -201,6 +199,8 @@
 				C976FE341922C60D0020AD6F /* CFPhageEmitter.m */,
 				C900311B1922BA470085F1E3 /* CFMyScene.h */,
 				C900311C1922BA470085F1E3 /* CFMyScene.m */,
+				1BB9B9781925241700A0896E /* Phage.sks */,
+				1BB9B9791925241700A0896E /* spark.png */,
 			);
 			name = Model;
 			path = Phage;
@@ -285,6 +285,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Code Fellows";
 				TargetAttributes = {
+					C90030FD1922BA470085F1E3 = {
+						DevelopmentTeam = 2D487H8MF5;
+					};
 					C90031251922BA470085F1E3 = {
 						TestTargetID = C90030FD1922BA470085F1E3;
 					};
@@ -314,13 +317,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B94F6821922D40F00BD5280 /* protocell1.png in Resources */,
+				1BB9B9771925118800A0896E /* phageX.atlas in Resources */,
 				C900310E1922BA470085F1E3 /* InfoPlist.strings in Resources */,
-				1BFE16501923B79D00BB02B0 /* protoPhage.png in Resources */,
 				C90031211922BA470085F1E3 /* Images.xcassets in Resources */,
-				1BFE164E1923190600BB02B0 /* protocell0.png in Resources */,
+				1BB9B97B1925241700A0896E /* spark.png in Resources */,
+				1BB9B97A1925241700A0896E /* Phage.sks in Resources */,
 				C90031171922BA470085F1E3 /* Main.storyboard in Resources */,
-				1B94F6841922E40700BD5280 /* protocell2.png in Resources */,
+				1BB9B9761925118800A0896E /* protocellX.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,11 +480,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Phage/Phage-Prefix.pch";
 				INFOPLIST_FILE = "Phage/Phage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -492,11 +498,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Phage/Phage-Prefix.pch";
 				INFOPLIST_FILE = "Phage/Phage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};

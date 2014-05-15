@@ -33,6 +33,8 @@
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     
+    skView.showsFPS = YES;
+    
     // Create and configure the scene.
     SKScene * scene = [CFMyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;

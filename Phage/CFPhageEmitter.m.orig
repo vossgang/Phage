@@ -20,11 +20,20 @@
     self = [super initWithTexture:texture];
     
     if (self) {
+<<<<<<< HEAD:Phage/CFPhageEmitter.m
+        _targetCell = targetCell;
+        _affiliation = affiliation;
+        _targetCell = targetCell;
+        _affiliation = affiliation;
+        self.size = PHAGE_CLOUD_SIZE;
+=======
+        
         _targetCell     = targetCell;
         _affiliation    = affiliation;
         _targetCell     = targetCell;
         _affiliation    = affiliation;
-        self.size       = PHAGE_EMITTER_SIZE;
+        self.size       = PHAGE_SIZE;
+>>>>>>> c481e74b3f732043874c708f13d08512e41e318d:Phage/CFPhage.m
         
     }
     return self;
