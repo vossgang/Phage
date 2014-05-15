@@ -7,6 +7,7 @@
 //
 
 #import "CFPhageEmitter.h"
+#import "CFCell.h"
 
 @implementation CFPhageEmitter
 
@@ -31,9 +32,13 @@
         self.size       = PHAGE_EMITTER_SIZE;
         
     }
+<<<<<<< HEAD
+    
+=======
     if (affiliation == AffiliationNeutral){
         self.hidden = YES;
     }
+>>>>>>> 83e3e7721acf2abf5132b757b91a096804c6b953
     return self;
 }
 

@@ -24,6 +24,7 @@
         [self setupArrayOfUnaffiliatedCells];
         [self setupArrayOfPlayerCells];
         [self setupArrayOfEnemyCells];
+        [self setupPhageEmittersForActiveCells];
         
     }
     return self;
@@ -46,19 +47,22 @@
 
 #pragma mark - Cell Management
 
--(void)setupArrayOfPlayerCells {
+-(void)setupArrayOfPlayerCells
+{
 
     CFCell *cell = [[CFCell alloc] initCellForPlayer];
     _playerCells = @[cell];
 }
 
--(void)setupArrayOfEnemyCells {
+-(void)setupArrayOfEnemyCells
+{
     
     CFCell *cell = [[CFCell alloc] initCellForAI];
     _enemyCells = @[cell];
 }
 
--(void)setupArrayOfUnaffiliatedCells {
+-(void)setupArrayOfUnaffiliatedCells
+{
     
     //temporary array of cells
     NSMutableArray *unaffiliatedCells = [NSMutableArray new];
@@ -74,6 +78,39 @@
     
 }
 
-
+-(void)setupPhageEmittersForActiveCells
+{
+//    for (CFCell *cell in self.playerCells) {
+//        NSString *effectsPhageEmitterPath = [[NSBundle mainBundle] pathForResource:@"Phage" ofType:@"sks"];
+//        SKEmitterNode *effectsParticleEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:effectsPhageEmitterPath];
+//
+//        effectsParticleEmitter.position = (CGPointMake(0, 0));
+////        effectsParticleEmitter.particleLifetimeRange = cell.size.width - 1000;
+//        
+//        [cell.effectsEmitter addChild:effectsParticleEmitter];
+//    }
+//    
+//    for (CFCell *cell in self.enemyCells) {
+//        NSString *effectsPhageEmitterPath = [[NSBundle mainBundle] pathForResource:@"Phage" ofType:@"sks"];
+//        SKEmitterNode *effectsParticleEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:effectsPhageEmitterPath];
+//        
+//        effectsParticleEmitter.position = (CGPointMake(0, 0));
+//        //effectsParticleEmitter.particleLifetimeRange = cell.size.width - 100;
+//        
+//        [cell.effectsEmitter addChild:effectsParticleEmitter];
+//    }
+    
+    // Test For Loop
+    for (CFCell *cell in self.unaffiliatedCells) {
+        NSString *effectsPhageEmitterPath = [[NSBundle mainBundle] pathForResource:@"Phage" ofType:@"sks"];
+        SKEmitterNode *effectsParticleEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:effectsPhageEmitterPath];
+        
+        effectsParticleEmitter.position = (CGPointMake(0, 0));
+        // NSLog(@"%f", cell.size.width);
+        effectsParticleEmitter.particleLifetimeRange = cell.size.width / 10.0;
+        
+        [cell.effectsEmitter addChild:effectsParticleEmitter];
+    }
+}
 
 @end
