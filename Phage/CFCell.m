@@ -15,7 +15,36 @@
 
 @end
 
-@implementation CFCell {
+@implementation CFCell
+
+-(id)initCellForNeutral {
+    
+    return [self initWithAffiliation:AffiliationNeutral
+                            cellSize:[self randomSizeClass]
+                                type:TypeNormal
+                          spawnPoint:[self randomPosition]
+                      effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationNeutral]
+                      sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationNeutral]];
+}
+
+-(id)initCellForAI {
+    
+    return [self initWithAffiliation:AffiliationNeutral
+                            cellSize:[self randomSizeClass]
+                                type:TypeFactory
+                          spawnPoint:[self randomPosition]
+                      effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationAI]
+                      sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationAI]];
+}
+
+-(id)initCellForPlayer {
+
+    return [self initWithAffiliation:AffiliationNeutral
+                            cellSize:[self randomSizeClass]
+                                type:TypeFactory
+                          spawnPoint:[self randomPosition]
+                      effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationPlayer]
+                      sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationPlayer]];
 }
 
 - (instancetype)initWithAffiliation:(Affiliation)affiliation
@@ -38,6 +67,10 @@
         
         [self addChild:effectsEmitter];
         [self addChild:sendingEmitter];
+        
+        [effectsEmitter setZPosition:-1];
+        
+        [self assignPhysics];
     }
     return self;
 }
@@ -72,5 +105,50 @@
 -(void)setPositionToSpawnPoint {
     self.position = _spawnPoint;
 }
+
+-(NSInteger)randomSizeClass {
+    return arc4random_uniform(3);
+}
+
+
+-(CGPoint)randomPosition {
+    
+    CGFloat x, y;
+    x =  arc4random_uniform(1024);
+    y = arc4random_uniform(768);
+    
+    return CGPointMake(x, y);
+}
+
+
+- (void)phageDensity:(int)density forPhageEmmiter:(CFPhageEmitter *)phageEmmiter {
+    
+}
+
+-(void)assignPhysics {
+    self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
+    self.physicsBody.allowsRotation     = YES;
+    self.physicsBody.affectedByGravity  = NO;
+    self.physicsBody.dynamic            = YES;
+    self.physicsBody.mass               = 2;
+}
+
+-(void)setCellAffiliation:(Affiliation)cellAffiliation
+{
+    if (_cellAffiliation != cellAffiliation) {
+        _cellAffiliation = cellAffiliation;
+        
+        switch (_cellAffiliation) {
+                
+            case AffiliationNeutral:    [self setTexture:[SKTexture textureWithImageNamed:@"protocell0"]]; break;
+                
+            case AffiliationAI:         [self setTexture:[SKTexture textureWithImageNamed:@"protocell2"]]; break;
+                
+            case AffiliationPlayer:     [self setTexture:[SKTexture textureWithImageNamed:@"protocell1"]]; break;
+                
+        }
+    }
+}
+
    
 @end

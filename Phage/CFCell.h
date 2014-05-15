@@ -31,6 +31,12 @@ static NSString * const kLargeCellKey   = @"largeCell";
 @property (nonatomic, strong) CFPhageEmitter *effectsEmitter;
 @property (nonatomic, strong) CFPhageEmitter *sendingEmitteer;
 
+-(id)initCellForNeutral;
+-(id)initCellForAI;
+-(id)initCellForPlayer;
+
+
+
 
 - (instancetype)initWithAffiliation:(Affiliation)affiliation
                            cellSize:(CellSize)cellSize
@@ -42,5 +48,7 @@ static NSString * const kLargeCellKey   = @"largeCell";
 
 - (CGSize)sizeForCellSize:(CellSize)cellSize;
 - (void)setPositionToSpawnPoint;
+
+- (void)phageDensity:(int)density forPhageEmmiter:(CFPhageEmitter *)phageEmmiter;
 
 @end
