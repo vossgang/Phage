@@ -16,6 +16,8 @@
 @property (nonatomic, strong) CFGameController *gameController;
 @property (nonatomic, weak) CFCell *originCell;
 @property (nonatomic, weak) CFCell *destinationCell;
+@property (nonatomic, strong) SKEmitterNode *cellBackground;
+
 
 @end
 
@@ -25,12 +27,29 @@
 {
     if (self = [super initWithSize:size]) {
         self.physicsBody        = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-        self.backgroundColor    = [UIColor darkGrayColor];
+        self.backgroundColor    = [SKColor colorWithRed:0.08 green:0.0 blue:0.0 alpha:1.0];
+        
+        //Adding Background assets for the game screen - sks and pngs in Supporting Files
+        NSString *cellBackgroundPath = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"sks"];
+        _cellBackground = [NSKeyedUnarchiver unarchiveObjectWithFile:cellBackgroundPath];
+        _cellBackground.position = CGPointMake(0, 0);
+        [_cellBackground advanceSimulationTime:500];
+        [self addChild:_cellBackground];
+        
+        SKSpriteNode *murky = [SKSpriteNode spriteNodeWithImageNamed:@"murky"];
+        murky.position = CGPointMake((self.size.width / 2) ,(self.size.height / 2));
+        murky.size = CGSizeMake(2000, 2000);
+        murky.alpha = 0.3;
+        [self addChild:murky];
+        
+        SKAction *rotation = [SKAction rotateByAngle:M_PI/4.0 duration:8];
+        [murky runAction:[SKAction repeatActionForever:rotation]];
+        
         [self layoutBoard];
+
     }
     return self;
 }
-
 
 
 #pragma mark - Cell Management
@@ -45,49 +64,16 @@
         [cell setPositionToSpawnPoint];
         [self addChild:cell];
     }
-//    
-//    [self addChild:_gameController.playerCells[0]];
-//    CFCell *playerCell = _gameController.playerCells[0];
-//    [playerCell setPositionToSpawnPoint];
-//    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-//        CFPhageEmitter *phage = playerCell.phageHead;
-////        phage.position = [self randomPhagePositionRelativeToCell:playerCell];
-//        SKAction *moveToTarget  = [SKAction moveTo:phage.targetCell.position duration:1];
-//        [phage runAction:[SKAction repeatActionForever:moveToTarget]];
-//
-//        [self addChild:phage];
-//    }
-//    
-//    [self addChild:_gameController.enemyCells[0]];
-//    CFCell *enemyCell = _gameController.enemyCells[0];
-//    [enemyCell setPositionToSpawnPoint];
-//    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-//        CFPhageEmitter *phage = enemyCell.phageHead;
-////        phage.position = [self randomPhagePositionRelativeToCell:enemyCell];
-//        [self addChild:phage];
-//        
-//    }
+    
+    [self addChild:_gameController.playerCells[0]];
+    CFCell *playerCell = _gameController.playerCells[0];
+    [playerCell setPositionToSpawnPoint];
+    
+    [self addChild:_gameController.enemyCells[0]];
+    CFCell *enemyCell = _gameController.enemyCells[0];
+    [enemyCell setPositionToSpawnPoint];
 
 }// end method
-
-//-(CGPoint)randomPhagePositionRelativeToCell:(CFCell *)cell {
-//    
-//    int x,y;
-//    
-//    if (arc4random_uniform(2)) {
-//        x = cell.position.x - arc4random_uniform(cell.size.height / 3);
-//    } else {
-//        x = cell.position.x + arc4random_uniform(cell.size.height / 3);
-//    }
-//    
-//    if (arc4random_uniform(2)) {
-//        y = cell.position.y + arc4random_uniform(cell.size.height / 3);
-//    } else {
-//        y = cell.position.y - arc4random_uniform(cell.size.height / 3);
-//    }
-//    
-//    return CGPointMake(x, y);
-//}
 
 
 #pragma mark - User Interaction
@@ -150,7 +136,7 @@
 
 - (void)drawArrowAtLocation:(CGPoint)newPosition
 {
-    CGPoint position = [_originCell position];
+//    CGPoint position = [_originCell position];
     
     // draw arrow from position to new position
     
@@ -176,8 +162,6 @@
 {
     /* Called when a touch begins */
     
-    
-    
 
 }
 
@@ -189,6 +173,7 @@
 
 
 #pragma mark - Pull cell information for AI to read
+
 - (NSArray *)returnCellInfoToAI {
     // Method will query all cells managed by current object, then return their information back to AI controller
     NSMutableArray *arrayOfCellLocations;
