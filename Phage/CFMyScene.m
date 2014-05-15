@@ -50,6 +50,9 @@
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
         CFPhage *phage = playerCell.phageHead;
         phage.position = [self randomPhagePositionRelativeToCell:playerCell];
+        SKAction *moveToTarget  = [SKAction moveTo:phage.targetCell.position duration:1];
+        [phage runAction:[SKAction repeatActionForever:moveToTarget]];
+
         [self addChild:phage];
     }
     
@@ -60,6 +63,7 @@
         CFPhage *phage = enemyCell.phageHead;
         phage.position = [self randomPhagePositionRelativeToCell:enemyCell];
         [self addChild:phage];
+        
     }
 
 }// end method
@@ -69,11 +73,15 @@
     int x,y;
     
     if (arc4random_uniform(2)) {
-        y = cell.position.y + arc4random_uniform(5);
-        x = cell.position.x - arc4random_uniform(5);
+        x = cell.position.x - arc4random_uniform(cell.size.height / 3);
     } else {
-        y = cell.position.y - arc4random_uniform(5);
-        x = cell.position.x + arc4random_uniform(5);
+        x = cell.position.x + arc4random_uniform(cell.size.height / 3);
+    }
+    
+    if (arc4random_uniform(2)) {
+        y = cell.position.y + arc4random_uniform(cell.size.height / 3);
+    } else {
+        y = cell.position.y - arc4random_uniform(cell.size.height / 3);
     }
     
     return CGPointMake(x, y);
@@ -91,7 +99,12 @@
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    /* Called before each frame is rendered */
+    
+    
+    for (CFPhage *phage in [self children]) {
+        
+    }
+
 }
 
 

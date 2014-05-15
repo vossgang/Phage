@@ -12,13 +12,20 @@
 
 -(instancetype)initWithTargetCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation
 {
-    self = [super initWithImageNamed:@"protoPhage"];
+    
+    SKTextureAtlas *phageAtlas      = [SKTextureAtlas atlasNamed:@"phageX"];
+    NSString *textureName           = [NSString stringWithFormat:@"phage%d", (int)affiliation];
+    SKTexture *texture              = [phageAtlas textureNamed:textureName];
+    
+    self = [super initWithTexture:texture];
+    
     if (self) {
-        _targetCell = targetCell;
-        _affiliation = affiliation;
-        _targetCell = targetCell;
-        _affiliation = affiliation;
-        self.size = PHAGE_SIZE;
+        
+        _targetCell     = targetCell;
+        _affiliation    = affiliation;
+        _targetCell     = targetCell;
+        _affiliation    = affiliation;
+        self.size       = PHAGE_SIZE;
         
     }
     return self;

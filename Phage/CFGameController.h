@@ -13,7 +13,7 @@
 
 @interface CFGameController : SKScene
 
-+ (instancetype) sharedGameController;
+//+ (instancetype) sharedGameController;
 - (instancetype)initNewGame;
 
 @property (nonatomic, strong) CFPlayer *winningPlayer;

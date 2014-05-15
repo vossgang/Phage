@@ -29,6 +29,7 @@
     return self;
 }
 
+/*
 //setup singleton
 +(instancetype)sharedGameController
 {
@@ -40,6 +41,8 @@
     
     return sharedGameController;
 }
+
+*/
 
 #pragma mark - Cell Management
 
@@ -94,7 +97,7 @@
     cell.physicsBody.allowsRotation     = YES;
     cell.physicsBody.affectedByGravity  = NO;
     cell.physicsBody.dynamic            = YES;
-    cell.physicsBody.mass               = 1.4;
+    cell.physicsBody.mass               = 10;
     
 }
 
@@ -139,7 +142,7 @@
 }
 
 -(void)assignPhysicsToPhage:(CFPhage *)phage {
-    phage.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:phage.size.width / 2];
+    phage.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:phage.size];
     
     phage.physicsBody.allowsRotation     = YES;
     phage.physicsBody.affectedByGravity  = NO;
