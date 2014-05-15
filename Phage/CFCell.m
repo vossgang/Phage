@@ -21,20 +21,23 @@
 - (instancetype)initWithAffiliation:(Affiliation)affiliation
                            cellSize:(CellSize)cellSize
                                type:(CellType)type
-                           spawnPoint:(CGPoint)spawnPoint
+                         spawnPoint:(CGPoint)spawnPoint
+                     effectsEmitter:(CFPhageEmitter *)effectsEmitter
+                     sendingEmitter:(CFPhageEmitter *)sendingEmitter
+
 {
-    
-    SKTextureAtlas *cellAtlas   = [SKTextureAtlas atlasNamed:@"protocellX"];
-    NSString *textureName       = [NSString stringWithFormat:@"protocell%d", (int)affiliation];
-    SKTexture *texture          = [cellAtlas textureNamed:textureName];
-    
-    self = [super initWithTexture:texture];
+    self = [super initWithImageNamed:[NSString stringWithFormat:@"protocell%u", type]];
     if (self) {
         _cellAffiliation    = affiliation;
         _cellSize           = cellSize;
         _cellType           = type;
         _spawnPoint         = spawnPoint;
+        _effectsEmitter     = effectsEmitter;
+        _sendingEmitteer    = sendingEmitter;
         self.size           = [self sizeForCellSize:cellSize];
+        
+        [self addChild:effectsEmitter];
+        [self addChild:sendingEmitter];
     }
     return self;
 }
@@ -56,8 +59,8 @@
     }
 }
 
--(CFPhage *)phageHead  {
-    CFPhage *current = _phageHead;
+-(CFPhageEmitter *)phageHead  {
+    CFPhageEmitter *current = _phageHead;
     _phageHead = current.next;
     
     return _phageHead;
@@ -69,7 +72,5 @@
 -(void)setPositionToSpawnPoint {
     self.position = _spawnPoint;
 }
-
-
    
 @end

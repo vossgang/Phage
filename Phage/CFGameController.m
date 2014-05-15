@@ -8,7 +8,7 @@
 
 #import "CFGameController.h"
 #import "CFCell.h"
-#import "CFPhage.h"
+#import "CFPhageEmitter.h"
 
 @interface CFGameController ()
 
@@ -109,7 +109,7 @@
     NSMutableArray *array = [NSMutableArray new];
     
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhage *phage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:cell.cellAffiliation];
+        CFPhageEmitter *phage  = [[CFPhageEmitter alloc] initWithTargetCell:cell affiliation:cell.cellAffiliation];
         [self assignPhysicsToPhage:phage];
         [array insertObject:phage atIndex:0];
         if (array.count > 1) {
@@ -117,7 +117,7 @@
         }
     }
     
-    CFPhage *last = [array lastObject];
+    CFPhageEmitter *last = [array lastObject];
     last.next = [array firstObject];
     cell.phageHead = [array firstObject];
     
@@ -136,7 +136,7 @@
 
 }
 
--(CFPhage *)phageForCell:(CFCell *)cell {
+-(CFPhageEmitter *)phageForCell:(CFCell *)cell {
     cell.phageHead = cell.phageHead.next;
     return cell.phageHead;
 }
