@@ -12,87 +12,126 @@
 
 @interface CFGameController ()
 
-@property (nonatomic, strong) NSArray *cells;
-
 @end
 
 @implementation CFGameController
 
+//initialize cell with new array of cells
+- (instancetype)initNewGame
+{
+    self = [super init];
+    if (self) {
+        [self setupArrayOfUnaffiliatedCells];
+        [self setupArrayOfPlayerCells];
+        [self setupArrayOfEnemyCells];
+        
+    }
+    return self;
+}
+
+//setup singleton
 +(instancetype)sharedGameController
 {
     static CFGameController *sharedGameController = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedGameController = [[CFGameController alloc] init];
+        sharedGameController = [[CFGameController alloc] initNewGame];
     });
+    
     return sharedGameController;
 }
 
-- (NSArray *)setupBoard
-{
-    [self setupArrayOfCells];
+#pragma mark - Cell Management
 
-    /*
-    NSMutableArray *smallCells = [[NSMutableArray alloc] init];
-    NSMutableArray *mediumCells = [[NSMutableArray alloc] init];
-    NSMutableArray *largeCells = [[NSMutableArray alloc] init];
+-(void)setupArrayOfPlayerCells {
     
-    for (int i = 0; i < DEFAULT_NUMBER_OF_SMALL_CELLS; i++) {
-        CFCell *smallCell = [[CFCell alloc] initWithAffiliation:AffiliationNeutral
-                                                       cellSize:SizeSmall
-                                                           type:TypeNormal
-                                                       location:CGPointZero];
-        [smallCells addObject:smallCell];
-    }
+#warning - needs CGPoint
+    CGPoint startingPosition = CGPointMake(500, 500);
     
-    for (int i = 0; i < DEFAULT_NUMBER_OF_MEDIUM_CELLS; i++) {
-        CFCell *mediumCell = [[CFCell alloc] initWithAffiliation:AffiliationNeutral
-                                                        cellSize:SizeMedium
-                                                            type:TypeNormal
-                                                        location:CGPointZero];
-        [mediumCells addObject:mediumCell];
-    }
-    
-    for (int i = 0; i < DEFAULT_NUMBER_OF_LARGE_CELLS; i++) {
-        CFCell *largeCell = [[CFCell alloc] initWithAffiliation:AffiliationNeutral
-                                                       cellSize:SizeLarge
-                                                           type:TypeNormal
-                                                       location:CGPointZero];
-        [largeCells addObject:largeCell];
-    }
-
-    return @{kSmallCellKey : smallCells,
-             kMediumCellKey : mediumCells,
-             kLargeCellKey : largeCells};
-     
-     */
-    return _cells;
+    CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationPlayer cellSize:MAXIMUM_CELL_SIZE type:TypeFactory spawnPoint:startingPosition];
+    [self assignPhysicsToCell:cell];
+    cell.texture = [SKTexture textureWithImageNamed:@"protocell1"];
+    [self setupPhageLinkedListForTargetCell:cell];
+    _playerCells = @[cell];
 }
 
-- (NSArray *)setupPlayers
-{
-    return nil;
+-(void)setupArrayOfEnemyCells {
+    
+#warning - needs CGPoint
+    CGPoint startingPosition = CGPointMake(1, 1);
+
+    CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationAI cellSize:MAXIMUM_CELL_SIZE type:TypeFactory spawnPoint:startingPosition];
+    cell.texture = [SKTexture textureWithImageNamed:@"protocell2"];
+    [self assignPhysicsToCell:cell];
+    [self setupPhageLinkedListForTargetCell:cell];
+    _enemyCells = @[cell];
 }
+
+-(void)setupArrayOfUnaffiliatedCells {
+    
+    //temporary array of cells
+    NSMutableArray *unaffiliatedCells = [NSMutableArray new];
+    
+    //divide screen into sections; assign random x,y coordinates of cells
+    for (int i = 0; i < NUMBER_OF_CELLS; i++) {
+        CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationNeutral cellSize:[self randomSizeClass] type:TypeNormal spawnPoint:[self randomPosition]];
+        
+        [self assignPhysicsToCell:cell];
+        
+        cell.texture = [SKTexture textureWithImageNamed:@"protocell0"];
+
+        [unaffiliatedCells addObject:cell];
+    }
+    
+    _unaffiliatedCells = unaffiliatedCells;
+    
+}
+
+
+-(void)assignPhysicsToCell:(CFCell *)cell {
+    
+    cell.physicsBody                    = [SKPhysicsBody bodyWithCircleOfRadius:cell.size.width / 2];
+    cell.physicsBody.allowsRotation     = YES;
+    cell.physicsBody.affectedByGravity  = NO;
+    cell.physicsBody.dynamic            = YES;
+    cell.physicsBody.mass               = 1.4;
+    
+}
+
 
 #pragma mark - Phage Management
 
--(CFPhage *)setupPhageLinkedListForTargetCell:(CFCell *)cell {
-
-
-    CFPhage *firstPhage = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
-    [self assignPhysicsToPhage:firstPhage];
-    firstPhage.position = [self randomPhagePositionRelativeToCell:cell];
+-(void)setupPhageLinkedListForTargetCell:(CFCell *)cell {
     
-    cell.phageHead = firstPhage;
+    NSMutableArray *array = [NSMutableArray new];
+    
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhage *nextPhage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
-        [self assignPhysicsToPhage:nextPhage];
-        nextPhage.position  = [self randomPhagePositionRelativeToCell:cell];
-        nextPhage.next      = cell.phageHead;
-        cell.phageHead      = nextPhage;
+        CFPhage *phage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
+        [self assignPhysicsToPhage:phage];
+        phage.position = [self randomPhagePositionRelativeToCell:cell];
+        [array insertObject:phage atIndex:0];
+        if (array.count > 1) {
+            phage.next = array[1];
+        }
     }
-    firstPhage.next = cell.phageHead;
-    return firstPhage;
+    
+    CFPhage *last = [array lastObject];
+    last.next = [array firstObject];
+    cell.phageHead = [array firstObject];
+    
+//    
+//    cell.phageHead = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
+//    [self assignPhysicsToPhage:cell.phageHead];
+//    cell.phageHead.position = [self randomPhagePositionRelativeToCell:cell];
+//    
+//    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
+//        CFPhage *nextPhage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
+//        [self assignPhysicsToPhage:nextPhage];
+//        nextPhage.position  = [self randomPhagePositionRelativeToCell:cell];
+//        nextPhage.next      = cell.phageHead;
+//        cell.phageHead      = nextPhage;
+//    }
+
 }
 
 -(CFPhage *)phageForCell:(CFCell *)cell {
@@ -119,49 +158,11 @@
     if (arc4random_uniform(2))  x = cell.position.y + arc4random_uniform(5);
     else x = cell.position.y - arc4random_uniform(5);
     
-    
     return CGPointMake(x, y);
 }
 
-#pragma mark - Cell Management
 
--(void)setupArrayOfCells {
-    
-    NSMutableArray *tempArrayOfCells = [NSMutableArray new];
-    
-    for (int section = 0; section < NUMBER_OF_SECTIONS; section++) {
-        for (int i = 0; i < (NUMBER_OF_CELLS / NUMBER_OF_SECTIONS); i++) {
-            
-            CFCell *cell = [self setupCellInSection:section+1];
-            [self assignPhysicsToCell:cell];
-            cell.phageHead = [self setupPhageLinkedListForTargetCell:cell];
-            [tempArrayOfCells addObject:cell];
-            
-        }
-    }
-    
-    _cells = tempArrayOfCells;
-    
-}
-
-
--(void)assignPhysicsToCell:(CFCell *)cell {
-    
-    cell.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:cell.size.width / 2];
-    
-    cell.physicsBody.allowsRotation     = YES;
-    cell.physicsBody.affectedByGravity  = NO;
-    cell.physicsBody.dynamic            = YES;
-    cell.physicsBody.mass               = 1.4;
-    
-}
-
--(CFCell *)setupCellInSection:(NSInteger)section {
-    //section is equivalant to enum value
-    CFCell *cell =  [[CFCell alloc] initWithAffiliation:section cellSize:[self randomSize] type:TypeNormal location:[self randomPosition]];
-                     
-    return cell;
-}
+#pragma mark - Helper Methods
 
 -(CGPoint)randomPosition {
     
@@ -173,13 +174,7 @@
 }
 
 
--(NSInteger)randomSize {
-    
-//    NSInteger diameter;
-//    
-//GET_NEW_SIZE: diameter = arc4random_uniform(MAXIMUM_CELL_SIZE-50) + 50;
-//    if (diameter > (MAXIMUM_CELL_SIZE * .5)) if (arc4random_uniform(2)) goto GET_NEW_SIZE;
-    
+-(NSInteger)randomSizeClass {
     return arc4random_uniform(3);
 }
 
