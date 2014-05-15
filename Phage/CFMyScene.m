@@ -45,49 +45,49 @@
         [cell setPositionToSpawnPoint];
         [self addChild:cell];
     }
-    
-    [self addChild:_gameController.playerCells[0]];
-    CFCell *playerCell = _gameController.playerCells[0];
-    [playerCell setPositionToSpawnPoint];
-    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhageEmitter *phage = playerCell.phageHead;
-        phage.position = [self randomPhagePositionRelativeToCell:playerCell];
-        SKAction *moveToTarget  = [SKAction moveTo:phage.targetCell.position duration:1];
-        [phage runAction:[SKAction repeatActionForever:moveToTarget]];
-
-        [self addChild:phage];
-    }
-    
-    [self addChild:_gameController.enemyCells[0]];
-    CFCell *enemyCell = _gameController.enemyCells[0];
-    [enemyCell setPositionToSpawnPoint];
-    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhageEmitter *phage = enemyCell.phageHead;
-        phage.position = [self randomPhagePositionRelativeToCell:enemyCell];
-        [self addChild:phage];
-        
-    }
+//    
+//    [self addChild:_gameController.playerCells[0]];
+//    CFCell *playerCell = _gameController.playerCells[0];
+//    [playerCell setPositionToSpawnPoint];
+//    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
+//        CFPhageEmitter *phage = playerCell.phageHead;
+////        phage.position = [self randomPhagePositionRelativeToCell:playerCell];
+//        SKAction *moveToTarget  = [SKAction moveTo:phage.targetCell.position duration:1];
+//        [phage runAction:[SKAction repeatActionForever:moveToTarget]];
+//
+//        [self addChild:phage];
+//    }
+//    
+//    [self addChild:_gameController.enemyCells[0]];
+//    CFCell *enemyCell = _gameController.enemyCells[0];
+//    [enemyCell setPositionToSpawnPoint];
+//    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
+//        CFPhageEmitter *phage = enemyCell.phageHead;
+////        phage.position = [self randomPhagePositionRelativeToCell:enemyCell];
+//        [self addChild:phage];
+//        
+//    }
 
 }// end method
 
--(CGPoint)randomPhagePositionRelativeToCell:(CFCell *)cell {
-    
-    int x,y;
-    
-    if (arc4random_uniform(2)) {
-        x = cell.position.x - arc4random_uniform(cell.size.height / 3);
-    } else {
-        x = cell.position.x + arc4random_uniform(cell.size.height / 3);
-    }
-    
-    if (arc4random_uniform(2)) {
-        y = cell.position.y + arc4random_uniform(cell.size.height / 3);
-    } else {
-        y = cell.position.y - arc4random_uniform(cell.size.height / 3);
-    }
-    
-    return CGPointMake(x, y);
-}
+//-(CGPoint)randomPhagePositionRelativeToCell:(CFCell *)cell {
+//    
+//    int x,y;
+//    
+//    if (arc4random_uniform(2)) {
+//        x = cell.position.x - arc4random_uniform(cell.size.height / 3);
+//    } else {
+//        x = cell.position.x + arc4random_uniform(cell.size.height / 3);
+//    }
+//    
+//    if (arc4random_uniform(2)) {
+//        y = cell.position.y + arc4random_uniform(cell.size.height / 3);
+//    } else {
+//        y = cell.position.y - arc4random_uniform(cell.size.height / 3);
+//    }
+//    
+//    return CGPointMake(x, y);
+//}
 
 
 #pragma mark - User Interaction
@@ -183,13 +183,7 @@
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    
-//    
-//    for (CFPhage *phage in [self children]) {
-//        
-//        
-//        
-//    }
+
 
 }
 

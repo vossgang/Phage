@@ -47,26 +47,14 @@
 #pragma mark - Cell Management
 
 -(void)setupArrayOfPlayerCells {
-    
-#warning - needs CGPoint
-    CGPoint startingPosition = CGPointMake(500, 500);
-    
-    CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationPlayer cellSize:MAXIMUM_CELL_SIZE type:TypeFactory spawnPoint:startingPosition];
-    [self assignPhysicsToCell:cell];
-    cell.texture = [SKTexture textureWithImageNamed:@"protocell1"];
-    [self setupPhageLinkedListForTargetCell:cell];
+
+    CFCell *cell = [[CFCell alloc] initCellForPlayer];
     _playerCells = @[cell];
 }
 
 -(void)setupArrayOfEnemyCells {
     
-#warning - needs CGPoint
-    CGPoint startingPosition = CGPointMake(100, 100);
-
-    CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationAI cellSize:MAXIMUM_CELL_SIZE type:TypeFactory spawnPoint:startingPosition];
-    cell.texture = [SKTexture textureWithImageNamed:@"protocell2"];
-    [self assignPhysicsToCell:cell];
-    [self setupPhageLinkedListForTargetCell:cell];
+    CFCell *cell = [[CFCell alloc] initCellForAI];
     _enemyCells = @[cell];
 }
 
@@ -77,11 +65,7 @@
     
     //divide screen into sections; assign random x,y coordinates of cells
     for (int i = 0; i < NUMBER_OF_CELLS; i++) {
-        CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationNeutral cellSize:[self randomSizeClass] type:TypeNormal spawnPoint:[self randomPosition]];
-        
-        [self assignPhysicsToCell:cell];
-        
-        cell.texture = [SKTexture textureWithImageNamed:@"protocell0"];
+        CFCell *cell = [[CFCell alloc] initCellForNeutral];
 
         [unaffiliatedCells addObject:cell];
     }
@@ -91,81 +75,5 @@
 }
 
 
--(void)assignPhysicsToCell:(CFCell *)cell {
-    
-    cell.physicsBody                    = [SKPhysicsBody bodyWithCircleOfRadius:cell.size.width / 2];
-    cell.physicsBody.allowsRotation     = YES;
-    cell.physicsBody.affectedByGravity  = NO;
-    cell.physicsBody.dynamic            = YES;
-    cell.physicsBody.mass               = 10;
-    
-}
-
-
-#pragma mark - Phage Management
-
--(void)setupPhageLinkedListForTargetCell:(CFCell *)cell {
-    
-    NSMutableArray *array = [NSMutableArray new];
-    
-    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhageEmitter *phage  = [[CFPhageEmitter alloc] initWithTargetCell:cell affiliation:cell.cellAffiliation];
-        [self assignPhysicsToPhage:phage];
-        [array insertObject:phage atIndex:0];
-        if (array.count > 1) {
-            phage.next = array[1];
-        }
-    }
-    
-    CFPhageEmitter *last = [array lastObject];
-    last.next = [array firstObject];
-    cell.phageHead = [array firstObject];
-    
-//    
-//    cell.phageHead = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
-//    [self assignPhysicsToPhage:cell.phageHead];
-//    cell.phageHead.position = [self randomPhagePositionRelativeToCell:cell];
-//    
-//    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-//        CFPhage *nextPhage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
-//        [self assignPhysicsToPhage:nextPhage];
-//        nextPhage.position  = [self randomPhagePositionRelativeToCell:cell];
-//        nextPhage.next      = cell.phageHead;
-//        cell.phageHead      = nextPhage;
-//    }
-
-}
-
--(CFPhageEmitter *)phageForCell:(CFCell *)cell {
-    cell.phageHead = cell.phageHead.next;
-    return cell.phageHead;
-}
-
--(void)assignPhysicsToPhage:(CFPhage *)phage {
-    phage.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:phage.size];
-    
-    phage.physicsBody.allowsRotation     = YES;
-    phage.physicsBody.affectedByGravity  = NO;
-    phage.physicsBody.dynamic            = YES;
-    phage.physicsBody.mass               = .2;
-}
-
-
-
-#pragma mark - Helper Methods
-
--(CGPoint)randomPosition {
-    
-    CGFloat x, y;
-    x =  arc4random_uniform(1024);
-    y = arc4random_uniform(768);
-    
-    return CGPointMake(x, y);
-}
-
-
--(NSInteger)randomSizeClass {
-    return arc4random_uniform(3);
-}
 
 @end
