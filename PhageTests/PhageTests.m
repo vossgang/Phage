@@ -39,4 +39,12 @@
     }
 }
 
+- (void)testCalculateDistanceToCell {
+    CFAI *ai = [CFAI new];
+    CGPoint start = CGPointMake(3, 3);
+    CGPoint end = CGPointMake(6, 7);
+    double result = [ai calculateDistanceToCellUsingStartPoint:start andEndPoint:end];
+    XCTAssertEqual(result, 5, @"The distance of %f is not correct",result);
+}
+
 @end

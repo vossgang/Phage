@@ -32,4 +32,15 @@
     / withSizeRatio;
 }
 
+- (void)locateCellsAndDetermineStatus {
+    CFMyScene *myScene = [CFMyScene new];
+    NSArray *arrayOfCells = [myScene returnCellInfoToAI];
+}
+
+- (double)calculateDistanceToCellUsingStartPoint:(CGPoint)withStartPoint andEndPoint:(CGPoint)withEndPoint {
+    double xAxis = pow(fabs(withEndPoint.x - withStartPoint.x),2);
+    double yAxis = pow(fabs(withEndPoint.y - withStartPoint.y),2);
+    return  sqrt(xAxis + yAxis);
+}
+
 @end
