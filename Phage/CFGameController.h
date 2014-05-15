@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
 @class CFPlayer;
 
-@interface CFGameController : NSObject
+@interface CFGameController : SKScene
 
 + (instancetype) sharedGameController;
-- (NSDictionary *)setupBoard;
-- (NSArray *)setupPlayers;
+- (instancetype)initNewGame;
 
 @property (nonatomic, strong) CFPlayer *winningPlayer;
 @property (nonatomic, strong) NSDictionary *gameState;
-
+@property (nonatomic, strong) NSArray *unaffiliatedCells, *playerCells, *enemyCells;
 
 @end

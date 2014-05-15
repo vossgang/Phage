@@ -18,9 +18,17 @@
         _affiliation = affiliation;
         _targetCell = targetCell;
         _affiliation = affiliation;
+        self.size = PHAGE_SIZE;
         
     }
     return self;
 }
+
+//-(CFPhage *)next
+//{
+//    CFPhage *first = _next;
+//    _next = first.next;
+//    return first;
+//}
 
 @end
