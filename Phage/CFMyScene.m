@@ -99,12 +99,11 @@
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    
-    
-    for (CFPhage *phage in [self children]) {
+    [self.children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+       
+        CFPhageEmitter *phageEmitter = (CFPhageEmitter *)obj;
         
-    }
-
+    }];
 }
 
 
