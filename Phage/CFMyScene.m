@@ -184,10 +184,12 @@
 -(void)update:(CFTimeInterval)currentTime
 {
     
-    
-    for (CFPhage *phage in [self children]) {
-        
-    }
+//    
+//    for (CFPhage *phage in [self children]) {
+//        
+//        
+//        
+//    }
 
 }
 
