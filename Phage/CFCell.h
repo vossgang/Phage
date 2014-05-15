@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
-#import "CFPhage.h"
+#import "CFPhageEmitter.h"
 
 static NSString * const kSmallCellKey   = @"smallCell";
 static NSString * const kMediumCellKey  = @"mediumCell";
@@ -24,14 +24,21 @@ static NSString * const kLargeCellKey   = @"largeCell";
 @property (nonatomic) Affiliation cellAffiliation;
 
 @property (nonatomic) NSInteger phageCount;
-@property (nonatomic, strong) CFPhage *phageHead;
+@property (nonatomic, strong) CFPhageEmitter *phageHead;
 @property (nonatomic, weak) CFPlayer *owner;
 @property (nonatomic) CGPoint location;
+
+@property (nonatomic, strong) CFPhageEmitter *effectsEmitter;
+@property (nonatomic, strong) CFPhageEmitter *sendingEmitteer;
+
 
 - (instancetype)initWithAffiliation:(Affiliation)affiliation
                            cellSize:(CellSize)cellSize
                                type:(CellType)type
-                         spawnPoint:(CGPoint)spawnPoint;
+                         spawnPoint:(CGPoint)spawnPoint
+                     effectsEmitter:(CFPhageEmitter *)effectsEmitter
+                     sendingEmitter:(CFPhageEmitter *)sendingEmitter;
+
 
 - (CGSize)sizeForCellSize:(CellSize)cellSize;
 - (void)setPositionToSpawnPoint;

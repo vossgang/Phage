@@ -8,7 +8,7 @@
 
 #import "CFMyScene.h"
 #import "CFCell.h"
-#import "CFPhage.h"
+#import "CFPhageEmitter.h"
 #import "CFGameController.h"
 
 @interface CFMyScene()
@@ -50,8 +50,11 @@
     CFCell *playerCell = _gameController.playerCells[0];
     [playerCell setPositionToSpawnPoint];
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhage *phage = playerCell.phageHead;
+        CFPhageEmitter *phage = playerCell.phageHead;
         phage.position = [self randomPhagePositionRelativeToCell:playerCell];
+        SKAction *moveToTarget  = [SKAction moveTo:phage.targetCell.position duration:1];
+        [phage runAction:[SKAction repeatActionForever:moveToTarget]];
+
         [self addChild:phage];
     }
     
@@ -59,9 +62,10 @@
     CFCell *enemyCell = _gameController.enemyCells[0];
     [enemyCell setPositionToSpawnPoint];
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhage *phage = enemyCell.phageHead;
+        CFPhageEmitter *phage = enemyCell.phageHead;
         phage.position = [self randomPhagePositionRelativeToCell:enemyCell];
         [self addChild:phage];
+        
     }
 
 }// end method
@@ -71,11 +75,15 @@
     int x,y;
     
     if (arc4random_uniform(2)) {
-        y = cell.position.y + arc4random_uniform(5);
-        x = cell.position.x - arc4random_uniform(5);
+        x = cell.position.x - arc4random_uniform(cell.size.height / 3);
     } else {
-        y = cell.position.y - arc4random_uniform(5);
-        x = cell.position.x + arc4random_uniform(5);
+        x = cell.position.x + arc4random_uniform(cell.size.height / 3);
+    }
+    
+    if (arc4random_uniform(2)) {
+        y = cell.position.y + arc4random_uniform(cell.size.height / 3);
+    } else {
+        y = cell.position.y - arc4random_uniform(cell.size.height / 3);
     }
     
     return CGPointMake(x, y);
@@ -175,7 +183,12 @@
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    /* Called before each frame is rendered */
+    
+    
+    for (CFPhage *phage in [self children]) {
+        
+    }
+
 }
 
 

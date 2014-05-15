@@ -7,45 +7,81 @@
 //
 
 #import "CFCell.h"
+#import "CFConstants.h"
 
-@implementation CFCell
+@interface CFCell()
 
-<<<<<<< HEAD
-- (instancetype)initWithAffiliation:(CellAffiliation)affiliation
+@property (nonatomic,readwrite) CGPoint spawnPoint;
+
+@end
+
+@implementation CFCell {
+}
+
+- (instancetype)initWithAffiliation:(Affiliation)affiliation
                            cellSize:(CellSize)cellSize
                                type:(CellType)type
-                           location:(CGPoint)location
+                         spawnPoint:(CGPoint)spawnPoint
+                     effectsEmitter:(CFPhageEmitter *)effectsEmitter
+                     sendingEmitter:(CFPhageEmitter *)sendingEmitter
+
 {
-    self = [super initWithColor:[UIColor clearColor] size:[self sizeForCellSize:cellSize]];
+<<<<<<< HEAD
+    self = [super initWithImageNamed:[NSString stringWithFormat:@"protocell%u", type]];
+=======
+    
+    SKTextureAtlas *cellAtlas   = [SKTextureAtlas atlasNamed:@"protocellX"];
+    NSString *textureName       = [NSString stringWithFormat:@"protocell%d", (int)affiliation];
+    SKTexture *texture          = [cellAtlas textureNamed:textureName];
+    
+    self = [super initWithTexture:texture];
+>>>>>>> c481e74b3f732043874c708f13d08512e41e318d
     if (self) {
-        
         _cellAffiliation    = affiliation;
         _cellSize           = cellSize;
         _cellType           = type;
-        _location           = location;
+        _spawnPoint         = spawnPoint;
+        _effectsEmitter     = effectsEmitter;
+        _sendingEmitteer    = sendingEmitter;
+        self.size           = [self sizeForCellSize:cellSize];
+        
+        [self addChild:effectsEmitter];
+        [self addChild:sendingEmitter];
     }
     return self;
 }
 
 - (CGSize)sizeForCellSize:(CellSize)cellSize
 {
+    NSInteger size = arc4random_uniform(11);
+    
     switch (cellSize) {
         case SizeSmall:
-            return CGSizeMake(30.0f, 30.0f);
+            return CGSizeMake(size +30, size +30);
             break;
         case SizeMedium:
-            return CGSizeMake(60.0f, 60.0f);
+            return CGSizeMake(size +60, size +60);
             break;
-        case SizeLarge:
-            return CGSizeMake(90.0f, 90.0f);
-            break;
-            
         default:
-            return CGSizeMake(30.0f, 30.0f);
+            return CGSizeMake(size +90, size +90);
             break;
     }
 }
+
+-(CFPhageEmitter *)phageHead  {
+    CFPhageEmitter *current = _phageHead;
+    _phageHead = current.next;
+    
+    return _phageHead;
+}
+
+
+#pragma mark - Setup Helper Methods
+
+-(void)setPositionToSpawnPoint {
+    self.position = _spawnPoint;
+}
+
+
    
-=======
->>>>>>> 747238cd901397cca9a854839bf80be3a6e2fe8c
 @end

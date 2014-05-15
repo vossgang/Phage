@@ -8,7 +8,7 @@
 
 #import "CFGameController.h"
 #import "CFCell.h"
-#import "CFPhage.h"
+#import "CFPhageEmitter.h"
 
 @interface CFGameController ()
 
@@ -29,6 +29,7 @@
     return self;
 }
 
+/*
 //setup singleton
 +(instancetype)sharedGameController
 {
@@ -40,6 +41,8 @@
     
     return sharedGameController;
 }
+
+*/
 
 #pragma mark - Cell Management
 
@@ -94,7 +97,7 @@
     cell.physicsBody.allowsRotation     = YES;
     cell.physicsBody.affectedByGravity  = NO;
     cell.physicsBody.dynamic            = YES;
-    cell.physicsBody.mass               = 1.4;
+    cell.physicsBody.mass               = 10;
     
 }
 
@@ -106,7 +109,7 @@
     NSMutableArray *array = [NSMutableArray new];
     
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhage *phage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:cell.cellAffiliation];
+        CFPhageEmitter *phage  = [[CFPhageEmitter alloc] initWithTargetCell:cell affiliation:cell.cellAffiliation];
         [self assignPhysicsToPhage:phage];
         [array insertObject:phage atIndex:0];
         if (array.count > 1) {
@@ -114,7 +117,7 @@
         }
     }
     
-    CFPhage *last = [array lastObject];
+    CFPhageEmitter *last = [array lastObject];
     last.next = [array firstObject];
     cell.phageHead = [array firstObject];
     
@@ -133,13 +136,13 @@
 
 }
 
--(CFPhage *)phageForCell:(CFCell *)cell {
+-(CFPhageEmitter *)phageForCell:(CFCell *)cell {
     cell.phageHead = cell.phageHead.next;
     return cell.phageHead;
 }
 
 -(void)assignPhysicsToPhage:(CFPhage *)phage {
-    phage.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:phage.size.width / 2];
+    phage.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:phage.size];
     
     phage.physicsBody.allowsRotation     = YES;
     phage.physicsBody.affectedByGravity  = NO;
