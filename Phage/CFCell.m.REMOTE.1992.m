@@ -17,36 +17,6 @@
 
 @implementation CFCell
 
-<<<<<<< HEAD
--(id)initCellForNeutral {
-    
-    return [self initWithAffiliation:AffiliationNeutral
-                            cellSize:[self randomSizeClass]
-                                type:TypeNormal
-                          spawnPoint:[self randomPosition]
-                      effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationNeutral]
-                      sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationNeutral]];
-}
-
--(id)initCellForAI {
-    
-    return [self initWithAffiliation:AffiliationNeutral
-                            cellSize:[self randomSizeClass]
-                                type:TypeFactory
-                          spawnPoint:[self randomPosition]
-                      effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationAI]
-                      sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationAI]];
-}
-
--(id)initCellForPlayer {
-
-    return [self initWithAffiliation:AffiliationNeutral
-                            cellSize:[self randomSizeClass]
-                                type:TypeFactory
-                          spawnPoint:[self randomPosition]
-                      effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationPlayer]
-                      sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationPlayer]];
-=======
 -(id)initCellForNeutral
 {
     return [self initWithAffiliation:AffiliationNeutral cellSize:[self randomSizeClass] type:TypeNormal spawnPoint:[self randomPosition] effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationNeutral] sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationNeutral]];
@@ -60,7 +30,6 @@
 -(id)initCellForPlayer
 {
     return [self initWithAffiliation:AffiliationPlayer cellSize:SizeLarge type:TypeFactory spawnPoint:STARTING_PLAYER_SPAWN_POINT effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationPlayer] sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationPlayer]];
->>>>>>> 83e3e7721acf2abf5132b757b91a096804c6b953
 }
 
 - (instancetype)initWithAffiliation:(Affiliation)affiliation
@@ -82,8 +51,6 @@
         
         [self addChild:effectsEmitter];
         [self addChild:sendingEmitter];
-        
-        [effectsEmitter setZPosition:-1];
         
         [self assignPhysics];
     }

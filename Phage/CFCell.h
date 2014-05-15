@@ -35,9 +35,6 @@ static NSString * const kLargeCellKey   = @"largeCell";
 -(id)initCellForAI;
 -(id)initCellForPlayer;
 
-
-
-
 - (instancetype)initWithAffiliation:(Affiliation)affiliation
                            cellSize:(CellSize)cellSize
                                type:(CellType)type
