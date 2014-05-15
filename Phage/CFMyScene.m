@@ -41,27 +41,43 @@
     
     for (CFCell *cell in _gameController.unaffiliatedCells) {
         [cell setPositionToSpawnPoint];
-        NSLog(@"%f", cell.position.x);
         [self addChild:cell];
     }
     
     [self addChild:_gameController.playerCells[0]];
+    CFCell *playerCell = _gameController.playerCells[0];
+    [playerCell setPositionToSpawnPoint];
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFCell *cell    = _gameController.playerCells[0];
-        [cell setPositionToSpawnPoint];
-        CFPhage *phage  = cell.phageHead;
+        CFPhage *phage = playerCell.phageHead;
+        phage.position = [self randomPhagePositionRelativeToCell:playerCell];
         [self addChild:phage];
     }
     
     [self addChild:_gameController.enemyCells[0]];
+    CFCell *enemyCell = _gameController.enemyCells[0];
+    [enemyCell setPositionToSpawnPoint];
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFCell *cell    = _gameController.enemyCells[0];
-        [cell setPositionToSpawnPoint];
-        CFPhage *phage  = cell.phageHead;
+        CFPhage *phage = enemyCell.phageHead;
+        phage.position = [self randomPhagePositionRelativeToCell:enemyCell];
         [self addChild:phage];
     }
 
 }// end method
+
+-(CGPoint)randomPhagePositionRelativeToCell:(CFCell *)cell {
+    
+    int x,y;
+    
+    if (arc4random_uniform(2)) {
+        y = cell.position.y + arc4random_uniform(5);
+        x = cell.position.x - arc4random_uniform(5);
+    } else {
+        y = cell.position.y - arc4random_uniform(5);
+        x = cell.position.x + arc4random_uniform(5);
+    }
+    
+    return CGPointMake(x, y);
+}
 
 
 #pragma mark - User Interaction

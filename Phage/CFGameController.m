@@ -58,7 +58,7 @@
 -(void)setupArrayOfEnemyCells {
     
 #warning - needs CGPoint
-    CGPoint startingPosition = CGPointMake(1, 1);
+    CGPoint startingPosition = CGPointMake(100, 100);
 
     CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationAI cellSize:MAXIMUM_CELL_SIZE type:TypeFactory spawnPoint:startingPosition];
     cell.texture = [SKTexture textureWithImageNamed:@"protocell2"];
@@ -106,9 +106,8 @@
     NSMutableArray *array = [NSMutableArray new];
     
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhage *phage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
+        CFPhage *phage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:cell.cellAffiliation];
         [self assignPhysicsToPhage:phage];
-        phage.position = [self randomPhagePositionRelativeToCell:cell];
         [array insertObject:phage atIndex:0];
         if (array.count > 1) {
             phage.next = array[1];
@@ -148,18 +147,6 @@
     phage.physicsBody.mass               = .2;
 }
 
--(CGPoint)randomPhagePositionRelativeToCell:(CFCell *)cell {
-    
-    int x,y;
-    
-    if (arc4random_uniform(2))  x = cell.position.x + arc4random_uniform(5);
-    else x = cell.position.x - arc4random_uniform(5);
-    
-    if (arc4random_uniform(2))  x = cell.position.y + arc4random_uniform(5);
-    else x = cell.position.y - arc4random_uniform(5);
-    
-    return CGPointMake(x, y);
-}
 
 
 #pragma mark - Helper Methods
