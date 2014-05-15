@@ -23,7 +23,12 @@
                                type:(CellType)type
                            spawnPoint:(CGPoint)spawnPoint
 {
-    self = [super initWithImageNamed:[NSString stringWithFormat:@"protocell%lu", type]];
+    
+    SKTextureAtlas *cellAtlas   = [SKTextureAtlas atlasNamed:@"protocellX"];
+    NSString *textureName       = [NSString stringWithFormat:@"protocell%d", (int)affiliation];
+    SKTexture *texture          = [cellAtlas textureNamed:textureName];
+    
+    self = [super initWithTexture:texture];
     if (self) {
         _cellAffiliation    = affiliation;
         _cellSize           = cellSize;
@@ -64,5 +69,7 @@
 -(void)setPositionToSpawnPoint {
     self.position = _spawnPoint;
 }
+
+
    
 @end
