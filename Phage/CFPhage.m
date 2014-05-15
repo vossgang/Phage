@@ -23,10 +23,11 @@
     return self;
 }
 
--(CFPhage *)next
-{
-    _next = _next.next;
-    return _next;
-}
+//-(CFPhage *)next
+//{
+//    CFPhage *first = _next;
+//    _next = first.next;
+//    return first;
+//}
 
 @end

@@ -10,9 +10,9 @@
 #import <SpriteKit/SpriteKit.h>
 #import "CFPhage.h"
 
-static NSString * const kSmallCellKey = @"smallCell";
-static NSString * const kMediumCellKey = @"mediumCell";
-static NSString * const kLargeCellKey = @"largeCell";
+static NSString * const kSmallCellKey   = @"smallCell";
+static NSString * const kMediumCellKey  = @"mediumCell";
+static NSString * const kLargeCellKey   = @"largeCell";
 
 @class CFPlayer;
 //@class CFPhage;
@@ -31,8 +31,9 @@ static NSString * const kLargeCellKey = @"largeCell";
 - (instancetype)initWithAffiliation:(Affiliation)affiliation
                            cellSize:(CellSize)cellSize
                                type:(CellType)type
-                           location:(CGPoint)location;
+                         spawnPoint:(CGPoint)spawnPoint;
 
 - (CGSize)sizeForCellSize:(CellSize)cellSize;
+- (void)setPositionToSpawnPoint;
 
 @end

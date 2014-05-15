@@ -48,9 +48,10 @@
 #warning - needs CGPoint
     CGPoint startingPosition = CGPointMake(500, 500);
     
-    CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationPlayer cellSize:[self randomSizeClass] type:TypeFactory location:startingPosition];
+    CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationPlayer cellSize:MAXIMUM_CELL_SIZE type:TypeFactory spawnPoint:startingPosition];
     [self assignPhysicsToCell:cell];
-    cell.phageHead = [self setupPhageLinkedListForTargetCell:cell];
+    cell.texture = [SKTexture textureWithImageNamed:@"protocell1"];
+    [self setupPhageLinkedListForTargetCell:cell];
     _playerCells = @[cell];
 }
 
@@ -59,9 +60,10 @@
 #warning - needs CGPoint
     CGPoint startingPosition = CGPointMake(1, 1);
 
-    CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationAI cellSize:[self randomSizeClass] type:TypeFactory location:startingPosition];
+    CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationAI cellSize:MAXIMUM_CELL_SIZE type:TypeFactory spawnPoint:startingPosition];
+    cell.texture = [SKTexture textureWithImageNamed:@"protocell2"];
     [self assignPhysicsToCell:cell];
-    cell.phageHead = [self setupPhageLinkedListForTargetCell:cell];
+    [self setupPhageLinkedListForTargetCell:cell];
     _enemyCells = @[cell];
 }
 
@@ -72,10 +74,12 @@
     
     //divide screen into sections; assign random x,y coordinates of cells
     for (int i = 0; i < NUMBER_OF_CELLS; i++) {
-        CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationNeutral cellSize:[self randomSizeClass] type:TypeNormal location:[self randomPosition]];
+        CFCell *cell = [[CFCell alloc] initWithAffiliation:AffiliationNeutral cellSize:[self randomSizeClass] type:TypeNormal spawnPoint:[self randomPosition]];
         
         [self assignPhysicsToCell:cell];
         
+        cell.texture = [SKTexture textureWithImageNamed:@"protocell0"];
+
         [unaffiliatedCells addObject:cell];
     }
     
@@ -97,23 +101,37 @@
 
 #pragma mark - Phage Management
 
--(CFPhage *)setupPhageLinkedListForTargetCell:(CFCell *)cell {
+-(void)setupPhageLinkedListForTargetCell:(CFCell *)cell {
     
+    NSMutableArray *array = [NSMutableArray new];
     
-    CFPhage *firstPhage = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
-    [self assignPhysicsToPhage:firstPhage];
-    firstPhage.position = [self randomPhagePositionRelativeToCell:cell];
-    
-    cell.phageHead = firstPhage;
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
-        CFPhage *nextPhage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
-        [self assignPhysicsToPhage:nextPhage];
-        nextPhage.position  = [self randomPhagePositionRelativeToCell:cell];
-        nextPhage.next      = cell.phageHead;
-        cell.phageHead      = nextPhage;
+        CFPhage *phage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
+        [self assignPhysicsToPhage:phage];
+        phage.position = [self randomPhagePositionRelativeToCell:cell];
+        [array insertObject:phage atIndex:0];
+        if (array.count > 1) {
+            phage.next = array[1];
+        }
     }
-    firstPhage.next = cell.phageHead;
-    return firstPhage;
+    
+    CFPhage *last = [array lastObject];
+    last.next = [array firstObject];
+    cell.phageHead = [array firstObject];
+    
+//    
+//    cell.phageHead = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
+//    [self assignPhysicsToPhage:cell.phageHead];
+//    cell.phageHead.position = [self randomPhagePositionRelativeToCell:cell];
+//    
+//    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
+//        CFPhage *nextPhage  = [[CFPhage alloc] initWithTargetCell:cell affiliation:AffiliationNeutral];
+//        [self assignPhysicsToPhage:nextPhage];
+//        nextPhage.position  = [self randomPhagePositionRelativeToCell:cell];
+//        nextPhage.next      = cell.phageHead;
+//        cell.phageHead      = nextPhage;
+//    }
+
 }
 
 -(CFPhage *)phageForCell:(CFCell *)cell {

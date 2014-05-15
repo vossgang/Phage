@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
 @class CFPlayer;
 
-@interface CFGameController : NSObject
+@interface CFGameController : SKScene
 
 + (instancetype) sharedGameController;
 - (instancetype)initNewGame;

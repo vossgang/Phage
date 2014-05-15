@@ -22,8 +22,8 @@
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
-        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-        self.backgroundColor = [UIColor darkGrayColor];
+        self.physicsBody        = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        self.backgroundColor    = [UIColor darkGrayColor];
         [self layoutBoard];
     }
     return self;
@@ -37,15 +37,18 @@
 
 -(void)layoutBoard
 {
-    _gameController = [CFGameController sharedGameController];
+    _gameController = [[CFGameController alloc] initNewGame];
     
     for (CFCell *cell in _gameController.unaffiliatedCells) {
+        [cell setPositionToSpawnPoint];
+        NSLog(@"%f", cell.position.x);
         [self addChild:cell];
     }
     
     [self addChild:_gameController.playerCells[0]];
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
         CFCell *cell    = _gameController.playerCells[0];
+        [cell setPositionToSpawnPoint];
         CFPhage *phage  = cell.phageHead;
         [self addChild:phage];
     }
@@ -53,6 +56,7 @@
     [self addChild:_gameController.enemyCells[0]];
     for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
         CFCell *cell    = _gameController.enemyCells[0];
+        [cell setPositionToSpawnPoint];
         CFPhage *phage  = cell.phageHead;
         [self addChild:phage];
     }

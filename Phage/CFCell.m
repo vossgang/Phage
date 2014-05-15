@@ -7,20 +7,28 @@
 //
 
 #import "CFCell.h"
+#import "CFConstants.h"
 
-@implementation CFCell
+@interface CFCell()
+
+@property (nonatomic,readwrite) CGPoint spawnPoint;
+
+@end
+
+@implementation CFCell {
+}
 
 - (instancetype)initWithAffiliation:(Affiliation)affiliation
                            cellSize:(CellSize)cellSize
                                type:(CellType)type
-                           location:(CGPoint)location
+                           spawnPoint:(CGPoint)spawnPoint
 {
     self = [super initWithImageNamed:[NSString stringWithFormat:@"protocell%lu", type]];
     if (self) {
         _cellAffiliation    = affiliation;
         _cellSize           = cellSize;
         _cellType           = type;
-        _location           = location;
+        _spawnPoint         = spawnPoint;
         self.size           = [self sizeForCellSize:cellSize];
     }
     return self;
@@ -44,7 +52,17 @@
 }
 
 -(CFPhage *)phageHead  {
-    return _phageHead.next;
+    CFPhage *current = _phageHead;
+    _phageHead = current.next;
+    
+    return _phageHead;
+}
+
+
+#pragma mark - Setup Helper Methods
+
+-(void)setPositionToSpawnPoint {
+    self.position = _spawnPoint;
 }
    
 @end
