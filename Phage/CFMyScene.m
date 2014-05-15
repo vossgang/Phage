@@ -41,7 +41,7 @@
         
         
         SKSpriteNode *murky = [SKSpriteNode spriteNodeWithImageNamed:@"murky"];
-        murky.position = CGPointMake(0,500);
+        murky.position = CGPointMake((self.size.width / 2) ,(self.size.height / 2));
         murky.size = CGSizeMake(2000, 2000);
         murky.alpha = 0.3;
         [self addChild:murky];
@@ -174,7 +174,7 @@
 
 - (void)drawArrowAtLocation:(CGPoint)newPosition
 {
-    CGPoint position = [_originCell position];
+//    CGPoint position = [_originCell position];
     
     // draw arrow from position to new position
     
