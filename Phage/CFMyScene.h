@@ -10,6 +10,6 @@
 
 @interface CFMyScene : SKScene
 
-- (NSArray *)returnCellInfoToAI;
+- (NSDictionary *)returnCellInfoToAI;
 
 @end

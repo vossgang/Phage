@@ -20,12 +20,6 @@
     return withValue + (withValue * ((1.0f * ((float)arc4random() / (float)RAND_MAX) - 1.0f) * k_RANDOMIZATION_VALUE / 100));
 }
 
-- (void)obtainCellInformation {
-    CFMyScene *myScene = [CFMyScene new];
-    [myScene returnCellInfoToAI];
-
-}
-
 - (double)calculateScoreForDecisionSizeFactor:(NSInteger)withSizeFactor andDistance:(double)withDistance andPhageNeeded:(NSInteger)withPhageNeeded andPhageTotal:(NSInteger)withPhageTotal andSizeRatio:(NSInteger)withSizeRatio {
     // Calculate score using randomized parameters to hinder the AI from making perfect decisions
     return withSizeFactor + (2 * [self createRandomizationValue:withDistance]) +
@@ -35,12 +29,14 @@
 
 - (void)locateCellsAndDetermineStatus {
     CFMyScene *myScene = [CFMyScene new];
-    NSArray *arrayOfCells = [myScene returnCellInfoToAI];
-    for (CFCell *cell in arrayOfCells) {
+    NSDictionary *dictionaryOfCells = [myScene returnCellInfoToAI];
+    for (CFCell *cell in dictionaryOfCells) {
         switch (cell.cellAffiliation) {
-            case AffiliationAI:
-                //
+            case AffiliationAI: {
+                // Calculate the distance to each object away from AI controlled units
+                
                 break;
+            }
                 
             default:
                 break;

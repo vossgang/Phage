@@ -174,15 +174,15 @@
 
 #pragma mark - Pull cell information for AI to read
 
-- (NSArray *)returnCellInfoToAI {
+- (NSDictionary *)returnCellInfoToAI {
     // Method will query all cells managed by current object, then return their information back to AI controller
-    NSMutableArray *arrayOfCellLocations;
+    NSMutableDictionary *dictionaryyOfCellLocations;
     // Iterate through all children to get cells
     for (CFCell *cell in [self children]) {
-        [arrayOfCellLocations addObject:cell];
+        [dictionaryyOfCellLocations setObject:cell forKey:@"cell"];
     }
     // Return array of cells back to AI
-    return arrayOfCellLocations;
+    return dictionaryyOfCellLocations;
 }
 
 @end
