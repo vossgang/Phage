@@ -14,6 +14,8 @@
 @interface CFMyScene()
 
 @property (nonatomic, strong) CFGameController *gameController;
+@property (nonatomic, weak) CFCell *originCell;
+@property (nonatomic, weak) CFCell *destinationCell;
 
 @end
 
@@ -90,16 +92,97 @@
 
 #pragma mark - User Interaction
 
+// Adds a pan gesture recognizer to the scene's view
+- (void)didMoveToView:(SKView *)view {
+    UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
+    [[self view] addGestureRecognizer:gestureRecognizer];
+}
+
+// Handles the pan
+- (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer {
+    
+    CGPoint touchLocation = [recognizer locationInView:recognizer.view];
+    touchLocation = [self convertPointFromView:touchLocation];
+    
+	if (recognizer.state == UIGestureRecognizerStateBegan) {
+        
+        [self selectCellForTouch:touchLocation];
+        
+        
+    } else if (recognizer.state == UIGestureRecognizerStateChanged) {
+        
+        [self drawArrowAtLocation:touchLocation];
+        [recognizer setTranslation:CGPointZero inView:recognizer.view];
+        
+    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
+        
+        if (_destinationCell) {
+            
+            // open circle timer thing that tracks how many phages should be sent
+            // add tap recognizer on the cell that lets user select phages to send
+        }
+        
+        else {
+            // Remove all animations
+        }
+    }
+}
+
+// Selects player's own cells
+- (void)selectCellForTouch:(CGPoint)touchLocation {
+
+    SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchLocation];
+    
+    // Check that the touched node is a cell
+    if ([touchedNode isKindOfClass:[CFCell class]]) {
+        
+        CFCell *touchedCell = (CFCell *)touchedNode;
+        
+        // Check that the touched cell is owned by Player
+        if (touchedCell.cellAffiliation == AffiliationPlayer) {
+            
+            _originCell = touchedCell;
+            
+            // Recommend adding animation of some kind here to indicate selection
+        }
+    }
+}
+
+- (void)drawArrowAtLocation:(CGPoint)newPosition
+{
+    CGPoint position = [_originCell position];
+    
+    // draw arrow from position to new position
+    
+    SKSpriteNode *destinationNode = (SKSpriteNode *)[self nodeAtPoint:newPosition];
+    if ([destinationNode isKindOfClass:[CFCell class]]) {
+        CFCell *destinationCell = (CFCell *)destinationNode;
+        if (![destinationCell isEqual:_originCell]) {
+            _destinationCell = destinationCell;
+            
+            // show animation around destination cell
+        }
+        else {
+            _destinationCell = nil;
+            
+            // hide all animations around not-origin cells
+        }
+    }
+    
+    
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch begins */
+    
+    
     
 
 }
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    
 
 
 }
