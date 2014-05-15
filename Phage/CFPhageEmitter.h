@@ -17,7 +17,7 @@
 @property (nonatomic) Affiliation affiliation;
 @property (nonatomic, weak) CFPhageEmitter *next;
 
-
++(instancetype)emitterWithCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation;
 -(instancetype)initWithTargetCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation;
 
 @end

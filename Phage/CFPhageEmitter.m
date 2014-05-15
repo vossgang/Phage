@@ -10,6 +10,11 @@
 
 @implementation CFPhageEmitter
 
++(instancetype)emitterWithCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation
+{
+    return [[CFPhageEmitter alloc]initWithTargetCell:targetCell affiliation:affiliation];
+}
+
 -(instancetype)initWithTargetCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation
 {
     
@@ -30,11 +35,5 @@
     return self;
 }
 
-//-(CFPhage *)next
-//{
-//    CFPhage *first = _next;
-//    _next = first.next;
-//    return first;
-//}
 
 @end
