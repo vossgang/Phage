@@ -25,4 +25,11 @@
 
 }
 
+- (double)calculateScoreForDecisionSizeFactor:(NSInteger)withSizeFactor andDistance:(double)withDistance andPhageNeeded:(NSInteger)withPhageNeeded andPhageTotal:(NSInteger)withPhageTotal andSizeRatio:(NSInteger)withSizeRatio {
+    // Calculate score using randomized parameters to hinder the AI from making perfect decisions
+    return withSizeFactor + (2 * [self createRandomizationValue:withDistance]) +
+    ([self createRandomizationValue:withPhageNeeded] - [self createRandomizationValue:withPhageTotal])
+    / withSizeRatio;
+}
+
 @end

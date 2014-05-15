@@ -11,5 +11,6 @@
 @interface CFAI : CFPlayer
 
 - (double)createRandomizationValue:(double)withValue;
+- (double)calculateScoreForDecisionSizeFactor:(NSInteger)withSizeFactor andDistance:(double)withDistance andPhageNeeded:(NSInteger)withPhageNeeded andPhageTotal:(NSInteger)withPhageTotal andSizeRatio:(NSInteger)withSizeRatio;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "CFAI.h"
 
 @interface PhageTests : XCTestCase
 
@@ -26,9 +27,16 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+- (void)testCallingAIScoringMethod {
+    CFAI *ai = [CFAI new];
+    
+    //sizeFactor: L = 0, M = 50, S = 100 (play around with this number)
+    //sizeRatio: L = 1, M = 2, S = 3 (approximately correct)
+    for (int i = 0; i < 100; i++) {
+    double score = [ai calculateScoreForDecisionSizeFactor:50 andDistance:2000 andPhageNeeded:50 andPhageTotal:50 andSizeRatio:2];
+        XCTAssert(score > 45 || score < 65, @"Score of %f is outside of range",score);
+    NSLog(@"Score: %f",score);
+    }
 }
 
 @end
