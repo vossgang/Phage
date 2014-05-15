@@ -7,6 +7,7 @@
 //
 
 #import "CFAI.h"
+#import "CFCell.h"
 #import "CFMyScene.h"
 
 #define k_RANDOMIZATION_VALUE 10
@@ -35,6 +36,9 @@
 - (void)locateCellsAndDetermineStatus {
     CFMyScene *myScene = [CFMyScene new];
     NSArray *arrayOfCells = [myScene returnCellInfoToAI];
+    for (CFCell *cell in arrayOfCells) {
+        // Do shit
+    }
 }
 
 - (double)calculateDistanceToCellUsingStartPoint:(CGPoint)withStartPoint andEndPoint:(CGPoint)withEndPoint {
