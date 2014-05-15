@@ -34,7 +34,24 @@
         switch (cell.cellAffiliation) {
             case AffiliationAI: {
                 // Calculate the distance to each object away from AI controlled units
-                
+                for (CFCell *targetCell in dictionaryOfCells) {
+                    switch (cell.cellAffiliation) {
+                        case AffiliationNeutral: {
+                            // Neutral cells
+                            double distanceToCell =
+                            [self calculateDistanceToCellUsingStartPoint:cell.location andEndPoint:targetCell.location];
+                            break;
+                        }
+                        case AffiliationPlayer: {
+                            // Player cells
+                            double distanceToCell =
+                            [self calculateDistanceToCellUsingStartPoint:cell.location andEndPoint:targetCell.location];
+                            break;
+                        }
+                        default:
+                            break;
+                    }
+                }
                 break;
             }
                 
