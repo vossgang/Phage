@@ -63,10 +63,10 @@
         [cell setPositionToSpawnPoint];
         [self addChild:cell];
     }
-//    
-//    [self addChild:_gameController.playerCells[0]];
-//    CFCell *playerCell = _gameController.playerCells[0];
-//    [playerCell setPositionToSpawnPoint];
+    
+    [self addChild:_gameController.playerCells[0]];
+    CFCell *playerCell = _gameController.playerCells[0];
+    [playerCell setPositionToSpawnPoint];
 //    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
 //        CFPhageEmitter *phage = playerCell.phageHead;
 ////        phage.position = [self randomPhagePositionRelativeToCell:playerCell];
@@ -75,10 +75,10 @@
 //
 //        [self addChild:phage];
 //    }
-//    
-//    [self addChild:_gameController.enemyCells[0]];
-//    CFCell *enemyCell = _gameController.enemyCells[0];
-//    [enemyCell setPositionToSpawnPoint];
+    
+    [self addChild:_gameController.enemyCells[0]];
+    CFCell *enemyCell = _gameController.enemyCells[0];
+    [enemyCell setPositionToSpawnPoint];
 //    for (int i = 0; i < NUMBER_OF_PHAGES_PER_CELL; i++) {
 //        CFPhageEmitter *phage = enemyCell.phageHead;
 ////        phage.position = [self randomPhagePositionRelativeToCell:enemyCell];
@@ -99,7 +99,6 @@
 
 // Handles the pan
 - (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer {
-    
     CGPoint touchLocation = [recognizer locationInView:recognizer.view];
     touchLocation = [self convertPointFromView:touchLocation];
     
@@ -109,7 +108,7 @@
         
         
     } else if (recognizer.state == UIGestureRecognizerStateChanged) {
-        
+
         [self drawArrowAtLocation:touchLocation];
         [recognizer setTranslation:CGPointZero inView:recognizer.view];
         

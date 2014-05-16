@@ -18,11 +18,7 @@
 
 -(instancetype)initWithTargetCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation
 {
-    SKTextureAtlas *phageAtlas      = [SKTextureAtlas atlasNamed:@"phageX"];
-    NSString *textureName           = [NSString stringWithFormat:@"phage%d", (int)affiliation];
-    SKTexture *texture              = [phageAtlas textureNamed:textureName];
-    
-    self = [super initWithTexture:texture];
+    self = [super init];
     
     if (self) {
         _targetCell     = targetCell;
