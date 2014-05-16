@@ -19,17 +19,32 @@
 
 -(id)initCellForNeutral
 {
-    return [self initWithAffiliation:AffiliationNeutral cellSize:[self randomSizeClass] type:TypeNormal spawnPoint:[self randomPosition] effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationNeutral] sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationNeutral]];
+    return [self initWithAffiliation:AffiliationNeutral
+                            cellSize:[self randomSizeClass]
+                                type:TypeNormal
+                          spawnPoint:[self randomPosition]
+                      effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationNeutral]
+                      sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationNeutral]];
 }
 
 -(id)initCellForAI
 {
-    return [self initWithAffiliation:AffiliationAI cellSize:SizeLarge type:TypeFactory spawnPoint:STARTING_AI_SPAWN_POINT effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationAI] sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationAI]];
+    return [self initWithAffiliation:AffiliationAI
+                            cellSize:SizeLarge
+                                type:TypeFactory
+                          spawnPoint:STARTING_AI_SPAWN_POINT
+                      effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationAI]
+                      sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationAI]];
 }
 
 -(id)initCellForPlayer
 {
-    return [self initWithAffiliation:AffiliationPlayer cellSize:SizeLarge type:TypeFactory spawnPoint:STARTING_PLAYER_SPAWN_POINT effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationPlayer] sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationPlayer]];
+    return [self initWithAffiliation:AffiliationPlayer
+                            cellSize:SizeLarge
+                                type:TypeFactory
+                          spawnPoint:STARTING_PLAYER_SPAWN_POINT
+                      effectsEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationPlayer]
+                      sendingEmitter:[CFPhageEmitter emitterWithCell:self affiliation:AffiliationPlayer]];
 }
 
 - (instancetype)initWithAffiliation:(Affiliation)affiliation
@@ -115,7 +130,7 @@
 
 -(void)assignPhysics
 {
-    self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
+    self.physicsBody                    = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
     self.physicsBody.allowsRotation     = YES;
     self.physicsBody.affectedByGravity  = NO;
     self.physicsBody.dynamic            = YES;
