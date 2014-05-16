@@ -113,46 +113,41 @@
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
         
         [self selectOriginCellForTouch:touchLocation];
-        [self createArrowAtLocation:touchLocation];
+        [self createShapeLayer];
     }
     
-    // In the middle of pan, "highlight" the destination cell if there is one
+    // In the middle of pan, draw arrow and find any destination cells in the path
     else if (recognizer.state == UIGestureRecognizerStateChanged) {
         
         if (_originCell) {
             
             [self selectDestinationCellForTouch:touchLocation];
             [self drawArrowAtLocation:touchLocation];
-            
         }
         
         [recognizer setTranslation:CGPointZero inView:recognizer.view];
-        
     }
     
     // At the end of the pan, if there's a destination cell, give user some options
-    else if (recognizer.state == UIGestureRecognizerStateEnded) {
+    else {
         
-        if (_originCell) {
-            [self growCell:_originCell];
-        }
+//        if (_originCell) {
+//            [self growCell:_originCell];
+//        }
         
         if (_destinationCell) {
             
             [self growCell:_destinationCell];
-            
+//            [self drawArrowAtLocation:_destinationCell.position];
             // open circle timer thing that tracks how many phages should be sent
             // add tap recognizer on the cell that lets user select phages to send
         }
-        
         else {
-            
-            // Remove all animations
+            [_shapeLayer removeFromSuperlayer];
+            _originCell = nil;
+            _destinationCell = nil;
         }
         
-        NSLog(@"origin/destination set to nil");
-        _originCell = nil;
-        _destinationCell = nil;
     }
 }
 
@@ -169,17 +164,13 @@
         if (touchedCell.cellAffiliation == AffiliationNeutral) {
             
             _originCell = touchedCell;
-            _originCell.isSelected = YES;
             
-            NSLog(@"origin selected");
         }
         else {
-            _originCell.isSelected = NO;
             _originCell = nil;
         }
     }
     else {
-        _originCell.isSelected = NO;
         _originCell = nil;
     }
 }
@@ -198,43 +189,42 @@
         if (![touchedCell isEqual:_originCell] && ![touchedCell isEqual:_destinationCell]) {
             
             _destinationCell = touchedCell;
-            _destinationCell.isSelected = YES;
             [self shrinkCell:_destinationCell];
-            NSLog(@"destination selected");
         }
-
     }
     
     else
     {
         if (_destinationCell) {
-            _destinationCell.isSelected = NO;
             [self growCell:_destinationCell];
             _destinationCell = nil;
-            NSLog(@"destination unselected");
         }
     }
 
 }
 
-- (void)createArrowAtLocation:(CGPoint)position
+- (void)createShapeLayer
 {
-    _arrow = [UIBezierPath bezierPath];
-    
     _shapeLayer = [CAShapeLayer layer];
-    _shapeLayer.path = [_arrow CGPath];
-    _shapeLayer.strokeColor = [[UIColor blueColor] CGColor];
+    _shapeLayer.strokeColor = [[UIColor whiteColor] CGColor];
     _shapeLayer.lineWidth = 3.0;
     _shapeLayer.fillColor = [[UIColor clearColor] CGColor];
     
-    [_arrow moveToPoint:position];
     [self.view.layer addSublayer:_shapeLayer];
-    
 }
 
 - (void)drawArrowAtLocation:(CGPoint)newPosition
 {
+    CGPoint position = _originCell.position;
+    position = [self convertPointFromView:position];
+    newPosition = [self convertPointFromView:newPosition];
     
+    _arrow = [UIBezierPath bezierPath];
+    
+    [_arrow moveToPoint:position];
+    [_arrow addLineToPoint:newPosition];
+    _shapeLayer.path = [_arrow CGPath];
+
 }
 
 - (void)shrinkCell:(CFCell *)cell
