@@ -141,6 +141,12 @@
 //            [self drawArrowAtLocation:_destinationCell.position];
             // open circle timer thing that tracks how many phages should be sent
             // add tap recognizer on the cell that lets user select phages to send
+            
+            // release line for now
+            [_shapeLayer removeFromSuperlayer];
+            _originCell = nil;
+            _destinationCell = nil;
+
         }
         else {
             [_shapeLayer removeFromSuperlayer];
