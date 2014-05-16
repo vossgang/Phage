@@ -301,7 +301,6 @@
 
 }
 
-
 #pragma mark - Pull cell information for AI to read
 
 - (NSArray *)returnCellInfoToAI
