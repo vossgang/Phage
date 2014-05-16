@@ -13,5 +13,7 @@
 
 -(CGFloat)distanceBetweenCellLocation:(CFCell *)location andDestinationCell:(CFCell *)destinationCell;
 -(BOOL)isScuttle:(CFCell *)scuttle inPathBetweenCellLocation:(CFCell *)location andDestinationCell:(CFCell *)destinationCell;
+- (double)createRandomizationValue:(double)withValue;
+
 
 @end

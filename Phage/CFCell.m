@@ -40,7 +40,7 @@
                      sendingEmitter:(CFPhageEmitter *)sendingEmitter
 
 {
-    self = [super initWithTexture:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"protocell%d", affiliation]]];
+    self = [super initWithTexture:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"cell", affiliation]]];
     if (self) {
         _cellAffiliation    = affiliation;
         _cellSize           = cellSize;
@@ -49,6 +49,8 @@
         _effectsEmitter     = effectsEmitter;
         _sendingEmitteer    = sendingEmitter;
         self.size           = [self sizeForCellSize:cellSize];
+        self.colorBlendFactor = .9;
+        self.color = [UIColor purpleColor];
         
         [self addChild:effectsEmitter];
         [self addChild:sendingEmitter];

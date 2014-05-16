@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		00F0302119255DC7000AE07C /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = 00F0302019255DC7000AE07C /* Background.sks */; };
-		00F0302319255DD0000AE07C /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F0302219255DD0000AE07C /* cell.png */; };
 		1BAA97BC1925617E002F1637 /* murky.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA97BB1925617E002F1637 /* murky.png */; };
 		1BB9B9761925118800A0896E /* protocellX.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9B9741925118800A0896E /* protocellX.atlas */; };
 		1BB9B9771925118800A0896E /* phageX.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9B9751925118800A0896E /* phageX.atlas */; };
@@ -28,7 +27,7 @@
 		C900312A1922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
 		C90031321922BA470085F1E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C90031301922BA470085F1E3 /* InfoPlist.strings */; };
 		C90031341922BA470085F1E3 /* PhageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90031331922BA470085F1E3 /* PhageTests.m */; };
-		C91D3F991925571F001B5937 /* CFAI.m in Sources */ = {isa = PBXBuildFile; fileRef = C91D3F981925571F001B5937 /* CFAI.m */; };
+		C9177B0C192579C500E3AE7F /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9177B0B192579C500E3AE7F /* cell.png */; };
 		C9693D1B1923D6D00038A669 /* CFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D171923D6D00038A669 /* CFPlayer.m */; };
 		C9693D251923D6F40038A669 /* CFGameCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D1E1923D6F40038A669 /* CFGameCenterViewController.m */; };
 		C9693D261923D6F40038A669 /* CFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D201923D6F40038A669 /* CFGameController.m */; };
@@ -51,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		00F0302019255DC7000AE07C /* Background.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Background.sks; sourceTree = SOURCE_ROOT; };
-		00F0302219255DD0000AE07C /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = SOURCE_ROOT; };
 		1BAA97BB1925617E002F1637 /* murky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = murky.png; sourceTree = "<group>"; };
 		1BB9B9741925118800A0896E /* protocellX.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = protocellX.atlas; sourceTree = "<group>"; };
 		1BB9B9751925118800A0896E /* phageX.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = phageX.atlas; sourceTree = "<group>"; };
@@ -81,8 +79,7 @@
 		C900312F1922BA470085F1E3 /* PhageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhageTests-Info.plist"; sourceTree = "<group>"; };
 		C90031311922BA470085F1E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C90031331922BA470085F1E3 /* PhageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhageTests.m; sourceTree = "<group>"; };
-		C91D3F971925571F001B5937 /* CFAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFAI.h; sourceTree = "<group>"; };
-		C91D3F981925571F001B5937 /* CFAI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFAI.m; sourceTree = "<group>"; };
+		C9177B0B192579C500E3AE7F /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
 		C9693D161923D6D00038A669 /* CFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPlayer.h; sourceTree = "<group>"; };
 		C9693D171923D6D00038A669 /* CFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPlayer.m; sourceTree = "<group>"; };
 		C9693D1D1923D6F40038A669 /* CFGameCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFGameCenterViewController.h; path = Phage/CFGameCenterViewController.h; sourceTree = "<group>"; };
@@ -130,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				1BAA97BB1925617E002F1637 /* murky.png */,
-				00F0302219255DD0000AE07C /* cell.png */,
 				C90031201922BA470085F1E3 /* Images.xcassets */,
 				1BB9B9741925118800A0896E /* protocellX.atlas */,
 				1BB9B9751925118800A0896E /* phageX.atlas */,
@@ -161,8 +157,6 @@
 				C90031131922BA470085F1E3 /* CFAppDelegate.m */,
 				C9693D1F1923D6F40038A669 /* CFGameController.h */,
 				C9693D201923D6F40038A669 /* CFGameController.m */,
-				C91D3F971925571F001B5937 /* CFAI.h */,
-				C91D3F981925571F001B5937 /* CFAI.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -211,6 +205,7 @@
 				3A95665E19257656000224D0 /* CFAI.h */,
 				3A95665F19257656000224D0 /* CFAI.m */,
 				C976FE361922C7F50020AD6F /* CFCell.h */,
+				C9177B0B192579C500E3AE7F /* cell.png */,
 				C976FE371922C7F50020AD6F /* CFCell.m */,
 				C976FE331922C60D0020AD6F /* CFPhageEmitter.h */,
 				C976FE341922C60D0020AD6F /* CFPhageEmitter.m */,
@@ -338,8 +333,8 @@
 			files = (
 				1BB9B9771925118800A0896E /* phageX.atlas in Resources */,
 				C900310E1922BA470085F1E3 /* InfoPlist.strings in Resources */,
-				00F0302319255DD0000AE07C /* cell.png in Resources */,
 				C90031211922BA470085F1E3 /* Images.xcassets in Resources */,
+				C9177B0C192579C500E3AE7F /* cell.png in Resources */,
 				1BAA97BC1925617E002F1637 /* murky.png in Resources */,
 				00F0302119255DC7000AE07C /* Background.sks in Resources */,
 				C90031171922BA470085F1E3 /* Main.storyboard in Resources */,
@@ -367,7 +362,6 @@
 				C90031101922BA470085F1E3 /* main.m in Sources */,
 				C90031141922BA470085F1E3 /* CFAppDelegate.m in Sources */,
 				C976FE381922C7F50020AD6F /* CFCell.m in Sources */,
-				C91D3F991925571F001B5937 /* CFAI.m in Sources */,
 				C9693D1B1923D6D00038A669 /* CFPlayer.m in Sources */,
 				C9693D251923D6F40038A669 /* CFGameCenterViewController.m in Sources */,
 				C9693D261923D6F40038A669 /* CFGameController.m in Sources */,
