@@ -45,6 +45,7 @@
         [murky runAction:[SKAction repeatActionForever:rotation]];
         
         [self layoutBoard];
+        [self animateCellsInScene];
 
     }
     return self;
@@ -52,6 +53,28 @@
 
 
 #pragma mark - Cell Management
+
+-(void)animateCellsInScene {
+
+    [[NSOperationQueue new]addOperationWithBlock:^{
+        for (CFCell *cell in [self children]) {
+            [cell runAction:[SKAction moveByX:[self randomCellPosition] y:[self randomCellPosition] duration:10]];
+        }
+        sleep(10);
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self animateCellsInScene];
+        }];
+    }];
+
+}
+
+-(NSInteger)randomCellPosition {
+    switch (arc4random_uniform(2)) {
+        case TRUE:  return arc4random_uniform(50);
+        case FALSE: return -arc4random_uniform(50);
+    }
+    return 1;
+}
 
 #pragma mark - Board Composition
 
