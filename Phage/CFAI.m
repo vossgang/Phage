@@ -40,17 +40,17 @@
     return YES;
 }
 
-- (double)createRandomizationValue:(double)withValue {
+- (double)createRandomizationValue:(double)withValue
+{
     // Generate a random value between -10% and 10%, then modify the incomming value by the random value
     // and return it to the AI method calling this
     return withValue + (withValue * ((1.0f * ((float)arc4random() / (float)RAND_MAX) - 1.0f) * k_RANDOMIZATION_VALUE / 100));
 }
 
-- (void)obtainCellInformation {
+- (void)obtainCellInformation
+{
     CFMyScene *myScene = [CFMyScene new];
     [myScene returnCellInfoToAI];
-    
 }
-
 
 @end

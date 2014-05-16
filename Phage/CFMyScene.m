@@ -51,7 +51,6 @@
     return self;
 }
 
-
 #pragma mark - Cell Management
 
 -(void)animateCellsInScene {
@@ -121,7 +120,8 @@
 }
 
 // Handles the pan
-- (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer {
+- (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer
+{
     CGPoint touchLocation = [recognizer locationInView:recognizer.view];
     touchLocation = [self convertPointFromView:touchLocation];
     
@@ -150,8 +150,8 @@
 }
 
 // Selects player's own cells
-- (void)selectCellForTouch:(CGPoint)touchLocation {
-
+- (void)selectCellForTouch:(CGPoint)touchLocation
+{
     SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchLocation];
     
     // Check that the touched node is a cell
@@ -189,8 +189,6 @@
             // hide all animations around not-origin cells
         }
     }
-    
-    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -203,13 +201,13 @@
 -(void)update:(CFTimeInterval)currentTime
 {
 
-
 }
 
 
 #pragma mark - Pull cell information for AI to read
 
-- (NSArray *)returnCellInfoToAI {
+- (NSArray *)returnCellInfoToAI
+{
     // Method will query all cells managed by current object, then return their information back to AI controller
     NSMutableArray *arrayOfCellLocations;
     // Iterate through all children to get cells

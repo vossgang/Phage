@@ -41,6 +41,6 @@
     
     // Present the scene.
     [skView presentScene:scene];
-    
 }
+
 @end
