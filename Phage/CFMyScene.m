@@ -33,6 +33,8 @@
         self.physicsBody        = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.backgroundColor    = [SKColor colorWithRed:0.08 green:0.0 blue:0.0 alpha:1.0];
         
+        //creating the scene
+        
         //Adding Background assets for the game screen - sks and pngs in Supporting Files
         NSString *cellBackgroundPath = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"sks"];
         _cellBackground = [NSKeyedUnarchiver unarchiveObjectWithFile:cellBackgroundPath];
