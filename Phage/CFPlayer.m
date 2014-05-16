@@ -10,7 +10,9 @@
 
 @implementation CFPlayer
 
--(instancetype)initWithColor:(UIColor *)color name:(NSString *)name playerCells:(NSArray *)playerCells
+-(instancetype)initWithColor:(UIColor *)color
+                        name:(NSString *)name
+                 playerCells:(NSArray *)playerCells
 {
     self = [super init];
     if (self) {

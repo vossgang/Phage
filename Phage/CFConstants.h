@@ -13,12 +13,16 @@
 #define MAXIMUM_CELL_SIZE 120
 #define MAXIMUM_NUMBER_OF_PHAGES 120
 
-#define NUMBER_OF_CELLS 20
+#define NUMBER_OF_CELLS 40
 #define NUMBER_OF_SECTIONS 2
 #define NUMBER_OF_PHAGES_PER_CELL 100
 
 #define PHAGE_EMITTER_SIZE CGSizeMake(10, 20)
 #define PHAGE_DIAMETER 10
+
+#warning Need actual starting points for Player and AI cells
+#define STARTING_PLAYER_SPAWN_POINT CGPointMake(200, 200)
+#define STARTING_AI_SPAWN_POINT     CGPointMake(600, 600)
 
 typedef enum : NSUInteger {
     SizeSmall,

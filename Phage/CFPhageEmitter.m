@@ -7,6 +7,7 @@
 //
 
 #import "CFPhageEmitter.h"
+#import "CFCell.h"
 
 @implementation CFPhageEmitter
 
@@ -17,12 +18,7 @@
 
 -(instancetype)initWithTargetCell:(CFCell *)targetCell affiliation:(Affiliation)affiliation
 {
-    
-    SKTextureAtlas *phageAtlas      = [SKTextureAtlas atlasNamed:@"phageX"];
-    NSString *textureName           = [NSString stringWithFormat:@"phage%d", (int)affiliation];
-    SKTexture *texture              = [phageAtlas textureNamed:textureName];
-    
-    self = [super initWithTexture:texture];
+    self = [super init];
     
     if (self) {
         _targetCell     = targetCell;
@@ -31,6 +27,9 @@
         _affiliation    = affiliation;
         self.size       = PHAGE_EMITTER_SIZE;
         
+    }
+    if (affiliation == AffiliationNeutral){
+        self.hidden = YES;
     }
     return self;
 }
