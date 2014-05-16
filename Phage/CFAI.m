@@ -82,14 +82,14 @@ CGPoint coordMapPlayer[NUMBER_OF_CELLS];
                     switch (cell.cellAffiliation) {
                         case AffiliationNeutral: {
                             // Neutral cells
-//                            double distanceToCell =
-//                            [self calculateDistanceToCellUsingStartPoint:cell.location andEndPoint:targetCell.location];
-//                            break;
+                            double distanceToCell =
+                            [self calculateDistanceToCellUsingStartPoint:cell.position andEndPoint:targetCell.position];
+                            break;
                         }
                         case AffiliationPlayer: {
                             // Player cells
-//                            double distanceToCell =
-//                            [self calculateDistanceToCellUsingStartPoint:cell.location andEndPoint:targetCell.location];
+                            double distanceToCell =
+                            [self calculateDistanceToCellUsingStartPoint:cell.position andEndPoint:targetCell.position];
                             break;
                         }
                         default:
