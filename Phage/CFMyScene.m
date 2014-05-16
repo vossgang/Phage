@@ -11,11 +11,16 @@
 #import "CFPhageEmitter.h"
 #import "CFGameController.h"
 
+#define PERCENT_TO_SHRINK_SELECTED_CELL 0.9
+
 @interface CFMyScene()
 
 @property (nonatomic, strong) CFGameController *gameController;
+@property (nonatomic, weak) CFCell *selectedCell;
 @property (nonatomic, weak) CFCell *originCell;
 @property (nonatomic, weak) CFCell *destinationCell;
+@property (nonatomic, strong) UIBezierPath *arrow;
+@property (nonatomic, strong) CAShapeLayer *shapeLayer;
 
 @end
 
@@ -104,33 +109,84 @@
     CGPoint touchLocation = [recognizer locationInView:recognizer.view];
     touchLocation = [self convertPointFromView:touchLocation];
     
+    // At start of pan, select the cell as the origin point
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
         
-        [self selectCellForTouch:touchLocation];
+        [self selectOriginCellForTouch:touchLocation];
+        [self createArrowAtLocation:touchLocation];
+    }
+    
+    // In the middle of pan, "highlight" the destination cell if there is one
+    else if (recognizer.state == UIGestureRecognizerStateChanged) {
         
+        if (_originCell) {
+            
+            [self selectDestinationCellForTouch:touchLocation];
+            [self drawArrowAtLocation:touchLocation];
+            
+        }
         
-    } else if (recognizer.state == UIGestureRecognizerStateChanged) {
-        
-        [self drawArrowAtLocation:touchLocation];
         [recognizer setTranslation:CGPointZero inView:recognizer.view];
         
-    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
+    }
+    
+    // At the end of the pan, if there's a destination cell, give user some options
+    else if (recognizer.state == UIGestureRecognizerStateEnded) {
+        
+        if (_originCell) {
+            [self growCell:_originCell];
+        }
         
         if (_destinationCell) {
+            
+            [self growCell:_destinationCell];
             
             // open circle timer thing that tracks how many phages should be sent
             // add tap recognizer on the cell that lets user select phages to send
         }
         
         else {
+            
             // Remove all animations
         }
+        
+        NSLog(@"origin/destination set to nil");
+        _originCell = nil;
+        _destinationCell = nil;
     }
 }
 
-// Selects player's own cells
-- (void)selectCellForTouch:(CGPoint)touchLocation {
+// Selects the origin cell
+- (void)selectOriginCellForTouch:(CGPoint)touchLocation {
 
+    SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchLocation];
+    
+    // Check that the touched node is a cell
+    if ([touchedNode isKindOfClass:[CFCell class]]) {
+        CFCell *touchedCell = (CFCell *)touchedNode;
+        
+        // Check that the touched cell is owned by Player (Neutral for testing)
+        if (touchedCell.cellAffiliation == AffiliationNeutral) {
+            
+            _originCell = touchedCell;
+            _originCell.isSelected = YES;
+            
+            NSLog(@"origin selected");
+        }
+        else {
+            _originCell.isSelected = NO;
+            _originCell = nil;
+        }
+    }
+    else {
+        _originCell.isSelected = NO;
+        _originCell = nil;
+    }
+}
+
+// Selects a destination cell upon encountering a foreign cell
+- (void)selectDestinationCellForTouch:(CGPoint)touchLocation
+{
     SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchLocation];
     
     // Check that the touched node is a cell
@@ -138,47 +194,83 @@
         
         CFCell *touchedCell = (CFCell *)touchedNode;
         
-        // Check that the touched cell is owned by Player
-        if (touchedCell.cellAffiliation == AffiliationPlayer) {
+        // Check that the touched cell is not the origin cell or equal to the current destination cell
+        if (![touchedCell isEqual:_originCell] && ![touchedCell isEqual:_destinationCell]) {
             
-            _originCell = touchedCell;
-            
-            // Recommend adding animation of some kind here to indicate selection
+            _destinationCell = touchedCell;
+            _destinationCell.isSelected = YES;
+            [self shrinkCell:_destinationCell];
+            NSLog(@"destination selected");
+        }
+
+    }
+    
+    else
+    {
+        if (_destinationCell) {
+            _destinationCell.isSelected = NO;
+            [self growCell:_destinationCell];
+            _destinationCell = nil;
+            NSLog(@"destination unselected");
         }
     }
+
+}
+
+- (void)createArrowAtLocation:(CGPoint)position
+{
+    _arrow = [UIBezierPath bezierPath];
+    
+    _shapeLayer = [CAShapeLayer layer];
+    _shapeLayer.path = [_arrow CGPath];
+    _shapeLayer.strokeColor = [[UIColor blueColor] CGColor];
+    _shapeLayer.lineWidth = 3.0;
+    _shapeLayer.fillColor = [[UIColor clearColor] CGColor];
+    
+    [_arrow moveToPoint:position];
+    [self.view.layer addSublayer:_shapeLayer];
+    
 }
 
 - (void)drawArrowAtLocation:(CGPoint)newPosition
 {
-    CGPoint position = [_originCell position];
-    
-    // draw arrow from position to new position
-    
-    SKSpriteNode *destinationNode = (SKSpriteNode *)[self nodeAtPoint:newPosition];
-    if ([destinationNode isKindOfClass:[CFCell class]]) {
-        CFCell *destinationCell = (CFCell *)destinationNode;
-        if (![destinationCell isEqual:_originCell]) {
-            _destinationCell = destinationCell;
-            
-            // show animation around destination cell
-        }
-        else {
-            _destinationCell = nil;
-            
-            // hide all animations around not-origin cells
-        }
-    }
-    
     
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)shrinkCell:(CFCell *)cell
+{
+    cell.size = CGSizeMake(cell.size.width * PERCENT_TO_SHRINK_SELECTED_CELL, cell.size.height * PERCENT_TO_SHRINK_SELECTED_CELL);
+}
+
+- (void)growCell:(CFCell *)cell
+{
+    cell.size = CGSizeMake(cell.size.width / PERCENT_TO_SHRINK_SELECTED_CELL, cell.size.height / PERCENT_TO_SHRINK_SELECTED_CELL);
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch begins */
     
+    UITouch *touch = [touches anyObject];
+    CGPoint position = [touch locationInNode:self];
+    SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:position];
     
     
+    // Check that the touched node is a cell
+    if ([touchedNode isKindOfClass:[CFCell class]]) {
+        
+        _selectedCell = (CFCell *)touchedNode;
+        [self shrinkCell:_selectedCell];
 
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (_selectedCell) {
+        [self growCell:_selectedCell];
+        _selectedCell = nil;
+    }
 }
 
 -(void)update:(CFTimeInterval)currentTime
@@ -186,6 +278,5 @@
 
 
 }
-
 
 @end
