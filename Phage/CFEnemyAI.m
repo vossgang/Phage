@@ -1,12 +1,12 @@
 //
-//  CFAI.m
+//  CFEnemyAI.m
 //  Phage
 //
-//  Created by Anton Rivera on 5/15/14.
+//  Created by Matthew Voss on 5/16/14.
 //  Copyright (c) 2014 Code Fellows. All rights reserved.
 //
 
-#import "CFAI.h"
+#import "CFEnemyAI.h"
 #import "CFMyScene.h"
 #import "CFCell.h"
 
@@ -16,8 +16,8 @@
 CGPoint coordMapNeutral[NUMBER_OF_CELLS];
 CGPoint coordMapPlayer[NUMBER_OF_CELLS];
 
+@implementation CFEnemyAI
 
-@implementation CFAI
 
 -(CGFloat)distanceBetweenCellLocation:(CFCell *)location andDestinationCell:(CFCell *)destinationCell
 {
@@ -104,5 +104,6 @@ CGPoint coordMapPlayer[NUMBER_OF_CELLS];
         }
     }
 }
+
 
 @end
