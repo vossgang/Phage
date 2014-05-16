@@ -21,9 +21,8 @@
 #define PHAGE_EMITTER_SIZE CGSizeMake(10, 20)
 #define PHAGE_DIAMETER 10
 
-#warning Need actual starting points for Player and AI cells
 #define STARTING_PLAYER_SPAWN_POINT CGPointMake(200, 200)
-#define STARTING_AI_SPAWN_POINT     CGPointMake(600, 600)
+#define STARTING_AI_SPAWN_POINT     CGPointMake(824, 568)
 
 typedef enum : NSUInteger {
     SizeSmall,
