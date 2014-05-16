@@ -10,6 +10,7 @@
 #import "CFCell.h"
 #import "CFPhageEmitter.h"
 #import "CFGameController.h"
+#import "math.h"
 
 @interface CFMyScene()
 
@@ -20,7 +21,9 @@
 
 @end
 
-@implementation CFMyScene
+@implementation CFMyScene {
+    BOOL deltaSecondFlag;
+}
 
 -(id)initWithSize:(CGSize)size
 {
@@ -45,7 +48,6 @@
         [murky runAction:[SKAction repeatActionForever:rotation]];
         
         [self layoutBoard];
-        [self animateCellsInScene];
 
     }
     return self;
@@ -53,27 +55,20 @@
 
 #pragma mark - Cell Management
 
--(void)animateCellsInScene {
-
-    [[NSOperationQueue new]addOperationWithBlock:^{
-        for (CFCell *cell in [self children]) {
-            [cell runAction:[SKAction moveByX:[self randomCellPosition] y:[self randomCellPosition] duration:10]];
-        }
-        sleep(10);
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self animateCellsInScene];
-        }];
-    }];
-
+-(CGPoint)randomVariationOfPoint:(CGPoint)point {
+    
+    return CGPointMake([self randomVariationOfNumber:point.x], [self randomVariationOfNumber:point.y]);
 }
 
--(NSInteger)randomCellPosition {
+-(NSInteger)randomVariationOfNumber:(NSInteger)number {
+    
     switch (arc4random_uniform(2)) {
-        case TRUE:  return arc4random_uniform(50);
-        case FALSE: return -arc4random_uniform(50);
+        case TRUE:  return number +  arc4random_uniform(CELL_DRIFT_DISTANCE);
+        case FALSE: return number - arc4random_uniform(CELL_DRIFT_DISTANCE);
     }
     return 1;
 }
+
 
 #pragma mark - Board Composition
 
@@ -200,6 +195,16 @@
 
 -(void)update:(CFTimeInterval)currentTime
 {
+    BOOL newDeltaSecondFlag = (abs(currentTime) % 2);
+    
+    //This 'if' statement fires once a second
+    if (newDeltaSecondFlag != deltaSecondFlag) {
+        for (CFCell *cell in [self children]) {
+            [cell runAction:[SKAction moveTo:[self randomVariationOfPoint:cell.position] duration:5]];
+        }
+    }
+    
+    deltaSecondFlag = newDeltaSecondFlag;
 
 }
 

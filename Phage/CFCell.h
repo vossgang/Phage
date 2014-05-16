@@ -27,9 +27,12 @@ static NSString * const kLargeCellKey   = @"largeCell";
 @property (nonatomic, strong) CFPhageEmitter *phageHead;
 @property (nonatomic, weak) CFPlayer *owner;
 @property (nonatomic) CGPoint location;
+@property (nonatomic, readwrite) NSInteger inertiaX, inertiaY;
 
 @property (nonatomic, strong) CFPhageEmitter *effectsEmitter;
 @property (nonatomic, strong) CFPhageEmitter *sendingEmitteer;
+
+
 
 -(id)initCellForNeutral;
 -(id)initCellForAI;
