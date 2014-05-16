@@ -29,6 +29,7 @@
 		C90031321922BA470085F1E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C90031301922BA470085F1E3 /* InfoPlist.strings */; };
 		C90031341922BA470085F1E3 /* PhageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90031331922BA470085F1E3 /* PhageTests.m */; };
 		C934AB801926B05F0018C36E /* cell.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C934AB7F1926B05F0018C36E /* cell.atlas */; };
+		C934AB831926C01B0018C36E /* CFEnemyAI.m in Sources */ = {isa = PBXBuildFile; fileRef = C934AB821926C01B0018C36E /* CFEnemyAI.m */; };
 		C9693D1B1923D6D00038A669 /* CFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D171923D6D00038A669 /* CFPlayer.m */; };
 		C9693D251923D6F40038A669 /* CFGameCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D1E1923D6F40038A669 /* CFGameCenterViewController.m */; };
 		C9693D261923D6F40038A669 /* CFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D201923D6F40038A669 /* CFGameController.m */; };
@@ -82,6 +83,8 @@
 		C90031311922BA470085F1E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C90031331922BA470085F1E3 /* PhageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhageTests.m; sourceTree = "<group>"; };
 		C934AB7F1926B05F0018C36E /* cell.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cell.atlas; sourceTree = "<group>"; };
+		C934AB811926C01B0018C36E /* CFEnemyAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFEnemyAI.h; sourceTree = "<group>"; };
+		C934AB821926C01B0018C36E /* CFEnemyAI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFEnemyAI.m; sourceTree = "<group>"; };
 		C9693D161923D6D00038A669 /* CFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPlayer.h; sourceTree = "<group>"; };
 		C9693D171923D6D00038A669 /* CFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPlayer.m; sourceTree = "<group>"; };
 		C9693D1D1923D6F40038A669 /* CFGameCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFGameCenterViewController.h; path = Phage/CFGameCenterViewController.h; sourceTree = "<group>"; };
@@ -205,8 +208,8 @@
 				C976FE3D1922C9D90020AD6F /* CFBoard.m */,
 				C9693D161923D6D00038A669 /* CFPlayer.h */,
 				C9693D171923D6D00038A669 /* CFPlayer.m */,
-				3A95665E19257656000224D0 /* CFAI.h */,
-				3A95665F19257656000224D0 /* CFAI.m */,
+				C934AB811926C01B0018C36E /* CFEnemyAI.h */,
+				C934AB821926C01B0018C36E /* CFEnemyAI.m */,
 				C976FE361922C7F50020AD6F /* CFCell.h */,
 				C976FE371922C7F50020AD6F /* CFCell.m */,
 				C976FE331922C60D0020AD6F /* CFPhageEmitter.h */,
@@ -359,7 +362,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A95666019257656000224D0 /* CFAI.m in Sources */,
 				C9693D281923D6F40038A669 /* CFMenuViewController.m in Sources */,
 				C90031101922BA470085F1E3 /* main.m in Sources */,
 				C90031141922BA470085F1E3 /* CFAppDelegate.m in Sources */,
@@ -368,6 +370,7 @@
 				C9693D251923D6F40038A669 /* CFGameCenterViewController.m in Sources */,
 				C9693D261923D6F40038A669 /* CFGameController.m in Sources */,
 				C900311D1922BA470085F1E3 /* CFMyScene.m in Sources */,
+				C934AB831926C01B0018C36E /* CFEnemyAI.m in Sources */,
 				C9693D271923D6F40038A669 /* CFGamePlayViewController.m in Sources */,
 				C976FE3E1922C9D90020AD6F /* CFBoard.m in Sources */,
 				C976FE351922C60D0020AD6F /* CFPhageEmitter.m in Sources */,
