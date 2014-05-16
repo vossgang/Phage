@@ -12,8 +12,10 @@
 
 #define k_RANDOMIZATION_VALUE 10
 
-int coordMapNeutral[20][20];
-int coordMapPlayer[20][20];
+// Used by the AI to map out the cells on map
+CGPoint coordMapNeutral[NUMBER_OF_CELLS];
+CGPoint coordMapPlayer[NUMBER_OF_CELLS];
+
 
 @implementation CFAI
 
