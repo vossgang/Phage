@@ -27,6 +27,7 @@
 		C900312A1922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
 		C90031321922BA470085F1E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C90031301922BA470085F1E3 /* InfoPlist.strings */; };
 		C90031341922BA470085F1E3 /* PhageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90031331922BA470085F1E3 /* PhageTests.m */; };
+		C934AB801926B05F0018C36E /* cell.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C934AB7F1926B05F0018C36E /* cell.atlas */; };
 		C9693D1B1923D6D00038A669 /* CFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D171923D6D00038A669 /* CFPlayer.m */; };
 		C9693D251923D6F40038A669 /* CFGameCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D1E1923D6F40038A669 /* CFGameCenterViewController.m */; };
 		C9693D261923D6F40038A669 /* CFGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9693D201923D6F40038A669 /* CFGameController.m */; };
@@ -35,7 +36,6 @@
 		C976FE351922C60D0020AD6F /* CFPhageEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE341922C60D0020AD6F /* CFPhageEmitter.m */; };
 		C976FE381922C7F50020AD6F /* CFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE371922C7F50020AD6F /* CFCell.m */; };
 		C976FE3E1922C9D90020AD6F /* CFBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C976FE3D1922C9D90020AD6F /* CFBoard.m */; };
-		C9CDA6341926698900618B6F /* cell.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C9CDA6331926698900618B6F /* cell.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +79,7 @@
 		C900312F1922BA470085F1E3 /* PhageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhageTests-Info.plist"; sourceTree = "<group>"; };
 		C90031311922BA470085F1E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C90031331922BA470085F1E3 /* PhageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhageTests.m; sourceTree = "<group>"; };
+		C934AB7F1926B05F0018C36E /* cell.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cell.atlas; sourceTree = "<group>"; };
 		C9693D161923D6D00038A669 /* CFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPlayer.h; sourceTree = "<group>"; };
 		C9693D171923D6D00038A669 /* CFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPlayer.m; sourceTree = "<group>"; };
 		C9693D1D1923D6F40038A669 /* CFGameCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFGameCenterViewController.h; path = Phage/CFGameCenterViewController.h; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		C976FE371922C7F50020AD6F /* CFCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFCell.m; sourceTree = "<group>"; };
 		C976FE3C1922C9D90020AD6F /* CFBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFBoard.h; sourceTree = "<group>"; };
 		C976FE3D1922C9D90020AD6F /* CFBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFBoard.m; sourceTree = "<group>"; };
-		C9CDA6331926698900618B6F /* cell.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cell.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 		3D6B02FF19242804005491FF /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C9CDA6331926698900618B6F /* cell.atlas */,
+				C934AB7F1926B05F0018C36E /* cell.atlas */,
 				1BAA97BB1925617E002F1637 /* murky.png */,
 				C90031201922BA470085F1E3 /* Images.xcassets */,
 				1BB9B9741925118800A0896E /* protocellX.atlas */,
@@ -336,7 +336,7 @@
 				C90031211922BA470085F1E3 /* Images.xcassets in Resources */,
 				1BAA97BC1925617E002F1637 /* murky.png in Resources */,
 				00F0302119255DC7000AE07C /* Background.sks in Resources */,
-				C9CDA6341926698900618B6F /* cell.atlas in Resources */,
+				C934AB801926B05F0018C36E /* cell.atlas in Resources */,
 				C90031171922BA470085F1E3 /* Main.storyboard in Resources */,
 				1BB9B9761925118800A0896E /* protocellX.atlas in Resources */,
 			);

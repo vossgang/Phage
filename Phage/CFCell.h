@@ -26,7 +26,7 @@ static NSString * const kLargeCellKey   = @"largeCell";
 @property (nonatomic) NSInteger phageCount;
 @property (nonatomic, strong) CFPhageEmitter *phageHead;
 @property (nonatomic, weak) CFPlayer *owner;
-@property (nonatomic) CGPoint location;
+//@property (nonatomic) CGPoint location;
 
 @property (nonatomic, strong) CFPhageEmitter *effectsEmitter;
 @property (nonatomic, strong) CFPhageEmitter *sendingEmitteer;

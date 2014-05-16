@@ -15,13 +15,10 @@
 
 @interface CFMyScene()
 
-@property (nonatomic, strong) CFGameController *gameController;
-@property (nonatomic, weak) CFCell *selectedCell;
-@property (nonatomic, weak) CFCell *originCell;
-@property (nonatomic, weak) CFCell *destinationCell;
-@property (nonatomic, strong) UIBezierPath *arrow;
-@property (nonatomic, strong) CAShapeLayer *shapeLayer;
-@property (nonatomic, strong) SKEmitterNode *cellBackground;
+@property (nonatomic, strong)   CFGameController    *gameController;
+@property (nonatomic, weak)     CFCell              *originCell;
+@property (nonatomic, weak)     CFCell              *destinationCell;
+@property (nonatomic, strong)   SKEmitterNode       *cellBackground;
 
 @end
 
