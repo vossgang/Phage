@@ -12,6 +12,9 @@
 
 #define k_RANDOMIZATION_VALUE 10
 
+int coordMapNeutral[20][20];
+int coordMapPlayer[20][20];
+
 @implementation CFAI
 
 - (double)createRandomizationValue:(double)withValue {
