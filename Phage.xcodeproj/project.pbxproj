@@ -11,6 +11,8 @@
 		1BAA97BC1925617E002F1637 /* murky.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA97BB1925617E002F1637 /* murky.png */; };
 		1BB9B9761925118800A0896E /* protocellX.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9B9741925118800A0896E /* protocellX.atlas */; };
 		1BB9B9771925118800A0896E /* phageX.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9B9751925118800A0896E /* phageX.atlas */; };
+		1BFD8FC71926A01900CEB9BE /* cell.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD8FC61926A01900CEB9BE /* cell.atlas */; };
+		3A95666019257656000224D0 /* CFAI.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A95665F19257656000224D0 /* CFAI.m */; };
 		C90031021922BA470085F1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031011922BA470085F1E3 /* Foundation.framework */; };
 		C90031041922BA470085F1E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031031922BA470085F1E3 /* CoreGraphics.framework */; };
 		C90031061922BA470085F1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90031051922BA470085F1E3 /* UIKit.framework */; };
@@ -56,6 +58,9 @@
 		1BB9B98519255A1F00A0896E /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
 		1BB9B98819255AB600A0896E /* phages.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = phages.sks; sourceTree = "<group>"; };
 		1BEDB74719255DA10023601A /* phage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phage.png; sourceTree = "<group>"; };
+		1BFD8FC61926A01900CEB9BE /* cell.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cell.atlas; sourceTree = "<group>"; };
+		3A95665E19257656000224D0 /* CFAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFAI.h; sourceTree = "<group>"; };
+		3A95665F19257656000224D0 /* CFAI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFAI.m; sourceTree = "<group>"; };
 		3D6B02FC1924182D005491FF /* CFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFConstants.h; path = Phage/CFConstants.h; sourceTree = "<group>"; };
 		C90030FE1922BA470085F1E3 /* Phage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90031011922BA470085F1E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,7 +131,7 @@
 		3D6B02FF19242804005491FF /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C934AB7F1926B05F0018C36E /* cell.atlas */,
+				1BFD8FC61926A01900CEB9BE /* cell.atlas */,
 				1BAA97BB1925617E002F1637 /* murky.png */,
 				C90031201922BA470085F1E3 /* Images.xcassets */,
 				1BB9B9741925118800A0896E /* protocellX.atlas */,
@@ -211,8 +216,8 @@
 				C976FE341922C60D0020AD6F /* CFPhageEmitter.m */,
 				C900311B1922BA470085F1E3 /* CFMyScene.h */,
 				C900311C1922BA470085F1E3 /* CFMyScene.m */,
-				1BEDB74719255DA10023601A /* phage.png */,
 				1BB9B98819255AB600A0896E /* phages.sks */,
+				1BEDB74719255DA10023601A /* phage.png */,
 				1BB9B98519255A1F00A0896E /* spark.png */,
 			);
 			name = Model;
@@ -336,7 +341,7 @@
 				C90031211922BA470085F1E3 /* Images.xcassets in Resources */,
 				1BAA97BC1925617E002F1637 /* murky.png in Resources */,
 				00F0302119255DC7000AE07C /* Background.sks in Resources */,
-				C934AB801926B05F0018C36E /* cell.atlas in Resources */,
+				1BFD8FC71926A01900CEB9BE /* cell.atlas in Resources */,
 				C90031171922BA470085F1E3 /* Main.storyboard in Resources */,
 				1BB9B9761925118800A0896E /* protocellX.atlas in Resources */,
 			);
