@@ -63,8 +63,7 @@
         _spawnPoint         = spawnPoint;
         _effectsEmitter     = effectsEmitter;
         _sendingEmitteer    = sendingEmitter;
-        _inertiaX           = 0;
-        _inertiaY           = 0;
+
         self.size           = [self sizeForCellSize:cellSize];
         
         [self addChild:effectsEmitter];
