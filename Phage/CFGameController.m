@@ -24,7 +24,7 @@
         [self setupArrayOfUnaffiliatedCells];
         [self setupArrayOfPlayerCells];
         [self setupArrayOfEnemyCells];
-        [self setupPhageEmittersForActiveCells];
+//        [self setupPhageEmittersForActiveCells];
         
     }
     return self;
@@ -49,8 +49,15 @@
 
 -(void)setupArrayOfPlayerCells
 {
+    SKTextureAtlas *phageAtlas      = [SKTextureAtlas atlasNamed:@"cell"];
+    NSString *textureName           = [NSString stringWithFormat:@"cell"];
+    SKTexture *texture              = [phageAtlas textureNamed:textureName];
 
     CFCell *cell = [[CFCell alloc] initCellForPlayer];
+    cell.colorBlendFactor = .9;
+    cell.color = [UIColor blueColor];
+
+    cell.texture = texture;
     _playerCells = @[cell];
 }
 
@@ -58,11 +65,23 @@
 {
     
     CFCell *cell = [[CFCell alloc] initCellForAI];
+    SKTextureAtlas *phageAtlas      = [SKTextureAtlas atlasNamed:@"cell"];
+    NSString *textureName           = [NSString stringWithFormat:@"cell"];
+    SKTexture *texture              = [phageAtlas textureNamed:textureName];
+    cell.colorBlendFactor = .9;
+    cell.color = [UIColor yellowColor];
+
+    cell.texture = texture;
     _enemyCells = @[cell];
 }
 
 -(void)setupArrayOfUnaffiliatedCells
 {
+    SKTextureAtlas *phageAtlas      = [SKTextureAtlas atlasNamed:@"cell"];
+    NSString *textureName           = [NSString stringWithFormat:@"cell"];
+    SKTexture *texture              = [phageAtlas textureNamed:textureName];
+    
+
     
     //temporary array of cells
     NSMutableArray *unaffiliatedCells = [NSMutableArray new];
@@ -70,6 +89,9 @@
     //divide screen into sections; assign random x,y coordinates of cells
     for (int i = 0; i < NUMBER_OF_CELLS; i++) {
         CFCell *cell = [[CFCell alloc] initCellForNeutral];
+        cell.texture = texture;
+        cell.colorBlendFactor = .9;
+        cell.color = [UIColor purpleColor];
 
         [unaffiliatedCells addObject:cell];
     }
@@ -100,6 +122,7 @@
 //        [cell.effectsEmitter addChild:effectsParticleEmitter];
 //    }
     
+
     // Test For Loop
     for (CFCell *cell in self.unaffiliatedCells) {
         NSString *effectsPhageEmitterPath = [[NSBundle mainBundle] pathForResource:@"Phage" ofType:@"sks"];

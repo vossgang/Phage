@@ -40,7 +40,7 @@
                      sendingEmitter:(CFPhageEmitter *)sendingEmitter
 
 {
-    self = [super initWithTexture:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"cell", affiliation]]];
+    self = [super init];
     if (self) {
         _cellAffiliation    = affiliation;
         _cellSize           = cellSize;
@@ -49,8 +49,6 @@
         _effectsEmitter     = effectsEmitter;
         _sendingEmitteer    = sendingEmitter;
         self.size           = [self sizeForCellSize:cellSize];
-        self.colorBlendFactor = .9;
-        self.color = [UIColor purpleColor];
         
         [self addChild:effectsEmitter];
         [self addChild:sendingEmitter];
@@ -124,22 +122,22 @@
     self.physicsBody.mass               = 2;
 }
 
--(void)setCellAffiliation:(Affiliation)cellAffiliation
-{
-    if (_cellAffiliation != cellAffiliation) {
-        _cellAffiliation = cellAffiliation;
-        
-        switch (_cellAffiliation) {
-                
-            case AffiliationNeutral:    [self setTexture:[SKTexture textureWithImageNamed:@"protocell0"]]; break;
-                
-            case AffiliationAI:         [self setTexture:[SKTexture textureWithImageNamed:@"protocell2"]]; break;
-                
-            case AffiliationPlayer:     [self setTexture:[SKTexture textureWithImageNamed:@"protocell1"]]; break;
-                
-        }
-    }
-}
+//-(void)setCellAffiliation:(Affiliation)cellAffiliation
+//{
+//    if (_cellAffiliation != cellAffiliation) {
+//        _cellAffiliation = cellAffiliation;
+//        
+//        switch (_cellAffiliation) {
+//                
+//            case AffiliationNeutral:    [self setTexture:[SKTexture textureWithImageNamed:@"protocell0"]]; break;
+//                
+//            case AffiliationAI:         [self setTexture:[SKTexture textureWithImageNamed:@"protocell2"]]; break;
+//                
+//            case AffiliationPlayer:     [self setTexture:[SKTexture textureWithImageNamed:@"protocell1"]]; break;
+//                
+//        }
+//    }
+//}
 
    
 @end
