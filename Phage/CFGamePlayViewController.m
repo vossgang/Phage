@@ -34,6 +34,7 @@
     SKView * skView = (SKView *)self.view;
     
     skView.showsFPS = YES;
+    skView.showsNodeCount = YES; //need to see as we test
     
     // Create and configure the scene.
     SKScene * scene = [CFMyScene sceneWithSize:skView.bounds.size];

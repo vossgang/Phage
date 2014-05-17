@@ -11,6 +11,7 @@
 #import "CFPhageEmitter.h"
 #import "CFGameController.h"
 #import "math.h"
+#import "CFPhage.h"
 
 #define PERCENT_TO_SHRINK_SELECTED_CELL 0.9
 
@@ -23,16 +24,21 @@
 @property (nonatomic, strong) UIBezierPath *arrow;
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
 @property (nonatomic, strong) SKEmitterNode *cellBackground;
+@property (nonatomic, strong) NSMutableArray *phages;
 
 @end
 
 @implementation CFMyScene {
     BOOL deltaSecondFlag;
+    CFTimeInterval _deltaTimeSincePhageSpawn;
+    CFTimeInterval _deltaTimeSincePhageUpdate;
+    CFTimeInterval _prevTime;
 }
 
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
+        
         self.physicsBody        = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.backgroundColor    = [SKColor colorWithRed:0.08 green:0.0 blue:0.0 alpha:1.0];
         
@@ -54,8 +60,9 @@
         SKAction *rotation = [SKAction rotateByAngle:M_PI/4.0 duration:8];
         [murky runAction:[SKAction repeatActionForever:rotation]];
         
+        _phages = [NSMutableArray new];
+        
         [self layoutBoard];
-
     }
     return self;
 }
@@ -276,6 +283,18 @@
         [self shrinkCell:_selectedCell];
 
     }
+    //set phage targets on cell touch for now (testing purposes)
+    for (UITouch *touch in touches) {
+        CGPoint touchLocation = [touch locationInNode:self];
+        
+        SKNode *node = [self nodeAtPoint:touchLocation];
+        if ([node isMemberOfClass:[CFCell class]]) {
+            CFCell *cell = (CFCell *)node;
+            for (CFPhage *phage in _phages) {
+                phage.targetCell = cell;
+            }
+        }
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -288,17 +307,57 @@
 
 -(void)update:(CFTimeInterval)currentTime
 {
+    /* because of ipad lag with bulk skaction animation we'll have to rewrite this to be like the phage "ORBIT" algorithm with its manual xy position manipulation
+     
     BOOL newDeltaSecondFlag = (abs(currentTime) % 2);
-    
+     
     //This 'if' statement fires once a second
     if (newDeltaSecondFlag != deltaSecondFlag) {
-        for (CFCell *cell in [self children]) {
-            [cell runAction:[SKAction moveTo:[self randomVariationOfPoint:cell.position] duration:5]];
+        for (id node in [self children]) {
+            if ([node isMemberOfClass:[CFCell class]]) {
+                CFCell *cell = (CFCell *)node;
+                [cell runAction:[SKAction moveTo:[self randomVariationOfPoint:cell.position] duration:5]];
+            }
         }
     }
-    
     deltaSecondFlag = newDeltaSecondFlag;
+     */
 
+    //phage creation for testing purposes
+    CFTimeInterval deltaTime = currentTime - _prevTime;
+    _prevTime = currentTime;
+    _deltaTimeSincePhageSpawn = _deltaTimeSincePhageSpawn + deltaTime;
+    if (_deltaTimeSincePhageSpawn > 0.5) {
+        _deltaTimeSincePhageSpawn = 0;
+        for (CFCell *cell in _gameController.playerCells) {
+            CFPhage *newPhage = [[CFPhage alloc] initWithCell:cell];
+            newPhage.owner = cell.owner;
+            newPhage.position = CGPointMake(cell.position.x + cell.frame.size.width/2, cell.position.y + cell.frame.size.height/2);
+            newPhage.targetCell = cell;
+            [_phages addObject:newPhage];
+            [self addChild:newPhage];
+        }
+        for (CFCell *cell in _gameController.enemyCells) {
+            CFPhage *newPhage = [[CFPhage alloc] initWithCell:cell];
+            newPhage.owner = cell.owner;
+            newPhage.position = CGPointMake(cell.position.x + cell.frame.size.width/2, cell.position.y + cell.frame.size.height/2);
+            newPhage.targetCell = cell;
+            [_phages addObject:newPhage];
+            [self addChild:newPhage];
+        }
+        for (CFCell *cell in _gameController.unaffiliatedCells) {
+            CFPhage *newPhage = [[CFPhage alloc] initWithCell:cell];
+            newPhage.owner = cell.owner;
+            newPhage.position = CGPointMake(cell.position.x + cell.frame.size.width/2, cell.position.y + cell.frame.size.height/2);
+            newPhage.targetCell = cell;
+            [_phages addObject:newPhage];
+            [self addChild:newPhage];
+        }
+    }
+    //global phage updating
+    for (CFPhage *phage in _phages) {
+        [phage updatePhage];
+    }
 }
 
 #pragma mark - Pull cell information for AI to read
